@@ -1,11 +1,12 @@
 import React from 'react';
-import Nav from './greeting/nav_bar';
+import NavContainer from './nav/nav_container';
+import { Route } from 'react-router-dom';
 
 const App = () => {
     return (
         <header>
-            <h1>L Y R I K L</h1>
-            <Nav />
+            <Route path="/" component={NavContainer} />
+            
         </header>
     );
 }
