@@ -4,7 +4,7 @@ import { logout } from '../../actions/session_actions';
 import Nav from './nav';
 
 const mSTP = ({ entities, session }) => ({
-    currentUser: entities.users[session.id]
+    currentUser: session.currentUser
 });
 
 const mDTP = (dispatch) => ({

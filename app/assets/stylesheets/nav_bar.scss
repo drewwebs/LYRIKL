@@ -5,7 +5,7 @@
     padding-left: 20px;
     padding-right: 20px;
     align-items: center;
-    font-family: sans-serif;
+    // font-family: sans-serif;
     height: 41px;
     position: relative;
     // width: 100%
@@ -23,20 +23,48 @@
     height: 100%
 }
 
-.session-buttons {
+.nav-buttons {
     display: flex;
     // justify-content: space-between;
     width: 120px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: capitalize;
+    font-size: 11px;
     height: 100%;
     position: absolute;
     right: 12px;
 }
 
-.session-buttons a {
+.nav-buttons a {
     display: flex;
+    text-transform: uppercase;
+    // align-items: center;
+    padding: 16px 8px 8px; 
+    text-decoration: none;
+    height: 100%;
+    box-sizing: border-box;
+    transition-duration: 0.1s;
+    &:hover {
+        border-bottom: 8px solid red;
+    }
+}
+
+.search-bar {
+    width: 100px;
+    position: absolute;
+    left: 20px;
+}
+
+.active-session-buttons {
+    width: 330px;
+    display: flex;
+    font-size: 11px;
+    height: 100%;
+    position: absolute;
+    right: 12px;
+}
+
+.active-session-buttons a {
+    display: flex;
+    text-transform: uppercase;
     // align-items: center;
     padding: 16px 8px 8px; 
     text-decoration: none;
@@ -45,12 +73,10 @@
     transition-duration: 0.1s;
 }
 
-.session-buttons a:hover {
-    border-bottom: 8px solid red;
+.active-session-buttons li {
+    list-style: none;
+    &:hover {
+        border-bottom: 8px solid red;
+    }
 }
 
-.search-bar {
-    width: 100px;
-    position: absolute;
-    left: 20px;
-}

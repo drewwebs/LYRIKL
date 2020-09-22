@@ -12,6 +12,7 @@
     padding: 15px;
     border-radius: 4px;
     border-top: 1px solid #555;
+    font-size: 14px;
 }
 
 .session-form input {
@@ -23,6 +24,7 @@
     border-radius: 4px;
     border: 1px solid #555;
     padding: 5px;
+    margin-top: 5px;
 }
 
 .session-header {
@@ -49,4 +51,16 @@
 .signup-prompt-button {
     color: #5BA7C2;
     text-decoration: none;
+}
+
+.demo-login {
+    margin: auto;
+}
+
+.demo-login button {
+    background-color: #333333;
+    color: #EDE8D9;
+    padding: 6px;
+    border: 1px solid #555;
+    border-radius: 2px;
 }

@@ -15,17 +15,30 @@ export default class Nav extends React.Component {
 
     display() {
         return !!this.props.currentUser ? (
-            <div className="session-buttons">
-                <p>Welcome, {this.props.currentUser.username}</p>
-                <button onClick={this.handleClick}>Log Out</button>
+            <div className="active-session-buttons">
+                <li> <a href="#">Forums </a></li>
+                <li> <a href="#">Feed </a></li>
+                <li> <a href="#">Me </a></li>
+                <li> <a href="#">Messages </a></li>
+                <li> <a href="#">Earn IQ </a></li>
+                <li> 
+                    <a href="#">139 IQ </a>
+                    <ul onClick={this.toggleHidden()} className="account-dropdown hidden">
+                        <span className="dropdown-subtitle">Account</span>
+                        <li><a href="#">View Profile</a></li>
+                        <li><a href="#">Report a Problem</a></li>
+                        <li><a href="#">Sign Out</a></li>
+                        <li><a href="#">Firehose</a></li>
+                    </ul>
+                </li>
             </div>
         )
         :
         (
-            <div className="session-buttons">
+            <div className="nav-buttons">
                 <Link to="/signup">Sign Up</Link>
-                <br />
-                <Link to="/login">Log In</Link>
+        
+                <Link to="/login">Sign In</Link>
             </div>
         );
     }
