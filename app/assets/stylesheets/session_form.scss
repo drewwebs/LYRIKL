@@ -9,8 +9,9 @@
     width: 370px;
     background: #1b1b1b;
     color: #EDE8D9;
-    font-family: programme;
-    padding: 15px
+    padding: 15px;
+    border-radius: 4px;
+    border-top: 1px solid #555;
 }
 
 .session-form input {
@@ -29,6 +30,23 @@
     color: #EDE8D9;
     margin: auto;
     padding: 15px;
-    // margin: 0px;
-    // margin-bottom: 10px
+}
+
+.session-form-button {
+    background-color: #333333;
+    color: #EDE8D9;
+    padding: 6px;
+    border: 1px solid #555;
+    border-radius: 2px;
+}
+
+.signup-prompt {
+    margin: auto;
+    color: #EDE8D9;
+    padding: 10px
+}
+
+.signup-prompt-button {
+    color: #5BA7C2;
+    text-decoration: none;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { ReactComponent as Logo } from '../../../app/assets/images/logo.svg'; 
 
 export default class Nav extends React.Component {
     constructor(props) {
@@ -33,7 +34,8 @@ export default class Nav extends React.Component {
         return(
             <header className="nav-bar">
                 <nav className="search-bar">Search Bar</nav>
-                <h1 className="site-header">L Y R I K L</h1>
+                {/* <Logo className="site-header" /> */}
+                <img className="site-header" src={window.logoURL} alt="lyrikl"/>
                 {this.display()}
             </header>
         )

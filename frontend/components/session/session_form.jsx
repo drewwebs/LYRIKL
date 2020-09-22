@@ -21,8 +21,8 @@ export default class SessionForm extends React.Component {
   }
 
   display() {
-    if (this.props.formType === "Log In") {
-      return (<p>Don&#39;t have an account? <Link to="/signup">Sign up here</Link></p>)
+    if (this.props.formType === "Login") {
+      return (<p className="signup-prompt">Don&#39;t have an account? <Link className="signup-prompt-button" to="/signup">Sign up here</Link></p>)
     }
   };
 
@@ -32,7 +32,7 @@ export default class SessionForm extends React.Component {
         <h2 className="session-header">{this.props.formType}</h2>
         <form onSubmit={this.handleSubmit} className="session-form">
           <label>
-            Email
+            Lyrikl login or email
             <br />
             <input
               type="text"
@@ -50,7 +50,7 @@ export default class SessionForm extends React.Component {
             />
           </label>
           <br />
-          <button>{this.props.formType}!</button>
+          <button className="session-form-button">{this.props.formType}</button>
         </form>
         {this.display()}
       </div>

@@ -4,7 +4,7 @@ import SessionForm from "./session_form";
 
 const mDTP = (dispatch) => ({
     action: (formUser) => dispatch(login(formUser)),
-    formType: "Log In"
+    formType: "Login"
 });
 
 export default connect(null, mDTP)(SessionForm);
