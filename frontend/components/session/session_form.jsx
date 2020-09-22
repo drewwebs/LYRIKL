@@ -6,6 +6,7 @@ export default class SessionForm extends React.Component {
     super(props);
     this.state = props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleInput(type) {
@@ -66,6 +67,11 @@ export default class SessionForm extends React.Component {
     }
   }
 
+  handleDemo(e) {
+    e.preventDefault();
+    this.props.loginDemo()
+  }
+
   render() {
     return (
       <div className="session-container">
@@ -86,7 +92,7 @@ export default class SessionForm extends React.Component {
         </form>
         {this.displaySignupPrompt()}
     
-        <form className="demo-login" onSubmit={this.props.loginDemo}>
+        <form className="demo-login" onSubmit={this.handleDemo}>
           <button>
             Log in as demo
           </button>
