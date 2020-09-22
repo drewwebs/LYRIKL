@@ -6,11 +6,11 @@ import { Route } from 'react-router-dom';
 
 const App = () => {
     return (
-        <header>
+        <div>
             <Route path="/" component={NavContainer} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-        </header>
+        </div>
     );
 }
 

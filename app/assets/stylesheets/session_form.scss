@@ -1,0 +1,29 @@
+.session-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.session-form {
+    margin: auto;
+    width: 370px;
+    background: #1b1b1b;
+    color: #EDE8D9;
+    padding: 15px
+}
+
+.session-form input {
+    width: 350px;
+    height: 29px;
+    background: #363636;
+    color:#EDE8D9;
+}
+
+.session-header {
+    font-size: 40px;
+    color: #EDE8D9;
+    margin: auto;
+    padding: 15px;
+    // margin: 0px;
+    // margin-bottom: 10px
+}

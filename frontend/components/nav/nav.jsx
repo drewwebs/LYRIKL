@@ -21,7 +21,7 @@ export default class Nav extends React.Component {
         )
         :
         (
-            <div>
+            <div className="session-buttons">
                 <Link to="/signup">Sign Up</Link>
                 <br />
                 <Link to="/login">Log In</Link>
@@ -31,8 +31,9 @@ export default class Nav extends React.Component {
 
     render() {
         return(
-            <header>
-                <h1>L Y R I K L</h1>
+            <header className="nav-bar">
+                <nav className="search-bar">Search Bar</nav>
+                <h1 className="site-header">L Y R I K L</h1>
                 <nav className="user-box">{this.display()}</nav>
             </header>
         )
