@@ -14,7 +14,7 @@ export default class Nav extends React.Component {
 
     display() {
         return !!this.props.currentUser ? (
-            <div>
+            <div className="session-buttons">
                 <p>Welcome, {this.props.currentUser.username}</p>
                 <button onClick={this.handleClick}>Log Out</button>
             </div>
@@ -34,7 +34,7 @@ export default class Nav extends React.Component {
             <header className="nav-bar">
                 <nav className="search-bar">Search Bar</nav>
                 <h1 className="site-header">L Y R I K L</h1>
-                <nav className="user-box">{this.display()}</nav>
+                {this.display()}
             </header>
         )
     }

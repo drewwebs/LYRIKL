@@ -9,14 +9,19 @@
     width: 370px;
     background: #1b1b1b;
     color: #EDE8D9;
+    font-family: programme;
     padding: 15px
 }
 
 .session-form input {
     width: 350px;
-    height: 29px;
+    height: 17px;
+    margin-bottom: 13px;
     background: #363636;
     color:#EDE8D9;
+    border-radius: 4px;
+    border: 1px solid #555;
+    padding: 5px;
 }
 
 .session-header {
