@@ -15,24 +15,15 @@ class Signup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props
-      .createNewUser(this.state)
-      // .then(() => this.props.history.push("/"));
+    this.props.signup(this.state)
+      .then(() => this.props.history.push("/"));
   }
 
   render() {
     return (
       <div className="session-form">
         <h2>Sign Up</h2>
-        <form>
-          <label>
-            Username
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.handleInput("username")}
-            />
-          </label>
+        <form onSubmit={this.handleSubmit}>
           <label>
             Email
             <input
@@ -49,7 +40,7 @@ class Signup extends React.Component {
               onChange={this.handleInput("password")}
             />
           </label>
-          <button onClick={this.handleSubmit}>Log In!</button>
+          <button>Sign Up!</button>
         </form>
       </div>
     );
