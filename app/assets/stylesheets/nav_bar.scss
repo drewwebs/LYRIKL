@@ -62,7 +62,7 @@
     right: 12px;
 }
 
-.active-session-buttons a {
+.active-session-buttons > li > a {
     display: flex;
     text-transform: uppercase;
     // align-items: center;
@@ -70,13 +70,12 @@
     text-decoration: none;
     height: 100%;
     box-sizing: border-box;
-    transition-duration: 0.1s;
 }
 
-.active-session-buttons li {
+.active-session-buttons > li {
     list-style: none;
+    transition-duration: 0.1s;
     &:hover {
         border-bottom: 8px solid red;
     }
 }
-

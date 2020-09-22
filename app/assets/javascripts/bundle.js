@@ -286,7 +286,11 @@ var Nav = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Nav);
 
     _this = _super.call(this, props);
+    _this.state = {
+      isDropdownVisible: false
+    };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.toggleHidden = _this.toggleHidden.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -297,8 +301,18 @@ var Nav = /*#__PURE__*/function (_React$Component) {
       this.props.logout();
     }
   }, {
+    key: "toggleHidden",
+    value: function toggleHidden() {
+      this.setState(function (prevState) {
+        return {
+          isDropdownVisible: !prevState.isDropdownVisible
+        };
+      });
+    }
+  }, {
     key: "display",
     value: function display() {
+      var isDropdownVisible = this.state.isDropdownVisible;
       return !!this.props.currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "active-session-buttons"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -311,19 +325,21 @@ var Nav = /*#__PURE__*/function (_React$Component) {
         href: "#"
       }, "Messages ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
-      }, "Earn IQ ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "Earn IQ ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "account-button",
+        onClick: this.toggleHidden
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
       }, "139 IQ "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        onClick: this.toggleHidden(),
-        className: "account-dropdown hidden"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "account-dropdown ".concat(isDropdownVisible ? "" : "hidden")
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "dropdown-subtitle"
       }, "Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
       }, "View Profile")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
-      }, "Report a Problem")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#"
+      }, "Report a Problem")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleClick
       }, "Sign Out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
       }, "Firehose"))))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 export default class Nav extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {isDropdownVisible: false};
         this.handleClick = this.handleClick.bind(this);
+        this.toggleHidden = this.toggleHidden.bind(this);
     }
 
     handleClick(e) {
@@ -13,7 +15,15 @@ export default class Nav extends React.Component {
         this.props.logout();
     }
 
+    toggleHidden() {
+        this.setState(prevState => ({
+            isDropdownVisible: !prevState.isDropdownVisible
+        }));
+    }
+
     display() {
+        const { isDropdownVisible } = this.state;
+
         return !!this.props.currentUser ? (
             <div className="active-session-buttons">
                 <li> <a href="#">Forums </a></li>
@@ -21,13 +31,13 @@ export default class Nav extends React.Component {
                 <li> <a href="#">Me </a></li>
                 <li> <a href="#">Messages </a></li>
                 <li> <a href="#">Earn IQ </a></li>
-                <li> 
+                <li className="account-button" onClick={this.toggleHidden}> 
                     <a href="#">139 IQ </a>
-                    <ul onClick={this.toggleHidden()} className="account-dropdown hidden">
-                        <span className="dropdown-subtitle">Account</span>
+                    <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
+                        <li className="dropdown-subtitle">Account</li>
                         <li><a href="#">View Profile</a></li>
                         <li><a href="#">Report a Problem</a></li>
-                        <li><a href="#">Sign Out</a></li>
+                        <li><button onClick={this.handleClick}>Sign Out</button></li>
                         <li><a href="#">Firehose</a></li>
                     </ul>
                 </li>
