@@ -32,13 +32,14 @@ export default class Nav extends React.Component {
 
         return !!this.props.currentUser ? (
             <div className="active-session-buttons">
-                <li> <a href="#">Forums </a></li>
-                <li> <a href="#">Feed </a></li>
-                <li> <a href="#">Me </a></li>
-                <li> <a href="#">Messages </a></li>
-                <li> <a href="#"><i className="fas fa-brain" /> <p>Earn IQ</p> </a></li>
-                <li className="account-button" onClick={this.toggleHidden}> 
-                    <a href="#">139 IQ </a>
+                <a href="#"><i className="fas fa-pen-alt"></i><p className="active-session-button-label">Forums </p></a>
+                <a href="#"><i className="far fa-newspaper"></i><p className="active-session-button-label">Feed </p></a>
+                <a href="#"><i className="far fa-bell"></i><p className="active-session-button-label">Me </p></a>
+                <a href="#"><i className="far fa-envelope"></i><p className="active-session-button-label">Messages </p></a>
+                <a href="#"><i className="fas fa-brain" /> <p className="active-session-button-label">Earn IQ</p> </a>
+                <a href="#" className="account-button" onClick={this.toggleHidden}>
+                    <i className="far fa-address-card"></i>
+                    <p className="active-session-button-label">139 IQ</p> 
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
                         <li className="dropdown-subtitle">Account</li>
                         <li><a href="#">View Profile</a></li>
@@ -46,7 +47,7 @@ export default class Nav extends React.Component {
                         <li onClick={this.handleClick}><button>Sign Out</button></li>
                         <li><a href="#">Firehose</a></li>
                     </ul>
-                </li>
+                </a>
             </div>
         )
         :

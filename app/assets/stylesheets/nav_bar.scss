@@ -72,7 +72,7 @@
 }
 
 .active-session-buttons {
-    width: 330px;
+    // width: 330px;
     display: flex;
     font-size: 11px;
     height: 100%;
@@ -80,23 +80,32 @@
     right: 12px;
 }
 
-.active-session-buttons > li > a {
+.active-session-buttons > a {
     display: flex;
     text-transform: uppercase;
-    padding: 16px 8px 8px; 
+    padding: 14px 8px 8px; 
     text-decoration: none;
     height: 100%;
     box-sizing: border-box;
-}
-
-.active-session-buttons > li {
-    list-style: none;
     transition-duration: 0.1s;
     &:hover {
         border-bottom: 8px solid red;
     }
 }
 
+.active-session-button-label {
+    padding-left: 6px;
+}
+
 .search-icon {
     padding: 0px 0.375rem;
+}
+
+.fa-pen-alt,
+.fa-newspaper,
+.fa-bell,
+.fa-envelope,
+.fa-brain,
+.fa-address-card {
+    font-size: 16px;
 }
