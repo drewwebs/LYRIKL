@@ -4,11 +4,11 @@ class Api::SessionsController < ApplicationController
             params[:user][:name],
             params[:user][:password]
         )
-        if @user.nil?
-            render json: ['Invalid credentials'], status: 401
-        else
+        if @user
             login!(@user)
             render 'api/users/show'
+        else   
+            render json: ['Invalid credentials'], status: 401
         end
     end
 

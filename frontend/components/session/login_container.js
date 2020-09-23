@@ -2,13 +2,14 @@ import { connect } from "react-redux";
 import { login, loginDemo } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 
-const mSTP = state => ({
-    formHeader: "Sign In",
-    buttonText: "Login",
-    user: {
-        name: "",
-        password: ""
-    }
+const mSTP = ({ errors }) => ({
+  errors: errors.session,
+  formHeader: "Sign In",
+  buttonText: "Login",
+  user: {
+    name: "",
+    password: "",
+  },
 });
 
 const mDTP = (dispatch) => ({

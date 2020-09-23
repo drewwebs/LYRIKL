@@ -37,7 +37,7 @@ export default class Nav extends React.Component {
                         <li className="dropdown-subtitle">Account</li>
                         <li><a href="#">View Profile</a></li>
                         <li><a href="#">Report a Problem</a></li>
-                        <li><button onClick={this.handleClick}>Sign Out</button></li>
+                        <li onClick={this.handleClick}><button>Sign Out</button></li>
                         <li><a href="#">Firehose</a></li>
                     </ul>
                 </li>

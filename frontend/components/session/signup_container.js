@@ -2,7 +2,8 @@ import { connect } from "react-redux";
 import { signup, loginDemo } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 
-const mSTP = state => ({
+const mSTP = ({ errors }) => ({
+  errors: errors.session,
   formHeader: "Sign Up",
   buttonText: "Create Account",
   user: {
