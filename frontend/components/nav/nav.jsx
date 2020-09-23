@@ -42,10 +42,10 @@ export default class Nav extends React.Component {
                     <p className="active-session-button-label">139 IQ</p> 
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
                         <li className="dropdown-subtitle">Account</li>
-                        <li><a href="#">View Profile</a></li>
-                        <li><a href="#">Report a Problem</a></li>
+                        <a href="#">View Profile</a>
+                        <a href="#">Report a Problem</a>
                         <li onClick={this.handleClick}><button>Sign Out</button></li>
-                        <li><a href="#">Firehose</a></li>
+                        <a href="#">Firehose</a>
                     </ul>
                 </a>
             </div>

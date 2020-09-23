@@ -21,22 +21,21 @@
     font-weight: bold;
 }
 
-.account-dropdown li {
+.account-dropdown li,
+.account-dropdown a {
 	text-transform: uppercase;
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     display: block;
-    border-bottom: 1.5px solid #EDE8D9;
+    border-bottom: 1px solid #cac7bf;
     padding: 15px;
     align-content: flex-start;
+    text-decoration: none;
     &:hover {
         background: #ffff64
     }
 }
 
-.account-dropdown a {
-    text-decoration: none;
-}
 
 .account-dropdown button {
     background:none;

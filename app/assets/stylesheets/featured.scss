@@ -1,0 +1,25 @@
+.featured {
+    padding: 72px 60px 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.news {
+    display: flex;
+    justify-content: space-between;
+    height: 460px;
+}
+
+.news-story {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 55%;
+}
+
+.news-image {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+}
