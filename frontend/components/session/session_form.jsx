@@ -7,6 +7,7 @@ export default class SessionForm extends React.Component {
     this.state = props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
+    this.clearErrors = this.clearErrors.bind(this);
   }
 
   handleInput(type) {
@@ -25,7 +26,11 @@ export default class SessionForm extends React.Component {
       return (
         <p className="signup-prompt">
           Don&#39;t have an account?{" "}
-          <Link className="signup-prompt-button" to="/signup">
+          <Link
+            className="signup-prompt-button"
+            to="/signup"
+            onClick={this.clearErrors}
+          >
             Sign up here
           </Link>
         </p>
@@ -34,7 +39,11 @@ export default class SessionForm extends React.Component {
       return (
         <p className="signup-prompt">
           Already have an account?{" "}
-          <Link className="signup-prompt-button" to="/login">
+          <Link
+            className="signup-prompt-button"
+            to="/login"
+            onClick={this.clearErrors}
+          >
             Log in here
           </Link>
         </p>
@@ -101,6 +110,11 @@ export default class SessionForm extends React.Component {
         </div>
       );
     }
+  }
+
+  clearErrors(e) {
+    e.preventDefault();
+    this.props.clearErrors()
   }
 
   render() {

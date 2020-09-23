@@ -8,7 +8,8 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render 'api/users/show'
         elsif params[:user][:password].length < 6
-            render json: ['Password is not valid'], status: 
+            render json: ['Password is not valid'], status: 422
+        else
             @user = User.find_by_username(params[:user][:name]) || User.find_by_email(params[:user][:name])
             if @user
                 render json: ['Incorrect password'], status: 422

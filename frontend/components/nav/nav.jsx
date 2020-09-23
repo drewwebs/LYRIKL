@@ -8,6 +8,7 @@ export default class Nav extends React.Component {
         this.state = {isDropdownVisible: false};
         this.handleClick = this.handleClick.bind(this);
         this.toggleHidden = this.toggleHidden.bind(this);
+        this.clearErrors = this.clearErrors.bind(this);
     }
 
     handleClick(e) {
@@ -19,6 +20,11 @@ export default class Nav extends React.Component {
         this.setState(prevState => ({
             isDropdownVisible: !prevState.isDropdownVisible
         }));
+    }
+
+    clearErrors(e) {
+        e.preventDefault();
+        this.props.clearErrors();
     }
 
     display() {
@@ -45,7 +51,7 @@ export default class Nav extends React.Component {
         )
         :
         (
-            <div className="nav-buttons">
+            <div className="nav-buttons" onClick={this.clearErrors}>
                 <Link to="/signup">Sign Up</Link>
         
                 <Link to="/login">Sign In</Link>
