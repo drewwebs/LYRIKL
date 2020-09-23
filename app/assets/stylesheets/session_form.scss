@@ -65,3 +65,23 @@
     border-radius: 2px;
 }
 
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #222222;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+}
+
+.errorContainer > * {
+    padding: 8px 32px;
+}
+
+.errorContainer li {
+    list-style-type: disc;
+}
+
+#whoops {
+    background-color: #990120
+}
+
