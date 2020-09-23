@@ -36,7 +36,7 @@ export default class Nav extends React.Component {
                 <li> <a href="#">Feed </a></li>
                 <li> <a href="#">Me </a></li>
                 <li> <a href="#">Messages </a></li>
-                <li> <a href="#">Earn IQ </a></li>
+                <li> <a href="#"><i className="fas fa-brain" /> <p>Earn IQ</p> </a></li>
                 <li className="account-button" onClick={this.toggleHidden}> 
                     <a href="#">139 IQ </a>
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
@@ -61,13 +61,30 @@ export default class Nav extends React.Component {
 
     render() {
         return (
-          <header className="nav-bar">
-            <form action="#" className="search-bar">
-              <input placeholder="Search lyrics & more" />
-            </form>
-            <img className="site-header" src={window.logoURL} alt="lyrikl" />
-            {this.display()}
-          </header>
+            <>
+                <header className="nav-bar">
+                    <form action="#" className="search-bar">
+                        <input placeholder="Search lyrics & more" />
+                        <div className="search-icon">
+                            <i className="fas fa-search" />
+                        </div>
+                    </form>
+                    <img className="site-header" src={window.logoURL} alt="lyrikl" />
+                    {this.display()}
+                </header>
+                <nav className="sub-nav-bar">
+                    <a href="#">Featured</a>
+                    <a href="#">Charts</a>
+                    <a href="#">Videos</a>
+                    <a href="#">Shop</a>
+                    <div className="social-links">
+                        <a href="#"><i className="fab fa-facebook-f"></i></a>
+                        <a href="#"><i className="fab fa-twitter"></i></a>
+                        <a href="#"><i className="fab fa-instagram"></i></a>
+                        <a href="#"><i className="fab fa-youtube"></i></a>
+                    </div>
+                </nav>
+            </>
         );
     }
 }

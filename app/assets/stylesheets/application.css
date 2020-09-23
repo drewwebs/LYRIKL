@@ -20,7 +20,8 @@
  }
 
  body {
-     margin: 0 auto
+     margin: 0 auto;
+     line-height: 1.45;
  }
 
  .hidden {
@@ -30,3 +31,9 @@
 *:focus {
     outline: none;
 }
+
+::placeholder { 
+  color: #000000;
+  opacity: 1;
+}
+

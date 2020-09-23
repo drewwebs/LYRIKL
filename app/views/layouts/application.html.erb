@@ -4,13 +4,23 @@
     <title>LYRIKL</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <script type="text/javascript">
       window.logoURL = "<%= image_url('logo.svg') %>";
     </script>
+
+    <script 
+      src="https://kit.fontawesome.com/5f08670860.js" crossorigin="anonymous">
+    </script>
+
     <%= favicon_link_tag asset_path('lyrikl_icon_v02.svg') %>
+
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
+
     <%= javascript_include_tag 'application' %>
+
     <% if current_user %>
       <script>
       window.currentUser = {
@@ -20,6 +30,7 @@
         }
       </script>
     <% end %>
+    
   </head>
 
   <body>

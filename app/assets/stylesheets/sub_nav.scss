@@ -1,0 +1,32 @@
+.sub-nav-bar {
+    height: 41px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    border-bottom: 1px solid #ffffff
+}
+
+.sub-nav-bar > * {
+    position: relative;
+    height: 0.875rem;
+    padding: 0px 2.25rem;
+    color: #ffffff;
+    border-left: 1px solid #ffffff;
+    font-size: .875em;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sub-nav-bar > :first-child {
+    border-left: 0px;
+}
+
+.social-links {
+    width: 127px;
+    display: flex;
+    justify-content: space-between;
+}
