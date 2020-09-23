@@ -379,9 +379,12 @@ var Nav = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
         className: "nav-bar"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        action: "#",
         className: "search-bar"
-      }, "Search Bar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeholder: "Search lyrics & more"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "site-header",
         src: window.logoURL,
         alt: "lyrikl"
@@ -594,16 +597,16 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "signup-prompt"
         }, "Don't have an account?", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          className: "signup-prompt-button",
           to: "/signup",
+          className: "signup-prompt-button",
           onClick: this.clearErrors
         }, "Sign up here"));
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "signup-prompt"
         }, "Already have an account?", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          className: "signup-prompt-button",
           to: "/login",
+          className: "signup-prompt-button",
           onClick: this.clearErrors
         }, "Log in here"));
       }
@@ -653,7 +656,6 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "clearErrors",
     value: function clearErrors(e) {
-      e.preventDefault();
       this.props.clearErrors();
     }
   }, {

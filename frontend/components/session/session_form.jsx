@@ -27,8 +27,8 @@ export default class SessionForm extends React.Component {
         <p className="signup-prompt">
           Don&#39;t have an account?{" "}
           <Link
-            className="signup-prompt-button"
             to="/signup"
+            className="signup-prompt-button"
             onClick={this.clearErrors}
           >
             Sign up here
@@ -40,8 +40,8 @@ export default class SessionForm extends React.Component {
         <p className="signup-prompt">
           Already have an account?{" "}
           <Link
-            className="signup-prompt-button"
             to="/login"
+            className="signup-prompt-button"
             onClick={this.clearErrors}
           >
             Log in here
@@ -113,7 +113,6 @@ export default class SessionForm extends React.Component {
   }
 
   clearErrors(e) {
-    e.preventDefault();
     this.props.clearErrors()
   }
 

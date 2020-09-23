@@ -48,9 +48,22 @@
 }
 
 .search-bar {
-    width: 100px;
+    width: 220px;
+    height: 29px;
     position: absolute;
     left: 20px;
+    background-color: #ffffff;
+}
+
+.search-bar input {
+    width: 190px;
+    height: 23px;
+    border: none;
+    border-radius: 0px;
+    background-color: #ffffff;
+    padding-left: 8px;
+    font-size: 14px;
+    color: #000000;
 }
 
 .active-session-buttons {

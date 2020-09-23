@@ -60,13 +60,14 @@ export default class Nav extends React.Component {
     }
 
     render() {
-        return(
-            <header className="nav-bar">
-                <nav className="search-bar">Search Bar</nav>
-                {/* <Logo className="site-header" /> */}
-                <img className="site-header" src={window.logoURL} alt="lyrikl"/>
-                {this.display()}
-            </header>
-        )
+        return (
+          <header className="nav-bar">
+            <form action="#" className="search-bar">
+              <input placeholder="Search lyrics & more" />
+            </form>
+            <img className="site-header" src={window.logoURL} alt="lyrikl" />
+            {this.display()}
+          </header>
+        );
     }
 }
