@@ -37,3 +37,6 @@
   opacity: 1;
 }
 
+em {
+    font-style: italic;
+}

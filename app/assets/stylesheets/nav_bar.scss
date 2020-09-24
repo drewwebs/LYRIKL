@@ -80,7 +80,7 @@
     right: 12px;
 }
 
-.active-session-buttons > a {
+.active-session-buttons > * {
     display: flex;
     text-transform: uppercase;
     padding: 14px 8px 8px; 
@@ -88,6 +88,7 @@
     height: 100%;
     box-sizing: border-box;
     transition-duration: 0.1s;
+    cursor: pointer;
     &:hover {
         border-bottom: 8px solid red;
     }

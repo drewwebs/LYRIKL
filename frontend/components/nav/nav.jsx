@@ -37,7 +37,7 @@ export default class Nav extends React.Component {
                 <a href="#"><i className="far fa-bell"></i><p className="active-session-button-label">Me </p></a>
                 <a href="#"><i className="far fa-envelope"></i><p className="active-session-button-label">Messages </p></a>
                 <a href="#"><i className="fas fa-brain" /> <p className="active-session-button-label">Earn IQ</p> </a>
-                <a href="#" className="account-button" onClick={this.toggleHidden}>
+                <li className="account-button" onClick={this.toggleHidden}>
                     <i className="far fa-address-card"></i>
                     <p className="active-session-button-label">139 IQ</p> 
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
@@ -47,7 +47,7 @@ export default class Nav extends React.Component {
                         <li onClick={this.handleClick}><button>Sign Out</button></li>
                         <a href="#">Firehose</a>
                     </ul>
-                </a>
+                </li>
             </div>
         )
         :

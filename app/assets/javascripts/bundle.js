@@ -319,9 +319,9 @@ var Featured = /*#__PURE__*/function (_React$Component) {
         className: "news-story"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "news-header"
-      }, "News"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Local man struggles with CSS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "After hours of styling his website, Drew Webster is still st")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, "News", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Kanye West promises new album with one shocking twist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Kanye unveiled his new project today, titled \"Ruff Crowd\". He promised the album would be an instant banger, with one caveat: it'll be recorded at a frequency that humans can't hear. When asked how he himself would know what it sounded like, Kanye winked and simply replied: ", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", null, "\"woof.\""))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "news-image",
-        src: window.earlURL,
+        src: window.kanyeURL,
         alt: "#"
       })));
     }
@@ -449,8 +449,7 @@ var Nav = /*#__PURE__*/function (_React$Component) {
         className: "fas fa-brain"
       }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "active-session-button-label"
-      }, "Earn IQ"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
+      }, "Earn IQ"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "account-button",
         onClick: this.toggleHidden
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
