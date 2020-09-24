@@ -9,6 +9,7 @@ export default class Nav extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.toggleHidden = this.toggleHidden.bind(this);
         this.clearErrors = this.clearErrors.bind(this);
+        this.toggleHide = this.toggleHide.bind(this);
     }
 
     handleClick(e) {
@@ -20,6 +21,12 @@ export default class Nav extends React.Component {
         this.setState(prevState => ({
             isDropdownVisible: !prevState.isDropdownVisible
         }));
+    }
+
+    toggleHide() {
+        this.setState(
+            {isDropdownVisible: false}
+        );
     }
 
     clearErrors(e) {
@@ -37,17 +44,17 @@ export default class Nav extends React.Component {
                 <a href="#"><i className="far fa-bell"></i><p className="active-session-button-label">Me </p></a>
                 <a href="#"><i className="far fa-envelope"></i><p className="active-session-button-label">Messages </p></a>
                 <a href="#"><i className="fas fa-brain" /> <p className="active-session-button-label">Earn IQ</p> </a>
-                <li className="account-button" onClick={this.toggleHidden}>
+                <button className="account-button" onClick={this.toggleHidden} onBlur={this.toggleHide}>
                     <i className="far fa-address-card"></i>
                     <p className="active-session-button-label">139 IQ</p> 
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
-                        <li className="dropdown-subtitle">Account</li>
+                        <li className="account-dropdown-subtitle">Account</li>
                         <a href="#">View Profile</a>
                         <a href="#">Report a Problem</a>
-                        <li onClick={this.handleClick}><button>Sign Out</button></li>
+                        <li onClick={this.handleClick}>Sign Out</li>
                         <a href="#">Firehose</a>
                     </ul>
-                </li>
+                </button>
             </div>
         )
         :

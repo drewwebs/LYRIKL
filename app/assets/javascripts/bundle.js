@@ -319,7 +319,13 @@ var Featured = /*#__PURE__*/function (_React$Component) {
         className: "news-story"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "news-header"
-      }, "News", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Kanye West promises new album with one shocking twist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Kanye unveiled his new project today, titled \"Ruff Crowd\". He promised the album would be an instant banger, with one caveat: it'll be recorded at a frequency that humans can't hear. When asked how he himself would know what it sounded like, Kanye winked and simply replied: ", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", null, "\"woof.\""))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, "News", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Kanye West promises new album with one shocking twist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Kanye unveiled his new project today, titled \"Ruff Crowd\". He promised the album would be an instant banger, with one caveat: it'll be recorded at a frequency that humans can't hear. When asked how he himself would know what it sounded like, Kanye winked and simply replied: ", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", null, "\"woof.\"")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "news-footer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "news-footer-author"
+      }, "by Drew Webster / "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "news-footer-published-date"
+      }, "Sep 24 2020"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "news-image",
         src: window.kanyeURL,
         alt: "#"
@@ -389,6 +395,7 @@ var Nav = /*#__PURE__*/function (_React$Component) {
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.toggleHidden = _this.toggleHidden.bind(_assertThisInitialized(_this));
     _this.clearErrors = _this.clearErrors.bind(_assertThisInitialized(_this));
+    _this.toggleHide = _this.toggleHide.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -405,6 +412,13 @@ var Nav = /*#__PURE__*/function (_React$Component) {
         return {
           isDropdownVisible: !prevState.isDropdownVisible
         };
+      });
+    }
+  }, {
+    key: "toggleHide",
+    value: function toggleHide() {
+      this.setState({
+        isDropdownVisible: false
       });
     }
   }, {
@@ -449,9 +463,10 @@ var Nav = /*#__PURE__*/function (_React$Component) {
         className: "fas fa-brain"
       }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "active-session-button-label"
-      }, "Earn IQ"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Earn IQ"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "account-button",
-        onClick: this.toggleHidden
+        onClick: this.toggleHidden,
+        onBlur: this.toggleHide
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "far fa-address-card"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -459,14 +474,14 @@ var Nav = /*#__PURE__*/function (_React$Component) {
       }, "139 IQ"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "account-dropdown ".concat(isDropdownVisible ? "" : "hidden")
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "dropdown-subtitle"
+        className: "account-dropdown-subtitle"
       }, "Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
       }, "View Profile"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
       }, "Report a Problem"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: this.handleClick
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Sign Out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "Sign Out"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
       }, "Firehose")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-buttons",

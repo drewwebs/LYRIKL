@@ -78,19 +78,21 @@
     height: 100%;
     position: absolute;
     right: 12px;
-}
-
-.active-session-buttons > * {
-    display: flex;
-    text-transform: uppercase;
-    padding: 14px 8px 8px; 
-    text-decoration: none;
-    height: 100%;
-    box-sizing: border-box;
-    transition-duration: 0.1s;
-    cursor: pointer;
-    &:hover {
-        border-bottom: 8px solid red;
+    & > * {
+        border: none;
+        outline: none;
+        background: none;
+        display: flex;
+        text-transform: uppercase;
+        padding: 14px 8px 8px; 
+        text-decoration: none;
+        height: 100%;
+        box-sizing: border-box;
+        transition-duration: 0.1s;
+        cursor: pointer;
+        &:hover {
+            border-bottom: 8px solid red;
+        }
     }
 }
 

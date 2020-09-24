@@ -20,6 +20,10 @@ export default class Featured extends React.Component {
                   like, Kanye winked and simply replied: {" "}
                   <em>"woof."</em>
                 </p>
+                <div className="news-footer">
+                  <span className="news-footer-author">by Drew Webster / </span>
+                  <span className="news-footer-published-date">Sep 24 2020</span>
+                </div>
               </Link>
               <img className="news-image" src={window.kanyeURL} alt="#" />
             </div>
