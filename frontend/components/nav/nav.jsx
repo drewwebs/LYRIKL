@@ -81,8 +81,8 @@ export default class Nav extends React.Component {
                     {this.display()}
                 </header>
                 <nav className="sub-nav-bar">
-                    <a href="#">Featured</a>
-                    <a href="#">Charts</a>
+                    <Link to="/featured">Featured</Link>
+                    <Link to="/charts">Charts</Link>
                     <a href="#">Videos</a>
                     <a href="#">Shop</a>
                     <div className="social-links">

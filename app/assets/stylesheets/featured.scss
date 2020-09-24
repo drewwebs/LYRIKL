@@ -63,3 +63,24 @@
         }
     }
 }
+
+.sub-stories {
+    height: 400px;
+    max-height: 454px;
+    display: flex;
+    padding-top: 40px;
+
+    &-story {
+        width: 252px;
+        min-width: 162px;
+        max-width: 252px;
+        border-left: 2px solid #000000;
+        padding: 0px 30px;
+        
+        &:first-child {
+            border-left: 0;
+            padding-left: 0px;
+        }
+    }
+
+}
