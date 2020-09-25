@@ -15,137 +15,138 @@ songs = Song.create([
     {
         title: "Crank That (Soulja Boy)", 
         artist: "Soulja Boy", 
-        lyrics: "[Intro] /n
-                Yuuuuuuu /n
-                Soulja Boy tell 'em /n
-                Ayy, I got this new dance for y'all called the Soulja Boy /n
-                You just gotta punch, then crank back three times from left to right /n
- /n
-                [Chorus] /n
-                Soulja Boy off in this ho /n
-                Watch me crank it, watch me roll /n
-                Watch me crank dat Soulja Boy /n
-                Then Superman that ho /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch /n
-                Soulja Boy off in this ho /n
-                Watch me crank it, watch me roll /n
-                Watch me crank dat Soulja Boy /n
-                Then Superman dat ho /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch /n
- /n
-                [Verse 1] /n
-                Soulja Boy up in this ho /n
-                Watch me lean then watch me rock /n
-                Superman dat ho /n
-                Yeah, watch me crank that Robocop /n
-                Super fresh, now watch me jock /n
-                Jocking on them haters, man /n
-                When I do that Soulja Boy /n
-                I lean to the left then crank that thang, now (Yuuuuuu) /n
-                I'm jocking on yo' (I'm jocking on yo') /n
-                And if we get to fightin' then I'm cocking on yo' (Then I'm cocking on yo') /n
-                You catch me at yo' local party /n
-                Yes, I crank it everyday /n
-                Haters gettin' mad 'cause /n
-                \"I got me some Bathin' Ape\" /n
- /n
-                [Chorus] /n
-                Soulja Boy off in this ho /n
-                Watch me crank it, watch me roll /n
-                Watch me crank dat Soulja Boy /n
-                Then Superman that ho /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch /n
-                Soulja Boy off in this ho /n
-                Watch me crank it, watch me roll /n
-                Watch me crank dat Soulja Boy /n
-                Then Superman dat ho /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch /n
- /n
-                [Verse 2] /n
-                I'm bouncin' on my toes /n
-                Watch me supersoak that ho /n
-                I'ma pass it to Arab and he gon' crank it up fo' sho' /n
-                Haters wanna be me, Soulja Boy, I'm the man /n
-                They be lookin' at my neck, sayin' it's the rubberband /n
-                Man (man), watch me do it (Watch me do it) /n
-                Dance (dance), let's get to it (Let's get to it) /n
-                Nope, you can't do it like me, though /n
-                So don't do it like me, folk /n
-                I see you tryna do it like me, man that damn ugly /n
- /n
-                [Chorus] /n
-                Soulja Boy off in this ho /n
-                Watch me crank it, watch me roll /n
-                Watch me crank dat Soulja Boy /n
-                Then Superman that ho /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch /n
-                Soulja Boy off in this ho /n
-                Watch me crank it, watch me roll /n
-                Watch me crank dat Soulja Boy /n
-                Then Superman dat ho /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch /n
- /n
-                [Verse 3] /n
-                I'm too fresh, off in that ho /n
-                Watch me crank it, watch me roll /n
-                Watch me crank that Roosevelt then super soak that ho /n
-                Supersoak that ho /n
-                Supersoak that ho /n
-                Supersoak that ho /n
-                Supersoak that ho /n
-                I'm too fresh, now watch me dooooooo it /n
-                Watch me shuffle, watch me yuuuuuuu /n
-                Watch me crank that Soulja Boy /n
-                Now Superman, yuuuuuuu /n
-                Superman, do it /n
-                Superman, do it /n
- /n
-                [Chorus] /n
-                Soulja Boy off in this ho /n
-                Watch me crank it, watch me roll /n
-                Watch me crank dat Soulja Boy /n
-                Then Superman that ho /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch /n
-                Soulja Boy off in this ho /n
-                Watch me crank it, watch me roll /n
-                Watch me crank dat Soulja Boy /n
-                Then Superman dat ho /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch me yuuuuuuu (Crank dat Soulja Boy) /n
-                Now watch /n
- /n
-                [Outro] /n
-                Yuuuuuuu /n
+        lyrics: "  
+                [Intro]   
+                Yuuuuuuu   
+                Soulja Boy tell 'em   
+                Ayy, I got this new dance for y'all called the Soulja Boy   
+                You just gotta punch, then crank back three times from left to right   
+   
+                [Chorus]   
+                Soulja Boy off in this ho   
+                Watch me crank it, watch me roll   
+                Watch me crank dat Soulja Boy   
+                Then Superman that ho   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch   
+                Soulja Boy off in this ho   
+                Watch me crank it, watch me roll   
+                Watch me crank dat Soulja Boy   
+                Then Superman dat ho   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch   
+   
+                [Verse 1]   
+                Soulja Boy up in this ho   
+                Watch me lean then watch me rock   
+                Superman dat ho   
+                Yeah, watch me crank that Robocop   
+                Super fresh, now watch me jock   
+                Jocking on them haters, man   
+                When I do that Soulja Boy   
+                I lean to the left then crank that thang, now (Yuuuuuu)   
+                I'm jocking on yo' (I'm jocking on yo')   
+                And if we get to fightin' then I'm cocking on yo' (Then I'm cocking on yo')   
+                You catch me at yo' local party   
+                Yes, I crank it everyday   
+                Haters gettin' mad 'cause   
+                \"I got me some Bathin' Ape\"   
+   
+                [Chorus]   
+                Soulja Boy off in this ho   
+                Watch me crank it, watch me roll   
+                Watch me crank dat Soulja Boy   
+                Then Superman that ho   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch   
+                Soulja Boy off in this ho   
+                Watch me crank it, watch me roll   
+                Watch me crank dat Soulja Boy   
+                Then Superman dat ho   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch   
+   
+                [Verse 2]   
+                I'm bouncin' on my toes   
+                Watch me supersoak that ho   
+                I'ma pass it to Arab and he gon' crank it up fo' sho'   
+                Haters wanna be me, Soulja Boy, I'm the man   
+                They be lookin' at my neck, sayin' it's the rubberband   
+                Man (man), watch me do it (Watch me do it)   
+                Dance (dance), let's get to it (Let's get to it)   
+                Nope, you can't do it like me, though   
+                So don't do it like me, folk   
+                I see you tryna do it like me, man that damn ugly   
+   
+                [Chorus]   
+                Soulja Boy off in this ho   
+                Watch me crank it, watch me roll   
+                Watch me crank dat Soulja Boy   
+                Then Superman that ho   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch   
+                Soulja Boy off in this ho   
+                Watch me crank it, watch me roll   
+                Watch me crank dat Soulja Boy   
+                Then Superman dat ho   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch   
+   
+                [Verse 3]   
+                I'm too fresh, off in that ho   
+                Watch me crank it, watch me roll   
+                Watch me crank that Roosevelt then super soak that ho   
+                Supersoak that ho   
+                Supersoak that ho   
+                Supersoak that ho   
+                Supersoak that ho   
+                I'm too fresh, now watch me dooooooo it   
+                Watch me shuffle, watch me yuuuuuuu   
+                Watch me crank that Soulja Boy   
+                Now Superman, yuuuuuuu   
+                Superman, do it   
+                Superman, do it   
+   
+                [Chorus]   
+                Soulja Boy off in this ho   
+                Watch me crank it, watch me roll   
+                Watch me crank dat Soulja Boy   
+                Then Superman that ho   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch   
+                Soulja Boy off in this ho   
+                Watch me crank it, watch me roll   
+                Watch me crank dat Soulja Boy   
+                Then Superman dat ho   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch me yuuuuuuu (Crank dat Soulja Boy)   
+                Now watch   
+   
+                [Outro]   
+                Yuuuuuuu   
                 Yuuuuuuu", 
         primary_tag: "Hip-hop"
     },
@@ -153,7 +154,8 @@ songs = Song.create([
     {
         title: "Exile", 
         artist: "Taylor Swift", 
-        lyrics: "[Verse 1: Justin Vernon]
+        lyrics: "  
+                [Verse 1: Justin Vernon]
                 I can see you standing, honey
                 With his arms around your body
                 Laughin', but the joke's not funny at all
@@ -235,7 +237,8 @@ songs = Song.create([
     {
         title: "Lost in the Supermarket", 
         artist: "The Clash", 
-        lyrics: "[Chorus]
+        lyrics: "  
+                [Chorus]
                 I'm all lost in the supermarket
                 I can no longer shop happily
                 I came in here for the special offer
@@ -313,7 +316,8 @@ songs = Song.create([
     {
         title: "Pretty", 
         artist: "The Weeknd", 
-        lyrics: "[Verse 1]
+        lyrics: "  
+                [Verse 1]
                 Somebody told me it was pointless for me to come back
                 Into your arms
                 Said you fucked another man
@@ -391,7 +395,8 @@ songs = Song.create([
     {
         title: "Redbone", 
         artist: "Childish Gambino", 
-        lyrics: "[Verse 1]
+        lyrics: "
+                [Verse 1]
                 Daylight
                 I wake up feeling like you won't play right
                 I used to know, but now that shit don't feel right
@@ -462,7 +467,8 @@ songs = Song.create([
     {
         title: "What's the Use?", 
         artist: "Mac Miller", 
-        lyrics: "[Intro]
+        lyrics: "  
+                [Intro]
                 Yeah
 
                 [Chorus]
@@ -561,7 +567,8 @@ songs = Song.create([
     {
         title: "The Climb Back", 
         artist: "J. Cole", 
-        lyrics: "[Intro]
+        lyrics: "  
+                [Intro]
                 Are you doin' this work to facilitate growth or to become famous?
                 Which is more important?
                 Getting or letting go?
@@ -677,7 +684,8 @@ songs = Song.create([
     {
         title: "Ring Ring", 
         artist: "Juice WRLD", 
-        lyrics: "[Intro: Juice WRLD]
+        lyrics: "  
+                [Intro: Juice WRLD]
                 I don't feel like comin' to the phone today
                 I wish everyone would leave me alone
                 I don't feel like comin' to the phone today
@@ -748,7 +756,8 @@ songs = Song.create([
     {
         title: "Doin' It Right (feat. Panda Bear)", 
         artist: "Daft Punk", 
-        lyrics: "[Hook: Daft Punk]
+        lyrics: "  
+                [Hook: Daft Punk]
                 Doing it right
                 Everybody will be dancing
                 And we'll feeling it right
@@ -874,7 +883,8 @@ songs = Song.create([
     {
         title: "Headlines", 
         artist: "Drake", 
-        lyrics: "[Produced by Boi-1da and Noah \"40\" Shebib]
+        lyrics: "  
+                [Produced by Boi-1da and Noah \"40\" Shebib]
 
                 [Verse 1]
                 I might be too strung out on compliments
