@@ -77,7 +77,7 @@ export default class Nav extends React.Component {
                             <i className="fas fa-search" />
                         </div>
                     </form>
-                    <img className="site-header" src={window.logoURL} alt="lyrikl" />
+                    <Link className="site-header" to="/"><img src={window.logoURL} alt="lyrikl" /></Link>
                     {this.display()}
                 </header>
                 <nav className="sub-nav-bar">

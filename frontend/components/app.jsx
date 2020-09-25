@@ -6,12 +6,14 @@ import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import Featured from './featured/featured';
 import Charts from './songs/charts_container';
+import Splash from './splash/splash';
 
 const App = () => {
     return (
         <div>
             <Nav />
             {/* <Route path="/" component={Nav} /> */}
+            <Route exact path="/" component={Splash} />
             <Route path="/featured" component={Featured} />
             <Route path="/charts" component={Charts} />
             <AuthRoute path="/signup" component={Signup} />
