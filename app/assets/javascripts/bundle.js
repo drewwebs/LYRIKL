@@ -1106,6 +1106,44 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/songs/song-show-header.jsx":
+/*!********************************************************!*\
+  !*** ./frontend/components/songs/song-show-header.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var song = _ref.song;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "song-show-header-image"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: "song-show-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "song-show-header-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "song-show-header-display"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2F0327e4a856f14b2430e6e1a9333b1f1f.1000x1000x1.jpg",
+    className: "song-show-header-display-image"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "song-show-header-display-details"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "song-show-header-display-details-title"
+  }, song.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "song-show-header-display-details-artist"
+  }, song.artist), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "song-show-header-display-details-album"
+  }, song.album))))));
+});
+
+/***/ }),
+
 /***/ "./frontend/components/songs/song_index_item.jsx":
 /*!*******************************************************!*\
   !*** ./frontend/components/songs/song_index_item.jsx ***!
@@ -1196,6 +1234,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_markdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-markdown */ "./node_modules/react-markdown/lib/react-markdown.js");
 /* harmony import */ var react_markdown__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_markdown__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _util_linkReference__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/linkReference */ "./frontend/util/linkReference.js");
+/* harmony import */ var _song_show_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./song-show-header */ "./frontend/components/songs/song-show-header.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1221,6 +1261,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
+
 var SongShow = /*#__PURE__*/function (_React$Component) {
   _inherits(SongShow, _React$Component);
 
@@ -1240,11 +1282,22 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var markdown = this.props.song && this.props.song.lyrics;
-      return markdown ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_markdown__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        className: "song-show-lyrics",
-        source: markdown
-      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");
+      var song = this.props.song;
+      return song ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "song-show"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_song_show_header__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        song: song
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "song-show-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_markdown__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        className: "song-show-body-lyrics",
+        source: song.lyrics,
+        renderers: {
+          linkReference: _util_linkReference__WEBPACK_IMPORTED_MODULE_2__["default"]
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "song-show-body-annotation"
+      }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading...");
     }
   }]);
 
@@ -1550,6 +1603,29 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/linkReference.js":
+/*!****************************************!*\
+  !*** ./frontend/util/linkReference.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// workaround for mishandling of square brackets in react-markdown
+// src: https://github.com/rexxars/react-markdown/issues/115#issuecomment-357953459
+/* harmony default export */ __webpack_exports__["default"] = (function (reference) {
+  if (!reference.href) {
+    return "[".concat(reference.children[0].props.value, "]");
+  }
+
+  return /*#__PURE__*/React.createElement("a", {
+    href: reference.$ref
+  }, reference.children);
+});
 
 /***/ }),
 
