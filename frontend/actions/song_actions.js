@@ -2,6 +2,7 @@ import * as SongUtil from '../util/song_util';
 
 export const RECEIVE_ALL_SONGS = 'RECEIVE_ALL_SONGS';
 export const RECEIVE_SONG = "RECEIVE_SONG";
+export const RECEIVE_ALBUM_ART = 'RECEIVE_ALBUM_ART';
 
 export const receiveSong = song => ({
     type: RECEIVE_SONG,
@@ -11,6 +12,11 @@ export const receiveSong = song => ({
 export const receiveAllSongs = songs => ({
     type: RECEIVE_ALL_SONGS,
     songs
+});
+
+export const receiveAlbumArt = data => ({
+    type: RECEIVE_ALBUM_ART,
+    song: data.track.album.image[3]["#text"]
 });
 
 export const fetchSong = songId => dispatch => (
