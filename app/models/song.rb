@@ -1,7 +1,4 @@
 class Song < ApplicationRecord
-    belongs_to :artist,
-        optional: true
-
     validates :title, :lyrics, :views, :artist, presence:true
 
     after_initialize :set_views
