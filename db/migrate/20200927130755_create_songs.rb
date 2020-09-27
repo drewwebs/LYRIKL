@@ -6,7 +6,6 @@ class CreateSongs < ActiveRecord::Migration[5.2]
       t.integer :views
       t.string :artist
       t.integer :artist_id
-      t.string :primary_tag
       t.index :title
       t.index :artist_id
 
