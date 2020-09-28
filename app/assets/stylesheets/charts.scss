@@ -1,12 +1,12 @@
 .charts {
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     width: 1188px;
     margin: auto;
     counter-reset: chart-list;
 
     &-background {
         width: 100%;
-        background-color: #ffffff;
+        background-color: #f9f9f9;
     }
 
     &-header {

@@ -3,7 +3,7 @@ import * as SongUtil from '../util/song_util';
 // Actions
 export const RECEIVE_ALL_SONGS = 'RECEIVE_ALL_SONGS';
 export const RECEIVE_SONG = "RECEIVE_SONG";
-export const RECEIVE_ALBUM_ART = 'RECEIVE_ALBUM_ART';
+// export const RECEIVE_ALBUM_ART = 'RECEIVE_ALBUM_ART';
 
 
 export const receiveSong = song => ({
@@ -17,11 +17,11 @@ const receiveAllSongs = songs => ({
     songs
 });
 
-const receiveAlbumArt = (song, track) => ({
-    type: RECEIVE_ALBUM_ART,
-    art: track.track.album.image[3]["#text"],
-    song
-});
+// const receiveAlbumArt = (song, track) => ({
+//     type: RECEIVE_ALBUM_ART,
+//     art: track.track.album.image[3]["#text"],
+//     song
+// });
 
 // Thunks
 export const fetchSong = songId => dispatch => (
@@ -44,7 +44,7 @@ export const updateSong = song => dispatch => (
     .then( song => dispatch(receiveSong(song)))
 );
 
-export const fetchArtwork = song => dispatch => (
-    SongUtil.fetchArtwork(song)
-    .then( (track) => dispatch(receiveAlbumArt(song, track)))
-);
+// export const fetchArtwork = song => dispatch => (
+//     SongUtil.fetchArtwork(song)
+//     .then( (track) => dispatch(receiveAlbumArt(song, track)))
+// );

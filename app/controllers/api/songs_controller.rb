@@ -15,6 +15,7 @@ class Api::SongsController < ApplicationController
 
     def create
         @song = song.create(song_params)
+        @song.image_url = Song.set_image_url(@song.artist, @song.title)
 
         if @song.save!
             render :show

@@ -227,26 +227,24 @@ var loginDemo = function loginDemo() {
 /*!******************************************!*\
   !*** ./frontend/actions/song_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_ALL_SONGS, RECEIVE_SONG, RECEIVE_ALBUM_ART, receiveSong, fetchSong, fetchAllSongs, createSong, updateSong, fetchArtwork */
+/*! exports provided: RECEIVE_ALL_SONGS, RECEIVE_SONG, receiveSong, fetchSong, fetchAllSongs, createSong, updateSong */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_SONGS", function() { return RECEIVE_ALL_SONGS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SONG", function() { return RECEIVE_SONG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALBUM_ART", function() { return RECEIVE_ALBUM_ART; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSong", function() { return receiveSong; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSong", function() { return fetchSong; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllSongs", function() { return fetchAllSongs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSong", function() { return createSong; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateSong", function() { return updateSong; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArtwork", function() { return fetchArtwork; });
 /* harmony import */ var _util_song_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/song_util */ "./frontend/util/song_util.js");
  // Actions
 
 var RECEIVE_ALL_SONGS = 'RECEIVE_ALL_SONGS';
-var RECEIVE_SONG = "RECEIVE_SONG";
-var RECEIVE_ALBUM_ART = 'RECEIVE_ALBUM_ART';
+var RECEIVE_SONG = "RECEIVE_SONG"; // export const RECEIVE_ALBUM_ART = 'RECEIVE_ALBUM_ART';
+
 var receiveSong = function receiveSong(song) {
   return {
     type: RECEIVE_SONG,
@@ -259,15 +257,12 @@ var receiveAllSongs = function receiveAllSongs(songs) {
     type: RECEIVE_ALL_SONGS,
     songs: songs
   };
-};
-
-var receiveAlbumArt = function receiveAlbumArt(song, track) {
-  return {
-    type: RECEIVE_ALBUM_ART,
-    art: track.track.album.image[3]["#text"],
-    song: song
-  };
-}; // Thunks
+}; // const receiveAlbumArt = (song, track) => ({
+//     type: RECEIVE_ALBUM_ART,
+//     art: track.track.album.image[3]["#text"],
+//     song
+// });
+// Thunks
 
 
 var fetchSong = function fetchSong(songId) {
@@ -297,14 +292,10 @@ var updateSong = function updateSong(song) {
       return dispatch(receiveSong(song));
     });
   };
-};
-var fetchArtwork = function fetchArtwork(song) {
-  return function (dispatch) {
-    return _util_song_util__WEBPACK_IMPORTED_MODULE_0__["fetchArtwork"](song).then(function (track) {
-      return dispatch(receiveAlbumArt(song, track));
-    });
-  };
-};
+}; // export const fetchArtwork = song => dispatch => (
+//     SongUtil.fetchArtwork(song)
+//     .then( (track) => dispatch(receiveAlbumArt(song, track)))
+// );
 
 /***/ }),
 
@@ -1349,12 +1340,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var newSong = _defineProperty({}, action.song.id, action.song);
 
       return Object.assign({}, state, newSong);
-
-    case _actions_song_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALBUM_ART"]:
-      var songWithArtwork = action.song;
-      var newState = Object.assign({}, state);
-      newState[action.song.id].image_url = action.art;
-      return newState;
+    // case RECEIVE_ALBUM_ART:
+    //   const songWithArtwork = action.song;
+    //   const newState = Object.assign({}, state);
+    //   newState[action.song.id].image_url = action.art;
+    //   return newState;
 
     default:
       return state;
@@ -1541,7 +1531,7 @@ var loginDemo = function loginDemo() {
 /*!************************************!*\
   !*** ./frontend/util/song_util.js ***!
   \************************************/
-/*! exports provided: fetchSong, fetchAllSongs, createSong, updateSong, fetchArtwork */
+/*! exports provided: fetchSong, fetchAllSongs, createSong, updateSong */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1550,11 +1540,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllSongs", function() { return fetchAllSongs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSong", function() { return createSong; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateSong", function() { return updateSong; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArtwork", function() { return fetchArtwork; });
 // API info for last.fm calls
-var API_KEY = "7a6f8a4e181cb30d24744f6e6e158b29";
-var USER_AGENT = "drewwebs"; // Ajax calls
-
+// const API_KEY = "7a6f8a4e181cb30d24744f6e6e158b29";
+// const USER_AGENT = "drewwebs";
+// Ajax calls
 var fetchSong = function fetchSong(songId) {
   return $.ajax({
     method: 'GET',
@@ -1580,22 +1569,19 @@ var updateSong = function updateSong(song) {
     method: 'PATCH',
     url: "api/songs/".concat(song.id)
   });
-}; // last.fm api call
-
-var fetchArtwork = function fetchArtwork(song) {
-  var title = song.title.split(" ").join("+");
-  var artist = song.artist.split(" ").join("+"); // debugger
-
-  return $.ajax({
-    method: 'GET',
-    url: 'http://ws.audioscrobbler.com/2.0/',
-    data: "method=track.getInfo&artist=".concat(artist, "&track=").concat(title, "&api_key=").concat(API_KEY, "&format=json"),
-    headers: {
-      'user-agent': USER_AGENT
-    },
-    dataType: 'jsonp'
-  });
-};
+}; // // last.fm api call
+// export const fetchArtwork = song => {
+//     const title = song.title.split(" ").join("+");
+//     const artist = song.artist.split(" ").join("+");
+//     // debugger
+//     return $.ajax({
+//         method: 'GET',
+//         url: 'http://ws.audioscrobbler.com/2.0/',
+//         data: `method=track.getInfo&artist=${artist}&track=${title}&api_key=${API_KEY}&format=json`,
+//         headers: {'user-agent': USER_AGENT},
+//         dataType: 'jsonp'
+//     });
+// };
 
 /***/ }),
 

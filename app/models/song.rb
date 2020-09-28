@@ -1,7 +1,7 @@
 class Song < ApplicationRecord
     validates :title, :lyrics, :views, :artist, presence:true
 
-    after_initialize :set_views, :set_album_artwork
+    after_initialize :set_views
 
     def self.stringify_views(views)
         stringified = ""
@@ -21,9 +21,9 @@ class Song < ApplicationRecord
         stringified
     end
 
-    def set_album_artwork
-        response = LastFM::Track.get_info(artist: self.artist, track: self.title)
-        self.image_url = response['track']['album']['image'][3]['#text']
+    def self.set_image_url(artist, title)
+        response = LastFM::Track.get_info(artist: artist, track: title)
+        response['track']['album']['image'][3]['#text']
     end
 
 
