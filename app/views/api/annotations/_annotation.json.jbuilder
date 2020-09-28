@@ -1,0 +1,1 @@
+json.extract! annotation, :body

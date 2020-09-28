@@ -3,6 +3,8 @@ class Song < ApplicationRecord
 
     after_initialize :set_views, :ensure_image_url
 
+    has_many :annotations
+    
     def self.stringify_views(views)
         stringified = ""
 

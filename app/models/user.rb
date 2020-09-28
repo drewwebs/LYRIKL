@@ -19,6 +19,8 @@ class User < ApplicationRecord
 
     before_validation :ensure_session_token
 
+    has_many :annotations
+
     def self.find_by_credentials(name,password)
         user = User.find_by(email: name) || User.find_by(username: name)
         return user if user && user.is_password?(password)
