@@ -1,8 +1,10 @@
+require 'net/http'
+
 class Api::SongsController < ApplicationController
     def index
-        songs = filters ? Song.where(primary_tag: params[:filters]) : Song.all
-
-        @songs = songs.limit(10).offset(params[:offset])
+        # songs = filters ? Song.where(primary_tag: params[:filters]) : Song.all
+        songs = Song.all
+        @songs = songs.limit(10)
 
         render :index
     end
@@ -13,6 +15,7 @@ class Api::SongsController < ApplicationController
 
     def create
         @song = song.create(song_params)
+
         if @song.save!
             render :show
         else
@@ -23,7 +26,7 @@ class Api::SongsController < ApplicationController
     private
 
     def song_params
-        params.require(:song).permit(:title, :lyrics, :views, :artist)
+        params.require(:song).permit(:title, :lyrics, :views, :artist, :image_url)
     end
 
     def filters

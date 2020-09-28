@@ -2,29 +2,73 @@
     background-color: #ffffff;
     width: 1188px;
     margin: auto;
+    counter-reset: chart-list;
+
+    &-background {
+        width: 100%;
+        background-color: #ffffff;
+    }
+
+    &-header {
+        text-align: center;
+        margin:auto;
+        font-size: 80px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    &-sub-header {
+        text-align: center;
+        font-size: 14px;
+        color: #ff1464;
+        text-transform: uppercase;
+        padding-bottom: 40px;
+    }
 
     &-song {
         display: flex;
-        border-bottom: 1px solid #000000;
+        border-bottom: 2px solid #E9E9E9;
         height: 77px;
         align-items: center;
+        text-decoration: none;
+        position: relative;
+
+        &:hover {
+            background-color: #E9E9E9;
+        }
+
+        &::before {
+            counter-increment: chart-list;
+            content: counter(chart-list);
+            font-size: 24px;
+            padding-left: 20px;
+            position: absolute;
+        }
 
         &-cover {
-            height: 50px;
-            width: 50px;
+            padding-left: 115px;
+            height: 60px;
+            width: 60px;
             object-fit: contain;
         }
 
         &-title {
-
+            font-size: 24px;
+            width: 400px;
+            padding-left: 30px;
         }
 
         &-artist {
-
+            width: 252px;
+            padding-left: 70px;
+            font-size: 24px;
+            font-weight: 100;
         }
 
-        &-view_count {
-
+        &-view-count {
+            font-size: 12px;
+            width: 252px;
+            padding-left: 100px;
         }
 
     }
@@ -32,5 +76,7 @@
 
 
 .fa-free-code-camp {
-
+    color: #ff1464;
+    font-size: 18px;
+    padding-left: 200px;
 }
