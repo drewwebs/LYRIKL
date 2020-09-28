@@ -1,3 +1,89 @@
 // Place all the styles related to the api/songs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.song-show {
+    &-header {
+        width: 970px;
+        margin: auto;
+        background: rgba(0,0,0,60%);
+        height: 100%;
+        position: relative;
+        display:flex;
+        align-items: center;
+
+        &-container {
+            height: 280px;
+            background: linear-gradient(to bottom, rgba(0,0,0,40%) 0, rgba(0,0,0,65%) 70%);
+
+            &-background {
+                background-position: center;
+                background-size: cover;
+            }
+        }
+
+        &-img {
+            height: 220px;
+            width: 220px;
+            border: 1px solid #9a9a9a;
+            box-sizing: border-box;
+            position: absolute;
+            left: -20px;
+        }
+
+        &-details {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 220px;
+            padding-bottom: 110px;
+
+            &-title {
+                font-size: 30px;
+                color: #FFFF64;
+                font-weight: 500;
+            }
+
+            &-artist {
+                font-size: 20px;
+                font-weight: 500;
+                color: #ffffff;
+            }
+        }
+    }
+
+    &-body {
+        background-color: #ffffff;
+        width: 970px;
+        font-size: 18px;
+        color: #222222;
+        margin: auto;
+        line-height: 1.7;
+
+        &-container {
+            background-color: #f7f7f7;
+        }
+
+        &-lyrics {
+            width: 55%;
+            padding: 0px 16px;
+
+            & p {
+                margin-top: 20px;
+
+                &:first-child {
+                    margin-top: 0;
+                    padding-top: 90px;
+                }
+
+                &:last-child {
+                    padding-bottom: 90px;
+                }
+            }
+        }
+
+        &-annotation {
+            width: 45%;
+            padding-right: 16px;
+        }
+    }
+}

@@ -3,14 +3,14 @@
     display: flex;
     flex-direction: column;
     background-color: #f9f9f9;
-    max-width: 1188px;
-    margin: auto
 }
 
 .news {
     display: flex;
     max-height: 815px;
     font-size: 12px;
+    max-width: 1188px;
+    margin: auto;
 
     & h1 {
         font-size: 36px;
@@ -69,6 +69,8 @@
     max-height: 454px;
     display: flex;
     padding-top: 40px;
+    max-width: 1188px;
+    margin: auto;
 
     &-story {
         width: 252px;
