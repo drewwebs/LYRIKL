@@ -1,0 +1,36 @@
+.charts {
+    background-color: #ffffff;
+    width: 1188px;
+    margin: auto;
+
+    &-song {
+        display: flex;
+        border-bottom: 1px solid #000000;
+        height: 77px;
+        align-items: center;
+
+        &-cover {
+            height: 50px;
+            width: 50px;
+            object-fit: contain;
+        }
+
+        &-title {
+
+        }
+
+        &-artist {
+
+        }
+
+        &-view_count {
+
+        }
+
+    }
+}
+
+
+.fa-free-code-camp {
+
+}

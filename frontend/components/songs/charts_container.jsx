@@ -1,4 +1,4 @@
-import { fetchAllSongs } from '../../util/song_util';
+import { fetchAllSongs } from '../../actions/song_actions';
 import { connect } from 'react-redux';
 import Charts from './charts';
 
@@ -7,7 +7,7 @@ const mSTP = ({entities}) => ({
 });
 
 const mDTP = dispatch => ({
-    fetchAllSongs: () => dispatch(fetchAllSongs())
+    fetchAllSongs: () => dispatch(fetchAllSongs()),
 });
 
 export default connect(mSTP, mDTP)(Charts);

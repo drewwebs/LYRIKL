@@ -2,7 +2,7 @@ class Api::SongsController < ApplicationController
     def index
         songs = filters ? Song.where(primary_tag: params[:filters]) : Song.all
 
-        @songs = songs.limit(10).offet(params[:offset])
+        @songs = songs.limit(10).offset(params[:offset])
 
         render :index
     end

@@ -5,6 +5,7 @@ import SongIndexItem from './song_index_item.jsx';
 export default class Charts extends React.Component {
     constructor(props) {
         super(props);
+        this.state = props.songs;
     }
 
     componentDidMount() {
@@ -13,18 +14,15 @@ export default class Charts extends React.Component {
 
     render() {
         return (
-            <ul>
-                {this.props.songs.map( song => {
-                    const {title, artist, view_count, fire} = song
-                    return (<SongIndexItem 
-                        title={title}
-                        artist={artist}
-                        view_count={view_count}
-                        fire={fire}
+            <ul className="charts">
+                {this.props.songs.map( song => (
+                    // const {id, title, artist, view_count, fire} = song
+                    <SongIndexItem
+                        key={song.id}
+                        id={song.id}
                     />)
-                })
+                )
                 }
-
             </ul>
         )
     }
