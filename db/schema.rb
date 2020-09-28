@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_28_033542) do
+ActiveRecord::Schema.define(version: 2020_09_28_202826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "annotations", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "author_id", null: false
+    t.integer "song_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_annotations_on_author_id"
+    t.index ["song_id"], name: "index_annotations_on_song_id"
+  end
 
   create_table "artists", force: :cascade do |t|
     t.string "name", null: false
