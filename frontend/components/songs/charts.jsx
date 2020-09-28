@@ -5,7 +5,7 @@ import SongIndexItem from './song_index_item.jsx';
 export default class Charts extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = props.songs;
+        this.chartsRef = React.createRef();
     }
 
     componentDidMount() {
@@ -14,7 +14,7 @@ export default class Charts extends React.Component {
 
     render() {
         return (
-          <div className="charts-background">
+          <div ref={this.chartsRef} className="charts-background">
             <ul className="charts">
               <h1 className="charts-header">Charts</h1>
               <h2 className="charts-sub-header">Trending on LYRIKL</h2>

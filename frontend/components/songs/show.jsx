@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import renderers from '../../util/markdown_util';
 
@@ -9,6 +9,7 @@ export default class SongShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchSong();
+        window.scrollTo(0,0);
     }
 
     render() {

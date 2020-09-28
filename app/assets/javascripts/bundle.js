@@ -1042,9 +1042,13 @@ var Charts = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(Charts);
 
   function Charts(props) {
+    var _this;
+
     _classCallCheck(this, Charts);
 
-    return _super.call(this, props); // this.state = props.songs;
+    _this = _super.call(this, props);
+    _this.chartsRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    return _this;
   }
 
   _createClass(Charts, [{
@@ -1056,6 +1060,7 @@ var Charts = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        ref: this.chartsRef,
         className: "charts-background"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "charts"
@@ -1174,6 +1179,7 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchSong();
+      window.scrollTo(0, 0);
     }
   }, {
     key: "render",
@@ -1316,6 +1322,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.scrollTo(0, 0);
+  }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_featured_featured__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_songs_charts_container__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 });
 

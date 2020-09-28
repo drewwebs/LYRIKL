@@ -26,8 +26,10 @@
         display: flex;
         flex-direction: column;
         height: auto;
-        width: 460px;
+        max-width: 460px;
         min-width: 310px;
+        max-height: 350px;
+        min-height: 320px;
         text-decoration: none;
         margin-right: 60px;
     }
