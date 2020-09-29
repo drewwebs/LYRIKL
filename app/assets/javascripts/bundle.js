@@ -453,6 +453,79 @@ var mDTP = function mDTP(dispatch, ownProps) {
 
 /***/ }),
 
+/***/ "./frontend/components/annotations/create_annotation_form.jsx":
+/*!********************************************************************!*\
+  !*** ./frontend/components/annotations/create_annotation_form.jsx ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CreateAnnotationForm; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var CreateAnnotationForm = /*#__PURE__*/function (_React$Component) {
+  _inherits(CreateAnnotationForm, _React$Component);
+
+  var _super = _createSuper(CreateAnnotationForm);
+
+  function CreateAnnotationForm(props) {
+    var _this;
+
+    _classCallCheck(this, CreateAnnotationForm);
+
+    _this = _super.call(this, props);
+    _this.state = props.annotation;
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(CreateAnnotationForm, [{
+    key: "handleSubmit",
+    value: function handleSubmit() {
+      this.props.createAnnotation(this.state);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Create an annotation:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }));
+    }
+  }]);
+
+  return CreateAnnotationForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+
+/***/ }),
+
 /***/ "./frontend/components/app.jsx":
 /*!*************************************!*\
   !*** ./frontend/components/app.jsx ***!
@@ -1403,6 +1476,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_markdown__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_markdown__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _util_markdown_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/markdown_util */ "./frontend/util/markdown_util.js");
 /* harmony import */ var _annotations_annotation_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../annotations/annotation_show */ "./frontend/components/annotations/annotation_show.jsx");
+/* harmony import */ var _annotations_create_annotation_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../annotations/create_annotation_form */ "./frontend/components/annotations/create_annotation_form.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1430,6 +1504,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var SongShow = /*#__PURE__*/function (_React$Component) {
   _inherits(SongShow, _React$Component);
 
@@ -1443,9 +1518,11 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       annotation: "",
-      yOffset: 0
+      yOffset: 0,
+      createAnnotation: false
     };
     _this.displayAnnotation = _this.displayAnnotation.bind(_assertThisInitialized(_this));
+    _this.handleSelect = _this.handleSelect.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1454,6 +1531,19 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchSong();
       window.scrollTo(0, 0);
+    }
+  }, {
+    key: "handleSelect",
+    value: function handleSelect(e) {
+      var selection = window.getSelection().toString();
+      var start = window.getSelection().anchorOffset;
+      var end = window.getSelection().focusOffset; // debugger
+
+      if (selection && e.target.nodeName !== "A") {
+        window.getSelection().focusNode.insertData(end, "](6)");
+        window.getSelection().anchorNode.insertData(start, "["); // TRY USING ANCHOR NODES TO EDIT DOM AND COMPARE TO LYRICS???
+        // this.setState({createAnnotation: true});
+      }
     }
   }, {
     key: "displayAnnotation",
@@ -1473,7 +1563,8 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
         });
       } else {
         this.setState({
-          annotation: ""
+          annotation: "",
+          createAnnotation: false
         });
       }
     }
@@ -1505,7 +1596,8 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
         className: "song-show-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "song-show-body",
-        onClick: this.displayAnnotation
+        onClick: this.displayAnnotation,
+        onMouseUp: this.handleSelect
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_markdown__WEBPACK_IMPORTED_MODULE_1___default.a, {
         className: "song-show-body-lyrics",
         source: this.props.song.lyrics,
@@ -1518,7 +1610,7 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
       }, this.state.annotation ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_annotations_annotation_show__WEBPACK_IMPORTED_MODULE_3__["default"], {
         annotation: this.state.annotation,
         yOffset: this.state.yOffset
-      }) : "", " ")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }) : "", this.state.createAnnotation ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_annotations_create_annotation_form__WEBPACK_IMPORTED_MODULE_4__["default"], null) : "")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "song-show"
       }, "Loading Song...");
     }

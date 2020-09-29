@@ -2,18 +2,36 @@ import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import {referenceHandler, linkCreator} from '../../util/markdown_util';
 import Annotation from '../annotations/annotation_show';
+import CreateAnnotation from '../annotations/create_annotation_form';
 
 export default class SongShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {annotation: "", yOffset: 0};
+        this.state = {annotation: "", yOffset: 0, createAnnotation: false};
         this.displayAnnotation = this.displayAnnotation.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchSong();        
         window.scrollTo(0,0);
     }
+
+    handleSelect(e) {
+        const selection = (window.getSelection()).toString();
+        const start = window.getSelection().anchorOffset
+        const end = window.getSelection().focusOffset
+        // debugger
+        if (selection && e.target.nodeName !== "A") {
+            window.getSelection().focusNode.insertData(end, `](6)`);
+            window.getSelection().anchorNode.insertData(start, "[");
+            
+            // TRY USING ANCHOR NODES TO EDIT DOM AND COMPARE TO LYRICS???
+            // this.setState({createAnnotation: true});
+        }
+    }
+
+
 
     displayAnnotation(e) {
         e.preventDefault();
@@ -23,7 +41,7 @@ export default class SongShow extends React.Component {
             this.props.fetchAnnotation(e.target.id)
             .then(data => this.setState({annotation: data.annotation}));
         } else {
-            this.setState({annotation: ""});
+            this.setState({annotation: "", createAnnotation: false});
         }
     }
 
@@ -42,7 +60,7 @@ export default class SongShow extends React.Component {
                     </div>
                 </div>
                 <div className="song-show-body-container">
-                    <section className="song-show-body" onClick={this.displayAnnotation}>
+                    <section className="song-show-body" onClick={this.displayAnnotation} onMouseUp={this.handleSelect}>
                         <ReactMarkdown 
                             className="song-show-body-lyrics"
                             source={this.props.song.lyrics} 
@@ -50,7 +68,8 @@ export default class SongShow extends React.Component {
                                         link: linkCreator}}
                             />
                         <section className="song-show-body-annotations">
-                            {this.state.annotation ? <Annotation annotation={this.state.annotation} yOffset={this.state.yOffset} /> : ""} {/* set X offset based on click event? */}
+                            {this.state.annotation ? <Annotation annotation={this.state.annotation} yOffset={this.state.yOffset} /> : ""}
+                            {this.state.createAnnotation ? <CreateAnnotation /> : ""}
                         </section>
                     </section>
                 </div>
