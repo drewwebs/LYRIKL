@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Song.delete_all
 User.delete_all
+Annotation.delete_all
 
 
 User.create(username: 'Demo', email: 'Demo', password: 'hunter12')
@@ -152,85 +153,88 @@ Yuuuuuuu",
     },
 
     {
-        title: "Exile", 
+        title: "All Too Well", 
         artist: "Taylor Swift", 
         lyrics: "  
-[Verse 1: Justin Vernon]  
-I can see you standing, honey  
-With his arms around your body  
-Laughin', but the joke's not funny at all  
-And it took you five whole minutes  
-To pack us up and leave me with it
-Holdin' all this love out here in the hall  
+[Intro]  
+I walked through the door with you  
+The air was cold  
+But something 'bout it felt like home somehow, and I  
+Left my scarf there at your sister's house  
+And you've still got it  
+In your drawer, even now  
   
-[Chorus: Justin Vernon]  
-I think I've seen this film before  
-And I didn't like the ending  
-You're not my homeland anymore  
-So what am I defending now?  
-You were my town, now I'm in exile, seein' you out  
-I think I've seen this film before  
+[Verse 1]  
+Oh, your sweet disposition  
+And my wide-eyed gaze  
+We're singing in the car getting lost upstate  
+Autumn leaves falling down like pieces into place  
+And I can picture it after all these days  
   
-[Post-Chorus: Justin Vernon]  
-Ooh, ooh, ooh  
-
-[Verse 2: Taylor Swift]  
-I can see you starin', honey  
-Like he's just your understudy  
-Like you'd get your knuckles bloody for me  
-Second, third, and hundredth chances  
-Balancin' on breaking branches  
-Those eyes add insult to injury  
+[Pre-Chorus 1]  
+And I know it's long gone and  
+That magic's not here no more  
+And I might be okay, but I'm not fine at all  
+Oh, oh, oh  
   
-[Chorus: Taylor Swift]  
-I think I've seen this film before  
-And I didn't like the ending  
-I'm not your problem anymore  
-So who am I offending now?  
-You were my crown, now I'm in exile, seein' you out  
-I think I've seen this film before  
-So I'm leaving out the side door  
+[Chorus 1]  
+'Cause there we are again on that little town street  
+You almost ran the red 'cause you were looking over at me  
+Wind in my hair, I was there, I remember it all too well  
   
-[Bridge: Justin Vernon, Taylor Swift & Both]  
-So step right out, there is no amount  
-Of crying I can do for you  
-All this time  
-We always walked a very thin line  
-You didn't even hear me out (You didn't even hear me out)  
-You never gave a warning sign (I gave so many signs)  
-All this time  
-I never learned to read your mind (Never learned to read my mind)  
-I couldn't turn things around (You never turned things around)  
-'Cause you never gave a warning sign (I gave so many signs)  
-So many signs, so many signs  
-You didn't even see the signs  
+[Verse 2]  
+Photo album on the counter  
+Your cheeks were turning red  
+You used to be a little kid with glasses in a twin-sized bed  
+And your mother's telling stories 'bout you on the tee-ball team  
+You tell me 'bout your past, thinking your future was me  
   
-[Chorus: Taylor Swift & Justin Vernon, Taylor Swift]  
-I think I've seen this film before  
-And I didn't like the ending  
-You're not my homeland anymore  
-So what am I defending now?  
-You were my town, now I'm in exile, seein' you out  
-I think I've seen this film before  
-So I'm leavin' out the side door  
+[Pre-Chorus 2]  
+And I know it's long gone and  
+There was nothing else I could do  
+And I forget about you long enough  
+To forget why I needed to  
   
-[Outro: Justin Vernon & Taylor Swift]  
-So step right out, there is no amount  
-Of crying I can do for you  
-All this time  
-We always walked a very thin line  
-You didn't even hear me out (Didn't even hear me out)  
-You never gave a warning sign (I gave so many signs)  
-All this time  
-I never learned to read your mind (Never learned to read my mind)  
-I couldn't turn things around (You never turned things around)  
-'Cause you never gave a warning sign (I gave so many signs)  
-You never gave a warning sign (All this time)  
-(So many times) I never learned to read your mind  
-(So many signs) I couldn't turn things around (I couldn't turn things around)  
-'Cause you never gave a warning sign (You never gave a warning sign)  
-You never gave a warning sign  
-Ah, ah",
+[Chorus 2]  
+'Cause there we are again in the middle of the night  
+We're dancing round the kitchen in the refrigerator light  
+Down the stairs, I was there, I remember it all too well, yeah  
+  
+[Bridge]  
+Maybe we got lost in translation  
+Maybe I asked for too much  
+But maybe this thing was a masterpiece  
+'Til you tore it all up  
+Running scared, I was there, I remember it all too well  
+  
+And you call me up again just to break me like a promise  
+So casually cruel in the name of being honest  
+I'm a crumpled up piece of paper lying here  
+'Cause I remember it all, all, all  
+Too well  
+  
+[Verse 3]  
+Time won't fly, it's like I'm paralyzed by it  
+I'd like to be my old self again  
+But I'm still trying to find it  
+After plaid shirt days and nights when you made me your own  
+Now you mail back my things and I walk home alone  
+But you keep my old scarf  
+From that very first week  
+'Cause it reminds you of innocence  
+And it smells like me  
+You can't get rid of it  
+'Cause you remember it all too well, yeah  
+  
+[Chorus 3]  
+'Cause there we are again when I loved you so  
+Back before you lost the one real thing you've ever known  
+It was rare, I was there, I remember it all too well  
+  
+[Outro]  
+Wind in my hair, you were there, you remember it all  
+Down the stairs, you were there, you remember it all  
+It was rare, I was there, I remember it all too well",
         primary_tag: "Pop" 
     },
 
@@ -525,7 +529,7 @@ Get a (Get a) little (Little) senti- (Senti) -mental when I'm off the juice (Tur
 Well, I'ma give you what you came for, yeah  
 Shit, I've worked too hard to have a clue who you are  
 [Set the bar so far above par, we can parlay all day  
-Crib long range with the yard](1)  
+Crib long range with the yard](4)  
 I know I should probably pray more but you gotta love me  
 'Cause I save the day, spend money  
 When I had nothin', shit, it wasn't so funny  

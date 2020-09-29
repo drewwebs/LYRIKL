@@ -19,7 +19,8 @@ class User < ApplicationRecord
 
     before_validation :ensure_session_token
 
-    has_many :annotations
+    has_many :annotations,
+        foreign_key: :author_id
 
     def self.find_by_credentials(name,password)
         user = User.find_by(email: name) || User.find_by(username: name)

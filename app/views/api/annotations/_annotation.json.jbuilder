@@ -1,1 +1,1 @@
-json.extract! annotation, :body
+json.extract! annotation, :id, :body, :song_id

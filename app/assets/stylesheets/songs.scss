@@ -58,6 +58,7 @@
         color: #222222;
         margin: auto;
         line-height: 1.7;
+        display: flex;
 
         &-container {
             background-color: #f7f7f7;
@@ -81,7 +82,10 @@
             }
         }
 
-        &-annotation {
+        &-annotations {
+            padding-top: 90px;
+            padding-left: 10px;
+            border-left: 3px solid blue;
             width: 45%;
             padding-right: 16px;
         }

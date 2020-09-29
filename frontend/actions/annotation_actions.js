@@ -13,13 +13,13 @@ const removeAnnotation = annotationId => ({
     annotationId
 });
 
-export const fetchAnnotation = (annotationId, songId) => dispatch => (
-    APIUtil.fetchAnnotation(annotationId, songId)
+export const fetchAnnotation = (annotationId) => dispatch => (
+    APIUtil.fetchAnnotation(annotationId)
     .then( (annotation) => dispatch(receiveAnnotation(annotation)))
 );
 
-export const deleteAnnotation = (annotationId, songId) => dispatch => (
-    APIUtil.deleteAnnotation(annotationId, songId)
+export const deleteAnnotation = (annotationId) => dispatch => (
+    APIUtil.deleteAnnotation(annotationId)
         .then(() => dispatch(removeAnnotation(annotation)))
 );
 

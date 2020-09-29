@@ -25,7 +25,17 @@ class Song < ApplicationRecord
 
     def self.set_image_url(artist, title)
         response = LastFM::Track.get_info(artist: artist, track: title)
-        response['track']['album']['image'][3]['#text']
+        if response['track']
+            if response['track']['album']
+                if response['track']['album']['image']
+                    if response['track']['album']['image'][3]
+                        return response['track']['album']['image'][3]['#text'] || "https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg"
+                    else
+                        return 'https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg'
+                    end
+                end
+            end
+        end
     end
 
     def ensure_image_url

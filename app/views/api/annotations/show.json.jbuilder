@@ -1,7 +1,11 @@
-json.annotation do
-  json.partial! '/api/annotations/annotation', annotation: @annotation
-end
+
+json.partial! '/api/annotations/annotation', annotation: @annotation
+
 
 json.author do
-  json.partial! '/api/users/user', user: @annotation.author
+  json.extract! @annotation.author, :id, :username
+end
+
+json.song do
+  json.partial! '/api/songs/song', song: @annotation.song
 end

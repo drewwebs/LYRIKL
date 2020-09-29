@@ -171,16 +171,16 @@ var removeAnnotation = function removeAnnotation(annotationId) {
   };
 };
 
-var fetchAnnotation = function fetchAnnotation(annotationId, songId) {
+var fetchAnnotation = function fetchAnnotation(annotationId) {
   return function (dispatch) {
-    return _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__["fetchAnnotation"](annotationId, songId).then(function (annotation) {
+    return _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__["fetchAnnotation"](annotationId).then(function (annotation) {
       return dispatch(receiveAnnotation(annotation));
     });
   };
 };
-var deleteAnnotation = function deleteAnnotation(annotationId, songId) {
+var deleteAnnotation = function deleteAnnotation(annotationId) {
   return function (dispatch) {
-    return _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__["deleteAnnotation"](annotationId, songId).then(function () {
+    return _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__["deleteAnnotation"](annotationId).then(function () {
       return dispatch(removeAnnotation(annotation));
     });
   };
@@ -356,6 +356,90 @@ var updateSong = function updateSong(song) {
 
 /***/ }),
 
+/***/ "./frontend/components/annotations/annotation_show.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/annotations/annotation_show.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _songs_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../songs/show */ "./frontend/components/songs/show.jsx");
+
+ // export default class AnnotationShow extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//                         song: ""
+//                     };
+//     }
+//     componentDidMount() {
+//         this.props.fetchAnnotation()
+//         .then((data) => this.props.fetchSong(data.annotation.song_id))
+//         .then((data) => this.setState( {song: data.song }));
+//     }
+//     render() {
+//         return this.state.song ? (
+//           <Song fetchSong={() => this.props.fetchSong(this.props.annotation.song_id)} song={this.state.song} annotation={this.props.annotation} />
+//         ) : (
+//             <div>Loading Annotation...</div>
+//         )
+//     }
+// }
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var annotation = _ref.annotation;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, annotation.body);
+});
+
+/***/ }),
+
+/***/ "./frontend/components/annotations/annotation_show_container.jsx":
+/*!***********************************************************************!*\
+  !*** ./frontend/components/annotations/annotation_show_container.jsx ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_annotation_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/annotation_actions */ "./frontend/actions/annotation_actions.js");
+/* harmony import */ var _actions_song_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/song_actions */ "./frontend/actions/song_actions.js");
+/* harmony import */ var _annotation_show__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./annotation_show */ "./frontend/components/annotations/annotation_show.jsx");
+
+
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  // debugger
+  return {
+    annotation: state.entities.annotations[ownProps.match.params.annotationId]
+  }; // song: state.entities.songs[state.entities.annotations[ownProps.match.params.annotationId].song_id]};
+};
+
+var mDTP = function mDTP(dispatch, ownProps) {
+  return {
+    fetchAnnotation: function fetchAnnotation() {
+      return dispatch(Object(_actions_annotation_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAnnotation"])(ownProps.match.params.annotationId));
+    },
+    fetchSong: function fetchSong(annotationId) {
+      return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_3__["fetchSong"])(annotationId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_annotation_show__WEBPACK_IMPORTED_MODULE_4__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/app.jsx":
 /*!*************************************!*\
   !*** ./frontend/components/app.jsx ***!
@@ -376,6 +460,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _songs_charts_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./songs/charts_container */ "./frontend/components/songs/charts_container.jsx");
 /* harmony import */ var _songs_show_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./songs/show_container */ "./frontend/components/songs/show_container.jsx");
 /* harmony import */ var _splash_splash__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./splash/splash */ "./frontend/components/splash/splash.jsx");
+/* harmony import */ var _annotations_annotation_show_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./annotations/annotation_show_container */ "./frontend/components/annotations/annotation_show_container.jsx");
+
 
 
 
@@ -401,6 +487,9 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     path: "/songs/:songId",
     component: _songs_show_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
+    path: "/annotations/:annotationId",
+    component: _annotations_annotation_show_container__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_utils__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
     path: "/signup",
     component: _session_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -1295,9 +1384,16 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(SongShow);
 
   function SongShow(props) {
+    var _this;
+
     _classCallCheck(this, SongShow);
 
-    return _super.call(this, props);
+    // debugger
+    _this = _super.call(this, props);
+    _this.state = {
+      annotation: ""
+    };
+    return _this;
   }
 
   _createClass(SongShow, [{
@@ -1305,6 +1401,15 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchSong();
       window.scrollTo(0, 0);
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick(e) {
+      e.preventDefault();
+
+      if (e.target.nodeName === "A") {
+        console.log("here we are");
+      }
     }
   }, {
     key: "render",
@@ -1333,7 +1438,8 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
       }, this.props.song.artist))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "song-show-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "song-show-body"
+        className: "song-show-body",
+        onClick: this.handleClick
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_markdown__WEBPACK_IMPORTED_MODULE_1___default.a, {
         className: "song-show-body-lyrics",
         source: this.props.song.lyrics,
@@ -1343,9 +1449,11 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
         }
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "song-show-body-annotations"
-      })))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.annotation ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Annotation, {
+        annotation: this.props.fetchAnnotation()
+      }) : "")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "song-show"
-      }, "Loading...");
+      }, "Loading Song...");
     }
   }]);
 
@@ -1755,27 +1863,27 @@ __webpack_require__.r(__webpack_exports__);
 var createAnnotation = function createAnnotation(annotation) {
   return $.ajax({
     method: 'POST',
-    url: "api/".concat(annotation.song_id, "/annotations"),
+    url: "api/annotations",
     data: annotation
   });
 };
 var fetchAnnotation = function fetchAnnotation(annotationId, songId) {
   return $.ajax({
     method: 'GET',
-    url: "api/".concat(songId, "/annotations/").concat(annotationId)
+    url: "api/annotations/".concat(annotationId)
   });
 };
 var updateAnnotation = function updateAnnotation(annotation) {
   return $.ajax({
     method: 'PATCH',
-    url: "api/".concat(annotation.song_id, "/annotations/").concat(annotation.id),
+    url: "api/annotations/".concat(annotation.id),
     data: annotation
   });
 };
 var deleteAnnotation = function deleteAnnotation(annotationId, songId) {
   return $.ajax({
     method: 'DELETE',
-    url: "api/".concat(songId, "/annotations/").concat(annotationId)
+    url: "api/annotations/".concat(annotationId)
   });
 };
 
@@ -1812,7 +1920,7 @@ var linkCreator = function linkCreator(reference) {
     return child.type === "br" ? parsed.push("<br />") : parsed.push(child.props.value);
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/annotations/".concat(reference.href)
+    to: "#"
   }, reference.children.map(function (child) {
     return child.type === "br" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null) : child.props.value;
   }));
