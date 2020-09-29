@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Song.delete_all
 User.delete_all
-Annotation.delete_all
+# Annotation.delete_all
 
 
 User.create(username: 'Demo', email: 'Demo', password: 'hunter12')
@@ -979,4 +979,4 @@ No doubt in my mind, that'll make them feel better",
 
 User.create(username: "drewwebs", email: "drewwebs@gmail.com", password: "hunter12")
 
-Annotation.create(body: "Mac uses parlay and par to setup his golf imagery in the following line", song_id: Song.find_by_title("What's the Use?").id, author_id: User.find_by_username("drewwebs").id)
+# Annotation.create(body: "Mac uses parlay and par to setup his golf imagery in the following line", song_id: Song.find_by_title("What's the Use?").id, author_id: User.find_by_username("drewwebs").id)

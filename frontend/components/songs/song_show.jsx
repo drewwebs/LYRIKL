@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import {referenceHandler, linkCreator} from '../../util/markdown_util';
+import Annotation from '../annotations/annotation_show';
 
 export default class SongShow extends React.Component {
     constructor(props) {
-        // debugger
         super(props);
-        this.state = {annotation: ""};
+        this.state = {annotation: "", yOffset: 0};
+        this.displayAnnotation = this.displayAnnotation.bind(this);
     }
 
     componentDidMount() {
@@ -14,10 +15,15 @@ export default class SongShow extends React.Component {
         window.scrollTo(0,0);
     }
 
-    handleClick(e) {
+    displayAnnotation(e) {
         e.preventDefault();
+        // debugger;
         if (e.target.nodeName === "A") {
-            console.log("here we are")
+            this.setState({yOffset: e.pageY});
+            this.props.fetchAnnotation(e.target.id)
+            .then(data => this.setState({annotation: data.annotation}));
+        } else {
+            this.setState({annotation: ""});
         }
     }
 
@@ -36,7 +42,7 @@ export default class SongShow extends React.Component {
                     </div>
                 </div>
                 <div className="song-show-body-container">
-                    <section className="song-show-body" onClick={this.handleClick}>
+                    <section className="song-show-body" onClick={this.displayAnnotation}>
                         <ReactMarkdown 
                             className="song-show-body-lyrics"
                             source={this.props.song.lyrics} 
@@ -44,7 +50,7 @@ export default class SongShow extends React.Component {
                                         link: linkCreator}}
                             />
                         <section className="song-show-body-annotations">
-                            {this.props.annotation ? <Annotation annotation={this.props.fetchAnnotation()} /> : ""}
+                            {this.state.annotation ? <Annotation annotation={this.state.annotation} yOffset={this.state.yOffset} /> : ""} {/* set X offset based on click event? */}
                         </section>
                     </section>
                 </div>
@@ -54,5 +60,4 @@ export default class SongShow extends React.Component {
         )
     }
 }
-
 

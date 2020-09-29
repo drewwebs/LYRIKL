@@ -1,5 +1,5 @@
 import React from 'react';
-import Song from '../songs/show';
+import Song from '../songs/song_show';
 
 // export default class AnnotationShow extends React.Component {
 //     constructor(props) {
@@ -24,6 +24,17 @@ import Song from '../songs/show';
 //     }
 // }
 
-export default ({annotation}) => (
-    <div>{annotation.body}</div>
-)
+export default ({annotation, yOffset}) => {
+
+    return (
+        <div className="song-show-body-annotations-display" style={{position:`absolute`, top: `${yOffset}px`}}>
+            <p className="song-show-body-annotations-display-body">
+                {annotation.body}
+            </p>
+            <footer className="news-footer">
+                <div className="news-footer-author">Annotation by {annotation.author.username}</div>
+            </footer>
+            
+        </div>
+    )
+}
