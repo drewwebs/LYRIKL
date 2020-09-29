@@ -524,8 +524,8 @@ Get a (Get a) little (Little) senti- (Senti) -mental when I'm off the juice (Tur
 [Verse 2]  
 Well, I'ma give you what you came for, yeah  
 Shit, I've worked too hard to have a clue who you are  
-Set the bar so far above par, we can parlay all day  
-Crib long range with the yard  
+[Set the bar so far above par, we can parlay all day  
+Crib long range with the yard](1)  
 I know I should probably pray more but you gotta love me  
 'Cause I save the day, spend money  
 When I had nothin', shit, it wasn't so funny  
@@ -972,3 +972,7 @@ No doubt in my mind, that'll make them feel better",
     }
 
 ])
+
+User.create(username: "drewwebs", email: "drewwebs@gmail.com", password: "hunter12")
+
+Annotation.create(body: "Mac uses parlay and par to setup his golf imagery in the following line", song_id: Song.find_by_title("What's the Use?").id, author_id: User.find_by_username("drewwebs").id)

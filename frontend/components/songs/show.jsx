@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import renderers from '../../util/markdown_util';
+import {referenceHandler, linkCreator} from '../../util/markdown_util';
 
 export default class SongShow extends React.Component {
     constructor(props) {
@@ -31,7 +31,8 @@ export default class SongShow extends React.Component {
                         <ReactMarkdown 
                             className="song-show-body-lyrics"
                             source={this.props.song.lyrics} 
-                            renderers={{linkReference: renderers}}
+                            renderers={{linkReference: referenceHandler, 
+                                        link: linkCreator}}
                             />
                         <section className="song-show-body-annotations"></section>
                     </section>

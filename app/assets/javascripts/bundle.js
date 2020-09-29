@@ -138,6 +138,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./frontend/actions/annotation_actions.js":
+/*!************************************************!*\
+  !*** ./frontend/actions/annotation_actions.js ***!
+  \************************************************/
+/*! exports provided: RECEIVE_ANNOTATION, DELETE_ANNOTATION, fetchAnnotation, deleteAnnotation, updateAnnotation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ANNOTATION", function() { return RECEIVE_ANNOTATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_ANNOTATION", function() { return DELETE_ANNOTATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAnnotation", function() { return fetchAnnotation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteAnnotation", function() { return deleteAnnotation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateAnnotation", function() { return updateAnnotation; });
+/* harmony import */ var _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/annotation_util */ "./frontend/util/annotation_util.js");
+
+var RECEIVE_ANNOTATION = 'RECEIVE_ANNOTATION';
+var DELETE_ANNOTATION = 'DELETE_ANNOTATION';
+
+var receiveAnnotation = function receiveAnnotation(annotation) {
+  return {
+    type: RECEIVE_ANNOTATION,
+    annotation: annotation
+  };
+};
+
+var removeAnnotation = function removeAnnotation(annotationId) {
+  return {
+    type: DELETE_ANNOTATION,
+    annotationId: annotationId
+  };
+};
+
+var fetchAnnotation = function fetchAnnotation(annotationId, songId) {
+  return function (dispatch) {
+    return _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__["fetchAnnotation"](annotationId, songId).then(function (annotation) {
+      return dispatch(receiveAnnotation(annotation));
+    });
+  };
+};
+var deleteAnnotation = function deleteAnnotation(annotationId, songId) {
+  return function (dispatch) {
+    return _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__["deleteAnnotation"](annotationId, songId).then(function () {
+      return dispatch(removeAnnotation(annotation));
+    });
+  };
+};
+var updateAnnotation = function updateAnnotation(annotation) {
+  return function (dispatch) {
+    return _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__["updateAnnotation"](annotation).then(function (annotation) {
+      return dispatch(receiveAnnotation(annotation));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -1281,7 +1338,8 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
         className: "song-show-body-lyrics",
         source: this.props.song.lyrics,
         renderers: {
-          linkReference: _util_markdown_util__WEBPACK_IMPORTED_MODULE_2__["default"]
+          linkReference: _util_markdown_util__WEBPACK_IMPORTED_MODULE_2__["referenceHandler"],
+          link: _util_markdown_util__WEBPACK_IMPORTED_MODULE_2__["linkCreator"]
         }
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "song-show-body-annotations"
@@ -1398,6 +1456,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./frontend/reducers/annotations_reducer.js":
+/*!**************************************************!*\
+  !*** ./frontend/reducers/annotations_reducer.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_annotation_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/annotation_actions */ "./frontend/actions/annotation_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_annotation_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ANNOTATION"]:
+      return Object.assign({}, state, _defineProperty({}, action.annotation.id, action.annotation));
+
+    case _actions_annotation_actions__WEBPACK_IMPORTED_MODULE_0__["DELETE_ANNOTATION"]:
+      newState = Object.assign({}, state);
+      delete newState[action.annotationId];
+      return newState;
+
+    default:
+      return state;
+  }
+});
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -1410,12 +1502,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _songs_reducer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./songs_reducer.js */ "./frontend/reducers/songs_reducer.js");
+/* harmony import */ var _annotations_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./annotations_reducer */ "./frontend/reducers/annotations_reducer.js");
+
 
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  songs: _songs_reducer_js__WEBPACK_IMPORTED_MODULE_2__["default"]
+  songs: _songs_reducer_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  annotations: _annotations_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1644,24 +1739,84 @@ var configureStore = function configureStore() {
 
 /***/ }),
 
-/***/ "./frontend/util/markdown_util.js":
-/*!****************************************!*\
-  !*** ./frontend/util/markdown_util.js ***!
-  \****************************************/
-/*! exports provided: default */
+/***/ "./frontend/util/annotation_util.js":
+/*!******************************************!*\
+  !*** ./frontend/util/annotation_util.js ***!
+  \******************************************/
+/*! exports provided: createAnnotation, fetchAnnotation, updateAnnotation, deleteAnnotation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (function (reference) {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAnnotation", function() { return createAnnotation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAnnotation", function() { return fetchAnnotation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateAnnotation", function() { return updateAnnotation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteAnnotation", function() { return deleteAnnotation; });
+var createAnnotation = function createAnnotation(annotation) {
+  return $.ajax({
+    method: 'POST',
+    url: "api/".concat(annotation.song_id, "/annotations"),
+    data: annotation
+  });
+};
+var fetchAnnotation = function fetchAnnotation(annotationId, songId) {
+  return $.ajax({
+    method: 'GET',
+    url: "api/".concat(songId, "/annotations/").concat(annotationId)
+  });
+};
+var updateAnnotation = function updateAnnotation(annotation) {
+  return $.ajax({
+    method: 'PATCH',
+    url: "api/".concat(annotation.song_id, "/annotations/").concat(annotation.id),
+    data: annotation
+  });
+};
+var deleteAnnotation = function deleteAnnotation(annotationId, songId) {
+  return $.ajax({
+    method: 'DELETE',
+    url: "api/".concat(songId, "/annotations/").concat(annotationId)
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/markdown_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/markdown_util.js ***!
+  \****************************************/
+/*! exports provided: referenceHandler, linkCreator */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "referenceHandler", function() { return referenceHandler; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "linkCreator", function() { return linkCreator; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+var referenceHandler = function referenceHandler(reference) {
   if (!reference.href) {
     return "[".concat(reference.children[0].props.value, "]");
   }
 
-  return /*#__PURE__*/React.createElement("a", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: reference.$ref
   }, reference.children);
-});
+};
+var linkCreator = function linkCreator(reference) {
+  var parsed = [];
+  reference.children.forEach(function (child) {
+    return child.type === "br" ? parsed.push("<br />") : parsed.push(child.props.value);
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/annotations/".concat(reference.href)
+  }, reference.children.map(function (child) {
+    return child.type === "br" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null) : child.props.value;
+  }));
+};
 
 /***/ }),
 
