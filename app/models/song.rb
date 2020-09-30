@@ -1,4 +1,6 @@
 class Song < ApplicationRecord
+    PATH = ['track', 'album', 'image', 3, '#text']
+
     validates :title, :lyrics, :views, :artist, presence:true
 
     after_initialize :set_views, :ensure_image_url
@@ -23,19 +25,27 @@ class Song < ApplicationRecord
         stringified
     end
 
+    def reformat_lyrics(line_start, line_end, start_offset, end_offet)
+        lines = self.lyrics.split("/n")
+        lines[line_start]
+    end
+
     def self.set_image_url(artist, title)
         response = LastFM::Track.get_info(artist: artist, track: title)
-        if response['track']
-            if response['track']['album']
-                if response['track']['album']['image']
-                    if response['track']['album']['image'][3]
-                        return response['track']['album']['image'][3]['#text'] || "https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg"
-                    else
-                        return 'https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg'
-                    end
-                end
-            end
-        end
+
+        return response.dig(*PATH) || 'https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg'
+        
+        # if response['track']
+        #     if response['track']['album']
+        #         if response['track']['album']['image']
+        #             if response['track']['album']['image'][3]
+        #                 return response['track']['album']['image'][3]['#text'] || "https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg"
+        #             else
+        #                 return 'https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg'
+        #             end
+        #         end
+        #     end
+        # end
     end
 
     def ensure_image_url

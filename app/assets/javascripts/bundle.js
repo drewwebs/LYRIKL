@@ -1539,9 +1539,10 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
       var start = window.getSelection().anchorOffset;
       var end = window.getSelection().focusOffset; // debugger
 
-      if (selection && e.target.nodeName !== "A") {
-        window.getSelection().focusNode.insertData(end, "](6)");
-        window.getSelection().anchorNode.insertData(start, "["); // TRY USING ANCHOR NODES TO EDIT DOM AND COMPARE TO LYRICS???
+      if (selection && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
+        // window.getSelection().focusNode.insertData(end, `](6)`);
+        // window.getSelection().anchorNode.insertData(start, "[");
+        debugger; // TRY USING ANCHOR NODES TO EDIT DOM AND COMPARE TO LYRICS???
         // this.setState({createAnnotation: true});
       }
     }
@@ -1600,11 +1601,12 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
         onMouseUp: this.handleSelect
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_markdown__WEBPACK_IMPORTED_MODULE_1___default.a, {
         className: "song-show-body-lyrics",
-        source: this.props.song.lyrics,
+        children: this.props.song.lyrics,
         renderers: {
           linkReference: _util_markdown_util__WEBPACK_IMPORTED_MODULE_2__["referenceHandler"],
           link: _util_markdown_util__WEBPACK_IMPORTED_MODULE_2__["linkCreator"]
-        }
+        },
+        sourcePos: true
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "song-show-body-annotations"
       }, this.state.annotation ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_annotations_annotation_show__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2033,6 +2035,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var referenceHandler = function referenceHandler(reference) {
+  // debugger
   if (!reference.href) {
     return "[".concat(reference.children[0].props.value, "]");
   }

@@ -22,10 +22,10 @@ export default class SongShow extends React.Component {
         const start = window.getSelection().anchorOffset
         const end = window.getSelection().focusOffset
         // debugger
-        if (selection && e.target.nodeName !== "A") {
-            window.getSelection().focusNode.insertData(end, `](6)`);
-            window.getSelection().anchorNode.insertData(start, "[");
-            
+        if (selection && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
+            // window.getSelection().focusNode.insertData(end, `](6)`);
+            // window.getSelection().anchorNode.insertData(start, "[");
+            debugger
             // TRY USING ANCHOR NODES TO EDIT DOM AND COMPARE TO LYRICS???
             // this.setState({createAnnotation: true});
         }
@@ -63,9 +63,10 @@ export default class SongShow extends React.Component {
                     <section className="song-show-body" onClick={this.displayAnnotation} onMouseUp={this.handleSelect}>
                         <ReactMarkdown 
                             className="song-show-body-lyrics"
-                            source={this.props.song.lyrics} 
+                            children={this.props.song.lyrics} 
                             renderers={{linkReference: referenceHandler, 
                                         link: linkCreator}}
+                            sourcePos={true}
                             />
                         <section className="song-show-body-annotations">
                             {this.state.annotation ? <Annotation annotation={this.state.annotation} yOffset={this.state.yOffset} /> : ""}
