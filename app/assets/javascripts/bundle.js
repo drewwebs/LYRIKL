@@ -573,26 +573,30 @@ var CreateAnnotationForm = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "annotation-form",
+        onSubmit: this.handleSubmit,
         style: {
           position: "absolute",
           top: "".concat(this.props.yOffset, "px")
         }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Create an annotation:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         placeholder: "Drop some LYRIKL knowledge!",
-        className: "form-input",
+        className: "annotation-form-input",
         required: true,
         value: this.state.body,
         onChange: this.handleChange(),
         rows: "8"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "cancel-button",
+        className: "annotation-form-buttons"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "annotation-form-submit-button"
+      }, "Save (+5 IQ)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "annotation-form-cancel-button",
         onClick: function onClick() {
           return _this3.props.onCancel();
         }
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Save (+5 IQ)")));
+      }, "Cancel")));
     }
   }]);
 
@@ -1660,7 +1664,7 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var loggedIn = !!window.currentUser;
+      var loggedIn = !!this.props.currentUser;
       return this.props.song ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "song-show"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1762,9 +1766,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(_ref, ownProps) {
-  var entities = _ref.entities;
+  var entities = _ref.entities,
+      session = _ref.session;
   return {
-    song: entities.songs[ownProps.match.params.songId]
+    song: entities.songs[ownProps.match.params.songId],
+    currentUser: session.currentUser
   };
 };
 

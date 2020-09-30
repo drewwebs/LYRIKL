@@ -17,24 +17,27 @@ export default class CreateAnnotationForm extends React.Component {
 
     render() {
         return (
-          <div style={{ position: `absolute`, top: `${this.props.yOffset}px` }}>
-            <h1>Create an annotation:</h1>
-            <form onSubmit={this.handleSubmit}>
+          <form 
+            className="annotation-form" 
+            onSubmit={this.handleSubmit} 
+            style={{ position: `absolute`, top: `${this.props.yOffset}px` }}>
               <textarea
                 placeholder="Drop some LYRIKL knowledge!"
-                className="form-input"
+                className="annotation-form-input"
                 required={true}
                 value={this.state.body}
                 onChange={this.handleChange()}
                 rows="8"
               />
 
-              <div
-                className="cancel-button"
-                onClick={() => this.props.onCancel()}
-              ></div>
-              <button>Save (+5 IQ)</button>
+              <div className="annotation-form-buttons">
+                <button className="annotation-form-submit-button">Save (+5 IQ)</button>
+                <div
+                  className="annotation-form-cancel-button"
+                  onClick={() => this.props.onCancel()}
+                >Cancel</div>
+
+              </div>
             </form>
-          </div>
         );}
 }

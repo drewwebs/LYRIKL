@@ -4,8 +4,9 @@ import SongShow from './song_show';
 import { fetchSong } from '../../actions/song_actions';
 import { fetchAnnotation } from '../../actions/annotation_actions';
 
-const mSTP = ({entities}, ownProps) => ({
-    song: entities.songs[ownProps.match.params.songId]
+const mSTP = ({entities, session}, ownProps) => ({
+    song: entities.songs[ownProps.match.params.songId],
+    currentUser: session.currentUser
 });
 
 const mDTP = (dispatch, ownProps) => ({

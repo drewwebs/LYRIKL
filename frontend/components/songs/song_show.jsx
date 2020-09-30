@@ -47,7 +47,7 @@ export default class SongShow extends React.Component {
     }
 
     render() {
-        const loggedIn = !!window.currentUser;
+        const loggedIn = !!this.props.currentUser;
         return this.props.song ? (
             <div className="song-show">
                 <div className="song-show-header-container-background" style={{ backgroundImage:`url(${this.props.song.image_url})` }}>
