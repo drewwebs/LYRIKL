@@ -2,14 +2,16 @@ import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import {referenceHandler, linkCreator} from '../../util/markdown_util';
 import Annotation from '../annotations/annotation_show';
-import CreateAnnotation from '../annotations/create_annotation_form';
+import CreateAnnotation from '../annotations/create_annotation_container';
+import getSelectionInfo from '../../util/selection_util';
 
 export default class SongShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {annotation: "", yOffset: 0, createAnnotation: false};
+        this.state = {annotation: "", yOffset: 0, createAnnotation: false, selection: ""};
         this.displayAnnotation = this.displayAnnotation.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
+        this.onCancel = this.onCancel.bind(this);
     }
 
     componentDidMount() {
@@ -18,30 +20,24 @@ export default class SongShow extends React.Component {
     }
 
     handleSelect(e) {
-        const selection = (window.getSelection()).toString();
-        const start = window.getSelection().anchorOffset
-        const end = window.getSelection().focusOffset
-        // debugger
-        if (selection && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
-            // window.getSelection().focusNode.insertData(end, `](6)`);
-            // window.getSelection().anchorNode.insertData(start, "[");
-            debugger
-            // TRY USING ANCHOR NODES TO EDIT DOM AND COMPARE TO LYRICS???
-            // this.setState({createAnnotation: true});
+        if (window.getSelection().toString() && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
+            const selection = window.getSelection();
+            const selectionInfo = getSelectionInfo(selection);
+            this.setState( { createAnnotation: true, selection: selectionInfo } );
         }
     }
 
-
+    onCancel() {
+        this.setState( { createAnnotation: false });
+    }
 
     displayAnnotation(e) {
-        e.preventDefault();
-        // debugger;
         if (e.target.nodeName === "A") {
             this.setState({yOffset: e.pageY});
             this.props.fetchAnnotation(e.target.id)
             .then(data => this.setState({annotation: data.annotation}));
         } else {
-            this.setState({annotation: "", createAnnotation: false});
+            this.setState({annotation: ""});
         }
     }
 
@@ -70,7 +66,10 @@ export default class SongShow extends React.Component {
                             />
                         <section className="song-show-body-annotations">
                             {this.state.annotation ? <Annotation annotation={this.state.annotation} yOffset={this.state.yOffset} /> : ""}
-                            {this.state.createAnnotation ? <CreateAnnotation /> : ""}
+                            {this.state.createAnnotation ? <CreateAnnotation 
+                                                                onCancel={this.onCancel}
+                                                                selection={this.state.selection}
+                                                                songId={this.props.song.id} /> : ""}
                         </section>
                     </section>
                 </div>

@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /*!************************************************!*\
   !*** ./frontend/actions/annotation_actions.js ***!
   \************************************************/
-/*! exports provided: RECEIVE_ANNOTATION, DELETE_ANNOTATION, fetchAnnotation, deleteAnnotation, updateAnnotation */
+/*! exports provided: RECEIVE_ANNOTATION, DELETE_ANNOTATION, fetchAnnotation, deleteAnnotation, updateAnnotation, createAnnotation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -152,6 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAnnotation", function() { return fetchAnnotation; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteAnnotation", function() { return deleteAnnotation; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateAnnotation", function() { return updateAnnotation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAnnotation", function() { return createAnnotation; });
 /* harmony import */ var _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/annotation_util */ "./frontend/util/annotation_util.js");
 
 var RECEIVE_ANNOTATION = 'RECEIVE_ANNOTATION';
@@ -188,6 +189,13 @@ var deleteAnnotation = function deleteAnnotation(annotationId) {
 var updateAnnotation = function updateAnnotation(annotation) {
   return function (dispatch) {
     return _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__["updateAnnotation"](annotation).then(function (annotation) {
+      return dispatch(receiveAnnotation(annotation));
+    });
+  };
+};
+var createAnnotation = function createAnnotation(annotation) {
+  return function (dispatch) {
+    return _util_annotation_util__WEBPACK_IMPORTED_MODULE_0__["createAnnotation"](annotation).then(function (annotation) {
       return dispatch(receiveAnnotation(annotation));
     });
   };
@@ -453,6 +461,45 @@ var mDTP = function mDTP(dispatch, ownProps) {
 
 /***/ }),
 
+/***/ "./frontend/components/annotations/create_annotation_container.js":
+/*!************************************************************************!*\
+  !*** ./frontend/components/annotations/create_annotation_container.js ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_annotation_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/annotation_actions */ "./frontend/actions/annotation_actions.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _create_annotation_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./create_annotation_form */ "./frontend/components/annotations/create_annotation_form.jsx");
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  return {
+    annotation: {
+      body: "",
+      author_id: state.session.currentUser.id,
+      song_id: ownProps.songId,
+      selection: ownProps.selection
+    }
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    createAnnotation: function createAnnotation(annotation) {
+      return dispatch(Object(_actions_annotation_actions__WEBPACK_IMPORTED_MODULE_0__["createAnnotation"])(annotation));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_create_annotation_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/annotations/create_annotation_form.jsx":
 /*!********************************************************************!*\
   !*** ./frontend/components/annotations/create_annotation_form.jsx ***!
@@ -511,11 +558,36 @@ var CreateAnnotationForm = /*#__PURE__*/function (_React$Component) {
       this.props.createAnnotation(this.state);
     }
   }, {
+    key: "handleChange",
+    value: function handleChange() {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState({
+          body: e.currentTarget.value
+        });
+      };
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Create an annotation:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
-      }));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        placeholder: "Drop some LYRIKL knowledge!",
+        className: "form-input",
+        required: true,
+        value: this.state.body,
+        onChange: this.handleChange(),
+        rows: "8"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cancel-button",
+        onClick: function onClick() {
+          return _this3.props.onCancel();
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Save (+5 IQ)")));
     }
   }]);
 
@@ -1476,7 +1548,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_markdown__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_markdown__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _util_markdown_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/markdown_util */ "./frontend/util/markdown_util.js");
 /* harmony import */ var _annotations_annotation_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../annotations/annotation_show */ "./frontend/components/annotations/annotation_show.jsx");
-/* harmony import */ var _annotations_create_annotation_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../annotations/create_annotation_form */ "./frontend/components/annotations/create_annotation_form.jsx");
+/* harmony import */ var _annotations_create_annotation_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../annotations/create_annotation_container */ "./frontend/components/annotations/create_annotation_container.js");
+/* harmony import */ var _util_selection_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/selection_util */ "./frontend/util/selection_util.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1505,6 +1578,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var SongShow = /*#__PURE__*/function (_React$Component) {
   _inherits(SongShow, _React$Component);
 
@@ -1519,10 +1593,12 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       annotation: "",
       yOffset: 0,
-      createAnnotation: false
+      createAnnotation: false,
+      selection: ""
     };
     _this.displayAnnotation = _this.displayAnnotation.bind(_assertThisInitialized(_this));
     _this.handleSelect = _this.handleSelect.bind(_assertThisInitialized(_this));
+    _this.onCancel = _this.onCancel.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1535,23 +1611,26 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSelect",
     value: function handleSelect(e) {
-      var selection = window.getSelection().toString();
-      var start = window.getSelection().anchorOffset;
-      var end = window.getSelection().focusOffset; // debugger
-
-      if (selection && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
-        // window.getSelection().focusNode.insertData(end, `](6)`);
-        // window.getSelection().anchorNode.insertData(start, "[");
-        debugger; // TRY USING ANCHOR NODES TO EDIT DOM AND COMPARE TO LYRICS???
-        // this.setState({createAnnotation: true});
+      if (window.getSelection().toString() && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
+        var selection = window.getSelection();
+        var selectionInfo = Object(_util_selection_util__WEBPACK_IMPORTED_MODULE_5__["default"])(selection);
+        this.setState({
+          createAnnotation: true,
+          selection: selectionInfo
+        });
       }
+    }
+  }, {
+    key: "onCancel",
+    value: function onCancel() {
+      this.setState({
+        createAnnotation: false
+      });
     }
   }, {
     key: "displayAnnotation",
     value: function displayAnnotation(e) {
       var _this2 = this;
-
-      e.preventDefault(); // debugger;
 
       if (e.target.nodeName === "A") {
         this.setState({
@@ -1564,8 +1643,7 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
         });
       } else {
         this.setState({
-          annotation: "",
-          createAnnotation: false
+          annotation: ""
         });
       }
     }
@@ -1612,7 +1690,11 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
       }, this.state.annotation ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_annotations_annotation_show__WEBPACK_IMPORTED_MODULE_3__["default"], {
         annotation: this.state.annotation,
         yOffset: this.state.yOffset
-      }) : "", this.state.createAnnotation ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_annotations_create_annotation_form__WEBPACK_IMPORTED_MODULE_4__["default"], null) : "")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }) : "", this.state.createAnnotation ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_annotations_create_annotation_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        onCancel: this.onCancel,
+        selection: this.state.selection,
+        songId: this.props.song.id
+      }) : "")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "song-show"
       }, "Loading Song...");
     }
@@ -1993,7 +2075,9 @@ var createAnnotation = function createAnnotation(annotation) {
   return $.ajax({
     method: 'POST',
     url: "api/annotations",
-    data: annotation
+    data: {
+      annotation: annotation
+    }
   });
 };
 var fetchAnnotation = function fetchAnnotation(annotationId, songId) {
@@ -2006,7 +2090,9 @@ var updateAnnotation = function updateAnnotation(annotation) {
   return $.ajax({
     method: 'PATCH',
     url: "api/annotations/".concat(annotation.id),
-    data: annotation
+    data: {
+      annotation: annotation
+    }
   });
 };
 var deleteAnnotation = function deleteAnnotation(annotationId, songId) {
@@ -2037,9 +2123,10 @@ __webpack_require__.r(__webpack_exports__);
 var referenceHandler = function referenceHandler(reference) {
   // debugger
   if (!reference.href) {
-    return "[".concat(reference.children[0].props.value, "]");
+    return '[' + reference.children[0].props.value + ']';
   }
 
+  debugger;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: reference.$ref
   }, reference.children);
@@ -2114,6 +2201,34 @@ var Protected = function Protected(_ref2) {
 
 var AuthRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP)(Auth));
 var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP)(Protected));
+
+/***/ }),
+
+/***/ "./frontend/util/selection_util.js":
+/*!*****************************************!*\
+  !*** ./frontend/util/selection_util.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function (selection) {
+  return {
+    line_start: selection.anchorNode.previousElementSibling.dataset["sourcepos"].split(":")[0],
+    line_end: selection.focusNode.previousElementSibling.dataset["sourcepos"].split(":")[0],
+    start_pos: selection.anchorOffset,
+    end_pos: selection.focusOffset
+  };
+}); // export const getEndLine = (selection) => {
+//     return ;
+// };
+// export const getAnchorOffset = (selection) => {
+//     return ;
+// };
+// export const getFocusOffset = (selection) => {
+//     return ;
+// };
 
 /***/ }),
 

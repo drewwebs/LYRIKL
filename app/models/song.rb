@@ -1,9 +1,11 @@
 class Song < ApplicationRecord
     PATH = ['track', 'album', 'image', 3, '#text']
+    DEFAULT_IMAGE = 'https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg'
 
     validates :title, :lyrics, :views, :artist, presence:true
 
     after_initialize :set_views, :ensure_image_url
+    before_create :sub_brackets
 
     has_many :annotations
     
@@ -25,27 +27,15 @@ class Song < ApplicationRecord
         stringified
     end
 
-    def reformat_lyrics(line_start, line_end, start_offset, end_offet)
-        lines = self.lyrics.split("/n")
-        lines[line_start]
+    def sub_brackets
+        self.lyrics = self.lyrics.gsub("[", "&#91")
+        self.lyrics = self.lyrics.gsub("]", "&#93")
     end
 
     def self.set_image_url(artist, title)
         response = LastFM::Track.get_info(artist: artist, track: title)
 
-        return response.dig(*PATH) || 'https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg'
-        
-        # if response['track']
-        #     if response['track']['album']
-        #         if response['track']['album']['image']
-        #             if response['track']['album']['image'][3]
-        #                 return response['track']['album']['image'][3]['#text'] || "https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg"
-        #             else
-        #                 return 'https://bitcoinist.com/wp-content/uploads/2018/11/shutterstock_756307072-2560x1701.jpg'
-        #             end
-        #         end
-        #     end
-        # end
+        response.dig(*PATH) || DEFAULT_IMAGE
     end
 
     def ensure_image_url

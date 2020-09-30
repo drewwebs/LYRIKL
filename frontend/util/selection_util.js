@@ -1,16 +1,20 @@
-export const getStartLine = (selection) => {
-    return selection
-      .anchorNode.previousElementSibling.dataset["sourcepos"].split(":")[0];
+export default (selection) => {
+    return {
+        line_start: selection.anchorNode.previousElementSibling.dataset["sourcepos"].split(":")[0],
+        line_end: selection.focusNode.previousElementSibling.dataset["sourcepos"].split(":")[0],
+        start_pos: selection.anchorOffset,
+        end_pos: selection.focusOffset
+    };
 };
 
-export const getEndLine = (selection) => {
-    return selection.focusNode.previousElementSibling.dataset["sourcepos"].split(":")[0];
-};
+// export const getEndLine = (selection) => {
+//     return ;
+// };
 
-export const getAnchorOffset = (selection) => {
-    return selection.anchorOffset;
-};
+// export const getAnchorOffset = (selection) => {
+//     return ;
+// };
 
-export const getFocusOffset = (selection) => {
-    return selection.focusOffset;
-};
+// export const getFocusOffset = (selection) => {
+//     return ;
+// };

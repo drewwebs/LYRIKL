@@ -1,13 +1,17 @@
 import { createAnnotation } from '../../actions/annotation_actions';
-import { connect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import AnnotationForm from './create_annotation_form';
 
-const mSTP = (state) => ({
-    annotation: {
-        body: "",
-        author: state.session.currentUser
-    }
-});
+const mSTP = (state, ownProps) => {
+    return {
+        annotation: {
+            body: "",
+            author_id: state.session.currentUser.id,
+            song_id: ownProps.songId,
+            selection: ownProps.selection
+        }
+    };
+};
 
 const mDTP = dispatch => ({
     createAnnotation: (annotation) => dispatch(createAnnotation(annotation))
