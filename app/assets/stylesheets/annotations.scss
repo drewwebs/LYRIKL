@@ -1,3 +1,42 @@
 // Place all the styles related to the Annotations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.song-show-body-annotations {
+    padding-top: 90px;
+    width: 45%;
+    padding-right: 16px;
+
+    &-display {
+        border-left: 5px solid skyblue;
+        max-width: 390px;
+        padding-left: 10px;
+        
+        &-body {
+            padding-bottom: 5px;
+        }
+    }
+}
+
+.annotation-button {
+    height: 35px;
+    width: 258px;
+    border: 2px solid black;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 8px;
+    cursor: pointer;
+
+    &-green-text {
+        color: #0ecb27;
+        font-size: 12px;
+    }
+
+}
+
+.annotation-sign-in {
+    width: 216px;
+    text-decoration: none;
+}

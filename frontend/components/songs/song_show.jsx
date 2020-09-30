@@ -4,14 +4,17 @@ import {referenceHandler, linkCreator} from '../../util/markdown_util';
 import Annotation from '../annotations/annotation_show';
 import CreateAnnotation from '../annotations/create_annotation_container';
 import getSelectionInfo from '../../util/selection_util';
+import { Link, Redirect } from 'react-router-dom';
 
 export default class SongShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {annotation: "", yOffset: 0, createAnnotation: false, selection: ""};
+        this.state = {annotation: "", createAnnotation: false, annotationButton: false};
         this.displayAnnotation = this.displayAnnotation.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.onCancel = this.onCancel.bind(this);
+        this.yOffset = 0;
+        this.selection = "";
     }
 
     componentDidMount() {
@@ -23,7 +26,9 @@ export default class SongShow extends React.Component {
         if (window.getSelection().toString() && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
             const selection = window.getSelection();
             const selectionInfo = getSelectionInfo(selection);
-            this.setState( { createAnnotation: true, selection: selectionInfo } );
+            this.setState( { annotationButton: true, createAnnotation: false } );
+            this.selection = selectionInfo;
+            this.yOffset = e.pageY;
         }
     }
 
@@ -33,7 +38,7 @@ export default class SongShow extends React.Component {
 
     displayAnnotation(e) {
         if (e.target.nodeName === "A") {
-            this.setState({yOffset: e.pageY});
+            this.yOffset = e.pageY;
             this.props.fetchAnnotation(e.target.id)
             .then(data => this.setState({annotation: data.annotation}));
         } else {
@@ -42,6 +47,7 @@ export default class SongShow extends React.Component {
     }
 
     render() {
+        const loggedIn = !!window.currentUser;
         return this.props.song ? (
             <div className="song-show">
                 <div className="song-show-header-container-background" style={{ backgroundImage:`url(${this.props.song.image_url})` }}>
@@ -65,11 +71,31 @@ export default class SongShow extends React.Component {
                             sourcePos={true}
                             />
                         <section className="song-show-body-annotations">
-                            {this.state.annotation ? <Annotation annotation={this.state.annotation} yOffset={this.state.yOffset} /> : ""}
+                            {this.state.annotation ?  <Annotation 
+                                                        annotation={this.state.annotation} 
+                                                        yOffset={this.yOffset} 
+                                                      /> : ""}
+
+                            {this.state.annotationButton ?  (loggedIn ?  <div 
+                                                                            className="annotation-button" 
+                                                                            onClick={ () => this.setState({createAnnotation: true, annotationButton: false}) }
+                                                                            style={{position:`absolute`, top: `${this.yOffset}px`}}
+                                                                        > <span>Start a LYRIKL Annotation</span><span className="annotation-button-green-text">(+5 IQ)</span></div> 
+                                                                      : 
+                                                                        <Link 
+                                                                            className="annotation-button annotation-sign-in"
+                                                                            style={{ position: `absolute`, top: `${this.yOffset}px` }}
+                                                                            to="/signin">
+                                                                            Sign in to start annotating
+                                                                        </Link>) : ""
+                                                                        }
+
                             {this.state.createAnnotation ? <CreateAnnotation 
                                                                 onCancel={this.onCancel}
-                                                                selection={this.state.selection}
-                                                                songId={this.props.song.id} /> : ""}
+                                                                selection={this.selection}
+                                                                songId={this.props.song.id}
+                                                                yOffset={this.yOffset} 
+                                                            /> : ""}
                         </section>
                     </section>
                 </div>

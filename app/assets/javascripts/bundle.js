@@ -573,7 +573,12 @@ var CreateAnnotationForm = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Create an annotation:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          position: "absolute",
+          top: "".concat(this.props.yOffset, "px")
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Create an annotation:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         placeholder: "Drop some LYRIKL knowledge!",
@@ -1550,6 +1555,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _annotations_annotation_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../annotations/annotation_show */ "./frontend/components/annotations/annotation_show.jsx");
 /* harmony import */ var _annotations_create_annotation_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../annotations/create_annotation_container */ "./frontend/components/annotations/create_annotation_container.js");
 /* harmony import */ var _util_selection_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/selection_util */ "./frontend/util/selection_util.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1579,6 +1585,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var SongShow = /*#__PURE__*/function (_React$Component) {
   _inherits(SongShow, _React$Component);
 
@@ -1592,13 +1599,14 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       annotation: "",
-      yOffset: 0,
       createAnnotation: false,
-      selection: ""
+      annotationButton: false
     };
     _this.displayAnnotation = _this.displayAnnotation.bind(_assertThisInitialized(_this));
     _this.handleSelect = _this.handleSelect.bind(_assertThisInitialized(_this));
     _this.onCancel = _this.onCancel.bind(_assertThisInitialized(_this));
+    _this.yOffset = 0;
+    _this.selection = "";
     return _this;
   }
 
@@ -1615,9 +1623,11 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
         var selection = window.getSelection();
         var selectionInfo = Object(_util_selection_util__WEBPACK_IMPORTED_MODULE_5__["default"])(selection);
         this.setState({
-          createAnnotation: true,
-          selection: selectionInfo
+          annotationButton: true,
+          createAnnotation: false
         });
+        this.selection = selectionInfo;
+        this.yOffset = e.pageY;
       }
     }
   }, {
@@ -1633,9 +1643,7 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       if (e.target.nodeName === "A") {
-        this.setState({
-          yOffset: e.pageY
-        });
+        this.yOffset = e.pageY;
         this.props.fetchAnnotation(e.target.id).then(function (data) {
           return _this2.setState({
             annotation: data.annotation
@@ -1650,6 +1658,9 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
+      var loggedIn = !!window.currentUser;
       return this.props.song ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "song-show"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1689,11 +1700,33 @@ var SongShow = /*#__PURE__*/function (_React$Component) {
         className: "song-show-body-annotations"
       }, this.state.annotation ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_annotations_annotation_show__WEBPACK_IMPORTED_MODULE_3__["default"], {
         annotation: this.state.annotation,
-        yOffset: this.state.yOffset
-      }) : "", this.state.createAnnotation ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_annotations_create_annotation_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        yOffset: this.yOffset
+      }) : "", this.state.annotationButton ? loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "annotation-button",
+        onClick: function onClick() {
+          return _this3.setState({
+            createAnnotation: true,
+            annotationButton: false
+          });
+        },
+        style: {
+          position: "absolute",
+          top: "".concat(this.yOffset, "px")
+        }
+      }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Start a LYRIKL Annotation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "annotation-button-green-text"
+      }, "(+5 IQ)")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+        className: "annotation-button annotation-sign-in",
+        style: {
+          position: "absolute",
+          top: "".concat(this.yOffset, "px")
+        },
+        to: "/signin"
+      }, "Sign in to start annotating") : "", this.state.createAnnotation ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_annotations_create_annotation_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         onCancel: this.onCancel,
-        selection: this.state.selection,
-        songId: this.props.song.id
+        selection: this.selection,
+        songId: this.props.song.id,
+        yOffset: this.yOffset
       }) : "")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "song-show"
       }, "Loading Song...");
