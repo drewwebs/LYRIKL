@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 const Annotation = ({annotation, yOffset, currentUser, displayForm}) => {
     const isUser = currentUser.id === annotation.author.id.toString(); 
-    // debugger
     return (
         <div className="song-show-body-annotations-display" style={{position:`absolute`, top: `${yOffset}px`}}>
             <p className="song-show-body-annotations-display-body">

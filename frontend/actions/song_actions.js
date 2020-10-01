@@ -17,12 +17,6 @@ const receiveAllSongs = songs => ({
     songs
 });
 
-// const receiveAlbumArt = (song, track) => ({
-//     type: RECEIVE_ALBUM_ART,
-//     art: track.track.album.image[3]["#text"],
-//     song
-// });
-
 // Thunks
 export const fetchSong = songId => dispatch => (
     SongUtil.fetchSong(songId)
@@ -43,8 +37,3 @@ export const updateSong = song => dispatch => (
     SongUtil.updateSong(song)
     .then( song => dispatch(receiveSong(song)))
 );
-
-// export const fetchArtwork = song => dispatch => (
-//     SongUtil.fetchArtwork(song)
-//     .then( (track) => dispatch(receiveAlbumArt(song, track)))
-// );

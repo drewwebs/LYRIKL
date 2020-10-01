@@ -1,5 +1,4 @@
 export const createAnnotation = (annotation) => {
-    // debugger
     return $.ajax({
         method: 'POST',
         url: `api/annotations`,
@@ -15,7 +14,6 @@ export const fetchAnnotation = (annotationId, songId) => (
 );
 
 export const updateAnnotation = (annotation) => {
-    // debugger
     return $.ajax({
         method: 'PATCH',
         url: `api/annotations/${annotation.id}`,
