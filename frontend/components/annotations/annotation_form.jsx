@@ -49,11 +49,15 @@ import React from 'react';
 //         );}
 // }
 
-export default class CreateAnnotationForm extends React.Component {
+export default class AnnotationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.annotation;
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.clearPage();
   }
 
   handleSubmit() {

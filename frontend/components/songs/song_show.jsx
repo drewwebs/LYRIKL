@@ -3,19 +3,22 @@ import ReactMarkdown from 'react-markdown';
 import {referenceHandler, linkCreator} from '../../util/markdown_util';
 import Annotation from '../annotations/annotation_show';
 import CreateAnnotation from '../annotations/create_annotation_container';
+import EditAnnotation from '../annotations/edit_annotation_form_container';
 import getSelectionInfo from '../../util/selection_util';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class SongShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {annotation: "", createAnnotation: false, annotationButton: false};
+        this.state = {annotation: "", annotationForm: "", annotationButton: false};
         this.displayAnnotation = this.displayAnnotation.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleFinish = this.handleFinish.bind(this);
         this.yOffset = 0;
         this.selection = "";
         this.addAnnotation = this.addAnnotation.bind(this);
+        this.displayForm = this.displayForm.bind(this);
+        this.removeAnnotationFromPage = this.removeAnnotationFromPage.bind(this);
     }
 
     componentDidMount() {
@@ -27,14 +30,18 @@ export default class SongShow extends React.Component {
         if (window.getSelection().toString() && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
             const selection = window.getSelection();
             const selectionInfo = getSelectionInfo(selection);
-            this.setState( { annotationButton: true, createAnnotation: false } );
+            this.setState( { annotationButton: true, annotationForm: "" } );
             this.selection = selectionInfo;
             this.yOffset = e.pageY;
         }
     }
 
+    removeAnnotationFromPage() {
+        this.setState({annotation: ""});
+    }
+
     handleFinish() {
-        this.setState( { createAnnotation: false });
+        this.setState( { annotationForm: "" });
     }
 
     addAnnotation(annotation) {
@@ -45,10 +52,14 @@ export default class SongShow extends React.Component {
         if (e.target.nodeName === "A") {
             this.yOffset = e.pageY;
             this.props.fetchAnnotation(e.target.id)
-            .then(data => this.setState({annotation: data.annotation}));
+            .then(data => this.setState({annotation: data.annotation, annotationForm: ""}));
         } else {
-            this.setState({annotation: ""});
+            this.removeAnnotationFromPage();
         }
+    }
+
+    displayForm(type) {
+        this.setState({annotationForm: type, annotationButton: false}, console.log(this.state.annotation));
     }
 
     render() {
@@ -75,15 +86,16 @@ export default class SongShow extends React.Component {
                                         link: linkCreator}}
                             sourcePos={true}
                             />
-                        <section className="song-show-body-annotations">
+                        <section className="song-show-body-annotations" onClick={(e) => e.stopPropagation()}>
                             {this.state.annotation ?  <Annotation 
                                                         annotation={this.state.annotation} 
-                                                        yOffset={this.yOffset} 
+                                                        yOffset={this.yOffset}
+                                                        displayForm={this.displayForm} 
                                                       /> : ""}
 
                             {this.state.annotationButton ?  (loggedIn ?  <div 
                                                                             className="annotation-button" 
-                                                                            onClick={ () => this.setState({createAnnotation: true, annotationButton: false}) }
+                                                                            onClick={ () => this.displayForm("create") }
                                                                             style={{position:`absolute`, top: `${this.yOffset}px`}}
                                                                         > <span>Start a LYRIKL Annotation</span><span className="annotation-button-green-text">(+5 IQ)</span></div> 
                                                                       : 
@@ -95,13 +107,23 @@ export default class SongShow extends React.Component {
                                                                         </Link>) : ""
                                                                         }
 
-                            {this.state.createAnnotation ? <CreateAnnotation 
+                            {this.state.annotationForm ? (this.state.annotationForm === "create" ? 
+                                                            <CreateAnnotation 
                                                                 handleFinish={this.handleFinish}
                                                                 selection={this.selection}
                                                                 songId={this.props.song.id}
                                                                 yOffset={this.yOffset} 
                                                                 addAnnotation={this.addAnnotation}
-                                                            /> : ""}
+                                                                clearPage={this.removeAnnotationFromPage}
+                                                            /> : 
+                                                            <EditAnnotation
+                                                                handleFinish={this.handleFinish}
+                                                                yOffset={this.yOffset}
+                                                                addAnnotation={this.addAnnotation}
+                                                                annotation={this.state.annotation}
+                                                                clearPage={this.removeAnnotationFromPage}
+                                                            />
+                                                            ) : ""}
                         </section>
                     </section>
                 </div>

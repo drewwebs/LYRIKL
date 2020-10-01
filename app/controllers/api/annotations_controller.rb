@@ -9,7 +9,7 @@ class Api::AnnotationsController < ApplicationController
             @annotation.reformat_lyrics(line_start.to_i, line_end.to_i, start_pos.to_i, end_pos.to_i)
             render :show
         else
-            render json: @annotation, status: :unprocessable_entity
+            render json: @annotation.errors.full_messages, status: :unprocessable_entity
         end
 
     end
@@ -20,7 +20,15 @@ class Api::AnnotationsController < ApplicationController
     end
 
     def update
-
+        
+        @annotation = Annotation.find(params[:id])
+        @annotation.body = annotation_params[:body]
+        if @annotation.save
+            render :show
+        else
+            render json: @annotation.errors.full_messages, status: :unprocessable_entity
+        end
+        
     end
 
     private

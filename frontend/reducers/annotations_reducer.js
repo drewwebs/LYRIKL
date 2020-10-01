@@ -4,7 +4,7 @@ import {
 } from '../actions/annotation_actions';
 
 export default (state={}, action) => {
-    Object.freeze(state)
+    Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ANNOTATION:
             return Object.assign({}, state, {[action.annotation.id]: action.annotation });
