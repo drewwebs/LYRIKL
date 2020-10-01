@@ -30,7 +30,6 @@ export default class SongShow extends React.Component {
             this.setState( { annotationButton: true, createAnnotation: false } );
             this.selection = selectionInfo;
             this.yOffset = e.pageY;
-            debugger
         }
     }
 

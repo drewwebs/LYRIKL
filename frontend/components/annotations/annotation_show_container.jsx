@@ -5,9 +5,7 @@ import { fetchSong } from '../../actions/song_actions';
 import Annotation from './annotation_show';
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return {annotation: state.entities.annotations[ownProps.match.params.annotationId]};
-            // song: state.entities.songs[state.entities.annotations[ownProps.match.params.annotationId].song_id]};
 };
 
 const mDTP = (dispatch, ownProps) => ({
