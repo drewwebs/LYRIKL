@@ -21,7 +21,7 @@ export const updateAnnotation = (annotation) => {
     });
 };
 
-export const deleteAnnotation = (annotationId, songId) => (
+export const deleteAnnotation = (annotationId) => (
     $.ajax({
         method: 'DELETE',
         url: `api/annotations/${annotationId}`

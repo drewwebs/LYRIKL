@@ -91,6 +91,7 @@ export default class SongShow extends React.Component {
                                                         annotation={this.state.annotation} 
                                                         yOffset={this.yOffset}
                                                         displayForm={this.displayForm} 
+                                                        clearPage={this.removeAnnotationFromPage}
                                                       /> : ""}
 
                             {this.state.annotationButton ?  (loggedIn ?  <div 

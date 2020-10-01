@@ -7,20 +7,25 @@ class Annotation < ApplicationRecord
     belongs_to :song
 
 
-    def reformat_lyrics(line_start, line_end, start_offset, end_offset)
+    def reformat_lyrics
         song = Song.find(self.song_id) 
         lines = song.lyrics.split("  \n")
-        lines[line_end].insert(end_offset, "](#{self.id.to_s})")
-        lines[line_start].insert(start_offset, "[")
+        lines[self.line_end].insert(self.end_offset, "](#{self.id.to_s})")
+        lines[self.line_start].insert(self.start_offset, "[")
         song.lyrics = lines.join("  \n")
         song.save!
     end
 
-    def undo_reformat(line_state, line_end)
+    def undo_reformat
         song = Song.find(self.song_id) 
         lines = song.lyrics.split("  \n")
-        lines[line_end].split("[").join("")
-        lines[line_start].split("](#{self.id.to_s}[")
+        lines[self.line_start][self.start_offset..-1].each_char.with_index do | char, idx |
+            if lines[self.line_end][idx] == "["
+                lines[self.line_end][idx] = ""
+                break
+            end
+        end
+        lines[self.line_end] = lines[self.line_end].split("](#{self.id.to_s})").join("")
         song.lyrics = lines.join("  \n")
         song.save!
     end

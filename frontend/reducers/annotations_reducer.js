@@ -9,7 +9,7 @@ export default (state={}, action) => {
         case RECEIVE_ANNOTATION:
             return Object.assign({}, state, {[action.annotation.id]: action.annotation });
         case DELETE_ANNOTATION:
-            newState = Object.assign({}, state);
+            const newState = Object.assign({}, state);
             delete newState[action.annotationId];
             return newState;
         default:

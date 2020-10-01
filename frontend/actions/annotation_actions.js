@@ -20,7 +20,7 @@ export const fetchAnnotation = (annotationId) => dispatch => (
 
 export const deleteAnnotation = (annotationId) => dispatch => (
     APIUtil.deleteAnnotation(annotationId)
-        .then(() => dispatch(removeAnnotation(annotation)))
+        .then(() => dispatch(removeAnnotation(annotationId)))
 );
 
 export const updateAnnotation = (annotation) => dispatch => (
