@@ -5,12 +5,7 @@ import AnnotationForm from './annotation_form';
 
 const mSTP = (state, ownProps) => {
     return {
-        annotation: {
-            body: "",
-            author_id: state.session.currentUser.id,
-            song_id: ownProps.songId,
-            selection: ownProps.selection
-        }
+        annotation: ownProps.annotation
     };
 };
 
