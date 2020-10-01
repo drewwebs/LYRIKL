@@ -5,7 +5,7 @@ import { fetchSong } from '../../actions/song_actions';
 
 const Annotation = ({annotation, yOffset, currentUser, displayForm, deleteAnnotation, fetchSong, clearPage}) => {
 
-    const isUser = currentUser && currentUser.id === annotation.author.id.toString(); 
+    const isUser = currentUser && (currentUser.id === annotation.author.id.toString() || currentUser.id === annotation.author.id); 
     return (
         <div className="song-show-body-annotations-display" style={{position:`absolute`, top: `${yOffset}px`}}>
             <p className="song-show-body-annotations-display-body">

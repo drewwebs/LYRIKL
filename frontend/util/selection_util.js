@@ -14,15 +14,3 @@ export default (selection) => {
         end_pos: selection.focusOffset
     };
 };
-
-// export const getEndLine = (selection) => {
-//     return ;
-// };
-
-// export const getAnchorOffset = (selection) => {
-//     return ;
-// };
-
-// export const getFocusOffset = (selection) => {
-//     return ;
-// };

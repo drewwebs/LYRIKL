@@ -28,7 +28,6 @@ export default class SongShow extends React.Component {
 
     handleSelect(e) {
         if (window.getSelection().toString() && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
-            debugger
             const selection = window.getSelection();
             const selectionInfo = getSelectionInfo(selection);
             this.setState( { annotationButton: true, annotationForm: "" } );

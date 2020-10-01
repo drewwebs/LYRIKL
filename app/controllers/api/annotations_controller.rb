@@ -4,7 +4,7 @@ class Api::AnnotationsController < ApplicationController
     def create
         @annotation = Annotation.new(annotation_params)
         @annotation.line_start, @annotation.line_end, @annotation.start_offset, @annotation.end_offset = params[:annotation][:selection][:line_start].to_i, params[:annotation][:selection][:line_end].to_i, params[:annotation][:selection][:start_pos].to_i, params[:annotation][:selection][:end_pos].to_i
-
+        
         if @annotation.save
             @annotation.reformat_lyrics
             render :show
