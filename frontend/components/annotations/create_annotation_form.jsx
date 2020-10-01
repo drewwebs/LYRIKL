@@ -8,7 +8,14 @@ export default class CreateAnnotationForm extends React.Component {
     }
 
     handleSubmit() {
-        this.props.createAnnotation(this.state);
+        this.props.createAnnotation(this.state)
+        .then(data => this.updateAndAdd(data.annotation));
+    }
+
+    updateAndAdd(annotation) {
+      this.props.addAnnotation(annotation);
+      this.props.fetchSong(annotation.song_id);
+      this.props.handleFinish();
     }
 
     handleChange() {
@@ -34,7 +41,7 @@ export default class CreateAnnotationForm extends React.Component {
                 <button className="annotation-form-submit-button">Save (+5 IQ)</button>
                 <div
                   className="annotation-form-cancel-button"
-                  onClick={() => this.props.onCancel()}
+                  onClick={() => this.props.handleFinish()}
                 >Cancel</div>
 
               </div>

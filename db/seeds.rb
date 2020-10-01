@@ -399,7 +399,7 @@ C'est là où je l'ai aperçue, seule, prête à entamer ses 17 ans",
     {
         title: "Redbone", 
         artist: "Childish Gambino", 
-        lyrics: "
+        lyrics: "  
 [Verse 1]  
 Daylight  
 I wake up feeling like you won't play right  

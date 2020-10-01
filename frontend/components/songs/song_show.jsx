@@ -12,9 +12,10 @@ export default class SongShow extends React.Component {
         this.state = {annotation: "", createAnnotation: false, annotationButton: false};
         this.displayAnnotation = this.displayAnnotation.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
-        this.onCancel = this.onCancel.bind(this);
+        this.handleFinish = this.handleFinish.bind(this);
         this.yOffset = 0;
         this.selection = "";
+        this.addAnnotation = this.addAnnotation.bind(this);
     }
 
     componentDidMount() {
@@ -29,11 +30,16 @@ export default class SongShow extends React.Component {
             this.setState( { annotationButton: true, createAnnotation: false } );
             this.selection = selectionInfo;
             this.yOffset = e.pageY;
+            debugger
         }
     }
 
-    onCancel() {
+    handleFinish() {
         this.setState( { createAnnotation: false });
+    }
+
+    addAnnotation(annotation) {
+        this.setState({annotation});
     }
 
     displayAnnotation(e) {
@@ -85,16 +91,17 @@ export default class SongShow extends React.Component {
                                                                         <Link 
                                                                             className="annotation-button annotation-sign-in"
                                                                             style={{ position: `absolute`, top: `${this.yOffset}px` }}
-                                                                            to="/signin">
+                                                                            to="/login">
                                                                             Sign in to start annotating
                                                                         </Link>) : ""
                                                                         }
 
                             {this.state.createAnnotation ? <CreateAnnotation 
-                                                                onCancel={this.onCancel}
+                                                                handleFinish={this.handleFinish}
                                                                 selection={this.selection}
                                                                 songId={this.props.song.id}
                                                                 yOffset={this.yOffset} 
+                                                                addAnnotation={this.addAnnotation}
                                                             /> : ""}
                         </section>
                     </section>
