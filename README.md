@@ -1,24 +1,27 @@
+![LYRIKL header](https://lyrikl.herokuapp.com/assets/logo-430431a0a8eee7d0d5b22f595b845de25c352a01b7aeed234ee7094f528473b6.svg)
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://lyrikl.herokuapp.com/
 
-Things you may want to cover:
+***LYRIKL*** is a clone of Rap Genius developed by Drew Webster.  The site allows users to view songs, and add annotations to lyrics that provide insight into what certain lines may mean.  Song lyrics are rendered using [React Markdown](https://github.com/rexxars/react-markdown) using custom link renderers.
 
-* Ruby version
+# Annotations
 
-* System dependencies
+**Adding an annotation** to a song is simple.  Simply highlight the lyrics that you'd like to annotate, and type your insights into the box provided!  You can annothing from a single letter up to an entire verse. ***LYRIKL*** records your selection and uses recursion and custom link renderers to apply your annotation to the correct set of lyrics, and render it as a markdown link.  Your annotation will then be viewable by anybody else accessing the site.
 
-* Configuration
+*note: Annotation headers of verses is not supported, and will throw a 422 error*
 
-* Database creation
+**Editing or deleting an annotation** If you select an annotation that you wrote, you will be granted a button to either delete or edit your annotation.
 
-* Database initialization
+***LYRIKL*** uses the Last.FM API to fetch the artwork for each song uploaded upon the song's creation.
 
-* How to run the test suite
+# Upcoming features
+### Comments
+  Users will be able to comment on songs, annotations, or even other comments.
+### Likes
+  Users will be able to like songs, annotations, or comments
 
-* Services (job queues, cache servers, search engines, etc.)
+# Author
+Drew Webster || [github](https://github.com/drewwebs/) || [LinkedIn](https://www.linkedin.com/in/drew-webster-4261a934/) 
 
-* Deployment instructions
-
-* ...
