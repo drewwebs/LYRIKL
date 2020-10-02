@@ -11,18 +11,6 @@ class Annotation < ApplicationRecord
         song = Song.find(self.song_id) 
         lines = song.lyrics.split("  \n")
 
-        
-        if lines[self.line_start][0] ==  "&" && lines[self.line_start][1] == "#"
-            self.body = "You can't annotate a verse header"
-            self.save
-            return nil
-        elsif lines[self.line_end][0] ==  "&" && lines[self.line_end][1] == "#"
-            self.body = "You can't annotate a verse header"
-            self.save
-            return nil
-        end
-        
-
         # lines[self.line_start][0..self.start_offset].each_char.with_index do |char,idx|
         #     
         #     if char == "["

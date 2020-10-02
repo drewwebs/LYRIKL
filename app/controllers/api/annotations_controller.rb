@@ -5,7 +5,10 @@ class Api::AnnotationsController < ApplicationController
         @annotation = Annotation.new(annotation_params)
         @annotation.line_start, @annotation.line_end, @annotation.start_offset, @annotation.end_offset = params[:annotation][:selection][:line_start].to_i, params[:annotation][:selection][:line_end].to_i, params[:annotation][:selection][:start_pos].to_i, params[:annotation][:selection][:end_pos].to_i
         
-        if @annotation.save
+        if validate_lines(@annotation) == nil
+            @annotation.errors = @annotation.body
+            render json: @annotation.errors, status: :unprocessable_entity
+        elsif @annotation.save
             @annotation.reformat_lyrics
             render :show
         else
@@ -38,6 +41,30 @@ class Api::AnnotationsController < ApplicationController
     private
     def annotation_params
         params.require(:annotation).permit(:body, :author_id, :song_id)
+    end
+
+    def validate_lines(annotation)
+        song = Song.find(annotation.song_id) 
+        lines = song.lyrics.split("  \n")
+
+        
+        if lines[annotation.line_start][0] ==  "&" && lines[annotation.line_start][1] == "#"
+            annotation.body = "You can't annotate a verse header"
+            annotation.save
+            return nil
+        elsif lines[annotation.line_end][0] ==  "&" && lines[annotation.line_end][1] == "#"
+            annotation.body = "You can't annotate a verse header"
+            annotation.save
+            return nil
+        end
+        
+        lines[annotation.line_start..annotation.line_end].each do |line|
+            if line.split("").include?("[") || line.split("").include?("]")
+                annotation.body = "Each line can only have one annotation"
+                annotation.save
+                return nil
+            end
+        end
     end
 
 end

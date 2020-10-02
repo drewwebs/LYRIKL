@@ -12,16 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     let preloadedState = undefined;
 
-
-    // $.ajax({
-    //   method: "GET",
-    //   url: "http://ws.audioscrobbler.com/2.0/",
-    //   data: `method=track.getInfo&artist=Childish+Gambino&track=Redbone&api_key=${API_KEY}&format=json`,
-    //   headers: { "user-agent": USER_AGENT },
-    // //   dataType: "jsonp",
-    // }).then(song => console.log(song));
-
-
     if (window.currentUser) {
         preloadedState = {
             session: {
