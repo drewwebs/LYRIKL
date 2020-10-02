@@ -8,6 +8,9 @@ class Song < ApplicationRecord
     before_create :sub_brackets
 
     has_many :annotations
+
+    has_many :comments,
+        as: :commentable
     
     def self.stringify_views(views)
         stringified = ""
