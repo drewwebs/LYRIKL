@@ -12,17 +12,13 @@ class Annotation < ApplicationRecord
         lines = song.lyrics.split("  \n")
 
         # lines[self.line_start][0..self.start_offset].each_char.with_index do |char,idx|
-        #     
+            
         #     if char == "["
         #         self.start_offset += 1
-        #     elsif char == "]"
-        #         i = 2
-        #         lines[self.line_start][idx+2..self.start_offset].each_char do |char2|
+        #         lines[self.line_start][idx+2..self.start_offset].each_char.with_index do |char2, idx2|
         #             if char2 == ")"
-        #                 self.start_offset += i + 1
+        #                 self.start_offset += 
         #                 break
-        #             else
-        #                 i += 1
         #             end
         #         end
         #     end
@@ -53,12 +49,30 @@ class Annotation < ApplicationRecord
     def undo_reformat
         song = Song.find(self.song_id) 
         lines = song.lyrics.split("  \n")
-        lines[self.line_start][self.start_offset..-1].each_char.with_index do | char, idx |
-            if lines[self.line_end][idx] == "["
-                lines[self.line_end][idx] = ""
-                break
+        if self.line_start == self.line_end
+            i = lines[self.line_start].index("](#{self.id.to_s})")
+            found = false
+            until found == true
+                if lines[self.line_start][i] == "["
+                    lines[self.line_start][i] = ""
+                    found = true
+                else
+                    i-=1
+                end
+            end
+        else
+            i = self.line_start.length - 1
+            found = false
+            until found == true
+                if lines[self.line_start][i] == "["
+                    lines[self.line_start][i] = ""
+                    found = true
+                else
+                    i-=1
+                end
             end
         end
+
         lines[self.line_end] = lines[self.line_end].split("](#{self.id.to_s})").join("")
         song.lyrics = lines.join("  \n")
         song.save!

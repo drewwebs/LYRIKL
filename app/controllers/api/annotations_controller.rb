@@ -6,8 +6,7 @@ class Api::AnnotationsController < ApplicationController
         @annotation.line_start, @annotation.line_end, @annotation.start_offset, @annotation.end_offset = params[:annotation][:selection][:line_start].to_i, params[:annotation][:selection][:line_end].to_i, params[:annotation][:selection][:start_pos].to_i, params[:annotation][:selection][:end_pos].to_i
         
         if validate_lines(@annotation) == nil
-            @annotation.errors = @annotation.body
-            render json: @annotation.errors, status: :unprocessable_entity
+            render json: ["You can't annotate that line"], status: :unprocessable_entity
         elsif @annotation.save
             @annotation.reformat_lyrics
             render :show
@@ -58,13 +57,14 @@ class Api::AnnotationsController < ApplicationController
             return nil
         end
         
-        lines[annotation.line_start..annotation.line_end].each do |line|
-            if line.split("").include?("[") || line.split("").include?("]")
-                annotation.body = "Each line can only have one annotation"
-                annotation.save
-                return nil
-            end
-        end
+        return true
+        # lines[annotation.line_start..annotation.line_end].each do |line|
+        #     if line.split("").include?("[") || line.split("").include?("]")
+        #         annotation.body = "Each line can only have one annotation"
+        #         annotation.save
+        #         return nil
+        #     end
+        # end
     end
 
 end
