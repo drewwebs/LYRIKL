@@ -12,7 +12,9 @@ https://lyrikl.herokuapp.com/
 
 *note: Annotation headers of verses is not supported, and will throw a 422 error*
 
-**Editing or deleting an annotation** If you select an annotation that you wrote, you will be granted a button to either delete or edit your annotation.
+**Editing or deleting an annotation**: If you select an annotation that you wrote, you will be granted a button to either delete or edit your annotation.
+
+![Annotation demo](https://i.imgur.com/kh2a2gc.gif)
 
 ***LYRIKL*** uses the Last.FM API to fetch the artwork for each song uploaded upon the song's creation.
 
