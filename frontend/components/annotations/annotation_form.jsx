@@ -42,7 +42,7 @@ export default class AnnotationForm extends React.Component {
         >{this.state.body}</textarea>
 
         <div className="annotation-form-buttons">
-          <button className="annotation-form-submit-button">Save (+5 IQ)</button>
+          <button className="annotation-form-submit-button" onClick={() => e.preventDefault()}>Save (+5 IQ)</button>
           <div
             className="annotation-form-cancel-button"
             onClick={() => this.props.handleFinish()}
