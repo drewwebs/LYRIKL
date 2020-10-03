@@ -8,7 +8,11 @@ const getLineNumber = (node) => {
 
 const getOffset = (originalOffset, node) => {
     if (node.previousElementSibling.nodeName !== "A") {
-        return originalOffset;
+        if (node.nodeName === "A" && node.previousSibling.nodeName === "#text") {
+            return originalOffset + node.previousSibling.length;
+        } else {
+            return originalOffset;
+        }
     } else {
         let newOffset = 0;
         if (node.nodeName === "A" && node.previousSibling.nodeName === "#text") {
