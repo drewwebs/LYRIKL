@@ -12,8 +12,8 @@ import Annotation from './annotations/annotation_show_container';
 
 const App = () => {
     return (
-        <div>
-            <Nav />
+        <div className="app-container">
+            <Nav className="nav-container" />
             <Switch>
                 <Route exact path="/" component={Splash} />
                 <Route path="/featured" component={Featured} />
