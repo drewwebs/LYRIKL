@@ -1,0 +1,59 @@
+.comments-section {
+    background: rgba(204,204,204,.2);
+    padding: 12px;
+    margin: 16px 0px;
+
+    &-header {
+        margin: 8px 0px;
+    }
+
+    &-submit-button {
+        border: 2px solid #0ecb27;
+        color: #0ecb27;
+        padding: 4px 8px;
+        margin: 8px 0px;
+        background: white;
+        height: 34px;
+        width: 70px;
+        cursor: pointer;
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+    }
+    
+    
+    &-input-box {
+        height: 35px;
+        padding: 4px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        letter-spacing: 1px;
+        &::placeholder {
+            color: grey;
+        }
+        
+        // &:focus + .comments-section-submit-button {
+        //     display: block;
+        // }
+    }
+}
+
+.comment-show {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    border-top: 1px solid #99a7ee;
+
+    &-author {
+        margin: 16px 0px;
+        font-weight: 500;
+    }
+
+    &-body {
+        margin-bottom: 16px;
+    }
+}
+
