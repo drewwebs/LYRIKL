@@ -2,7 +2,8 @@ import React from 'react';
 
 export default ({ comment, deleteComment }) => (
     <div className="comment-show">
-        <h1>{comment.body}</h1>
+        <p>{comment.body}</p>
+        <p>-by {comment.author.username}</p>
     </div>
 )
 

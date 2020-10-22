@@ -1,1 +1,0 @@
-json.extract! @comment, :id, :body, :song_id, :commentable_id

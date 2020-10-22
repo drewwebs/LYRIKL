@@ -21,7 +21,7 @@ class Annotation extends React.Component {
                 <footer className="news-footer">
                     <div className="news-footer-author">Annotation by {this.props.annotation.author.username}</div>
                 </footer>
-                {this.props.annotation.comments.map( comment => 
+                {Object.values(this.props.annotation.comments).map( comment => 
                     <Comment comment={comment} deleteComment={this.props.deleteComment} />)}
                 {isUser ? <div className="annotation-edit-button-container">
                     <button className="annotation-edit-button" onClick={ () => displayForm("edit")}>Edit</button> 
