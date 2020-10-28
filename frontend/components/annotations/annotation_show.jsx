@@ -7,7 +7,7 @@ const Annotation = ({annotation, yOffset, currentUser, displayForm, deleteAnnota
 
     const isUser = currentUser && (currentUser.id === annotation.author.id.toString() || currentUser.id === annotation.author.id); 
     return (
-        <div className="song-show-body-annotations-display" style={{position:`absolute`, top: `${yOffset}px`}}>
+        <div onClick={(e) => e.stopPropagation()} className="song-show-body-annotations-display" style={{position:`absolute`, top: `${yOffset}px`}}>
             <p className="song-show-body-annotations-display-body">
                 {annotation.body}
             </p>

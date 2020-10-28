@@ -87,7 +87,7 @@ export default class SongShow extends React.Component {
                                         link: linkCreator}}
                             sourcePos={true}
                             />
-                        <section className="song-show-body-annotations" onClick={(e) => e.stopPropagation()}>
+                        <section className="song-show-body-annotations">
                             {this.state.annotation ?  <Annotation 
                                                         annotation={this.state.annotation} 
                                                         yOffset={this.yOffset}
