@@ -21,7 +21,7 @@ class Annotation extends React.Component {
                 <footer className="news-footer">
                     <div className="news-footer-author">Annotation by {this.props.annotation.author.username}</div>
                 </footer>
-                <CommentIndex annotation={this.props.annotation} comments={this.props.annotation.comments} />
+                <CommentIndex handleFinish={this.props.handleFinish} annotation={this.props.annotation} comments={this.props.annotation.comments} />
                 {isUser ? <div className="annotation-edit-button-container">
                     <button className="annotation-edit-button" onClick={ () => displayForm("edit")}>Edit</button> 
                     <button className="annotation-delete-button" onClick={ () => this.props.deleteAnnotation().then(() => this.props.fetchSong()).then( () => this.props.clearPage())}>Delete</button>

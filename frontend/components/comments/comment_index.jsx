@@ -7,10 +7,12 @@ export default class CommentIndex extends React.Component {
         this.state = { comment: {body: ""}, showButton: false };
         this.comments = props.comments ? this.comments = Object.values(props.comments) : this.comments = [];
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleSubmit() {
-        this.props.createComment(this.state.comment);
+        this.props.createComment(this.state.comment)
+        .then(() => this.props.fetchSong(annotation.song_id));
     }
 
     handleChange() {
@@ -25,19 +27,23 @@ export default class CommentIndex extends React.Component {
     render() {
         
         return (
-            <ul className="comments-section">
-                <form className="comments-section-form">
-                    <h2 className="comments-section-header">Help us improve this annotation</h2>
-                    <input onClick={() => this.state.showButton ? this.setState({ showButton: false }) : this.setState({ showButton: true })}
-                        className="comments-section-input-box" type="text" placeholder="Suggest an improvement" onChange={this.handleChange()} />
-                    {this.state.showButton ? 
-                        <button onClick={this.handleSubmit} className="comments-section-submit-button">Submit</button>
-                        :
-                        <></>
+            this.props.currentUser || this.comments.length > 1 ?
+                <ul className="comments-section">
+                    {this.props.currentUser ?
+                        <form className="comments-section-form">
+                            <h2 className="comments-section-header">Help us improve this annotation</h2>
+                            <input onClick={() => this.state.showButton ? this.setState({ showButton: false }) : this.setState({ showButton: true })}
+                                className="comments-section-input-box" type="text" placeholder="Suggest an improvement" onChange={this.handleChange()} />
+                            {this.state.showButton ? 
+                                <button onClick={this.handleSubmit} className="comments-section-submit-button">Submit</button>
+                                :
+                                <></>
+                            }
+                        </form> : <></>
                     }
-                </form>
-                {this.comments.map(comment => <Comment key={comment.id} comment={comment} deleteComment={this.props.deleteComment} />)}
-            </ul>
+                    {this.comments.map(comment => <Comment key={comment.id} comment={comment} deleteComment={this.props.deleteComment} />)}
+                </ul>
+            : <></> 
         )
     }
 }

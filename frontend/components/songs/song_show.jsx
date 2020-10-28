@@ -92,6 +92,7 @@ export default class SongShow extends React.Component {
                                                         yOffset={this.yOffset}
                                                         displayForm={this.displayForm} 
                                                         clearPage={this.removeAnnotationFromPage}
+                                                        addAnnotation={this.addAnnotation}
                                                         key={this.state.annotation.id}
                                                       /> : ""}
 
