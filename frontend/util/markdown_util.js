@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import SongShow from '../components/songs/song_show';
+
 export const referenceHandler = (reference) => {
     if (!reference.href) {
         return '[' + reference.children[0].props.value + ']';
@@ -12,8 +14,8 @@ export const linkCreator = (reference) => {
     reference.children.forEach( child => child.type === "br" ? parsed.push("<br />") : parsed.push(child.props.value) )
     
     return (
-      <Link id={`${reference.href}`} to="#"> 
+      <button id={`${reference.href}`}> 
         {reference.children.map( child => child.type === "br" ? <br /> : child.props.value )}
-      </Link>
+      </button>
     );
 }

@@ -49,7 +49,8 @@ export default class SongShow extends React.Component {
     }
 
     displayAnnotation(e) {
-        if (e.target.nodeName === "A") {
+        
+        if (e.target.nodeName === "BUTTON") {
             this.yOffset = e.pageY;
             this.props.fetchAnnotation(e.target.id)
             .then(data => this.setState({annotation: data.annotation, annotationForm: ""}));
