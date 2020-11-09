@@ -34,7 +34,7 @@ export default class CommentIndex extends React.Component {
         
         return (
             this.props.currentUser || this.state.comments.length > 1 ?
-                <ul className="comments-section">
+                <ul onClick={e => e.stopPropagation()} className="comments-section">
                     {this.props.currentUser ?
                         <form 
                             className="comments-section-form">
