@@ -6,7 +6,7 @@ export const createAnnotation = (annotation) => {
     });
 };
 
-export const fetchAnnotation = (annotationId, songId) => (
+export const fetchAnnotation = (annotationId) => (
     $.ajax({
         method: 'GET',
         url: `api/annotations/${annotationId}`

@@ -60,7 +60,7 @@ export default class SongShow extends React.Component {
     }
 
     displayForm(type) {
-        this.setState({annotationForm: type, annotationButton: false}, console.log(this.state.annotation));
+        this.setState({annotationForm: type, annotationButton: false});
     }
 
     render() {
@@ -93,6 +93,8 @@ export default class SongShow extends React.Component {
                                                         yOffset={this.yOffset}
                                                         displayForm={this.displayForm} 
                                                         clearPage={this.removeAnnotationFromPage}
+                                                        addAnnotation={this.addAnnotation}
+                                                        key={this.state.annotation.id}
                                                       /> : ""}
 
                             {this.state.annotationButton ?  (loggedIn ?  <div 

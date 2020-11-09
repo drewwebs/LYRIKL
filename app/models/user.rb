@@ -22,6 +22,9 @@ class User < ApplicationRecord
     has_many :annotations,
         foreign_key: :author_id
 
+    has_many :comments,
+        foreign_key: :author_id
+
     def self.find_by_credentials(name,password)
         user = User.find_by(email: name) || User.find_by(username: name)
         return user if user && user.is_password?(password)

@@ -6,6 +6,8 @@ class Annotation < ApplicationRecord
 
     belongs_to :song
 
+    has_many :comments,
+        as: :commentable
 
     def reformat_lyrics
         song = Song.find(self.song_id) 
