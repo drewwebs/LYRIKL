@@ -8,7 +8,10 @@ import CommentIndex from '../comments/comment_index_container';
 class Annotation extends React.Component {
     constructor(props) {
         super(props);
+        this.state = props.annotation;
     }
+
+    
 
     render() {
         const isUser = this.props.currentUser && (this.props.currentUser.id === this.props.annotation.author.id.toString() || this.props.currentUser.id === this.props.annotation.author.id); 
@@ -21,7 +24,7 @@ class Annotation extends React.Component {
                 <footer className="news-footer">
                     <div className="news-footer-author">Annotation by {this.props.annotation.author.username}</div>
                 </footer>
-                <CommentIndex handleFinish={this.props.handleFinish} annotation={this.props.annotation} comments={this.props.annotation.comments} />
+                <CommentIndex handleFinish={this.props.handleFinish} annotation={this.props.annotation} comments={this.props.annotation.comments} addAnnotation={this.props.addAnnotation}/>
                 {isUser ? <div className="annotation-edit-button-container">
                     <button className="annotation-edit-button" onClick={ () => displayForm("edit")}>Edit</button> 
                     <button className="annotation-delete-button" onClick={ () => this.props.deleteAnnotation().then(() => this.props.fetchSong()).then( () => this.props.clearPage())}>Delete</button>
