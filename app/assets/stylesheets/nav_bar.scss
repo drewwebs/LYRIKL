@@ -50,34 +50,6 @@
     }
 }
 
-.search-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 220px;
-    height: 29px;
-    position: absolute;
-    left: 6px;
-    background-color: #f9f9f9;
-}
-
-.search-bar input {
-    width: 190px;
-    height: 23px;
-    border: none;
-    box-sizing: border-box;
-    border-radius: 0px;
-    background-color: #f9f9f9;
-    padding-left: 8px;
-    padding-right: 0px;
-    font-size: 16px;
-    color: #000000;
-    font-family: 'Ubuntu', sans-serif;
-    &:focus::placeholder {
-        color: grey;
-    }
-}
-
 .active-session-buttons {
     max-width: 35%; 
     

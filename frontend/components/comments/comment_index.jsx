@@ -9,7 +9,6 @@ export default class CommentIndex extends React.Component {
             newComment: {body: ""}, 
             showButton: false
         };
-        // this.comments = props.comments ? this.comments = Object.values(props.comments) : this.comments = [];
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
@@ -40,7 +39,6 @@ export default class CommentIndex extends React.Component {
                             className="comments-section-form">
                             <h2 className="comments-section-header">Help us improve this annotation</h2>
                             <input onFocus={() => this.setState({ showButton: true })}
-                                // onBlur={() => this.setState({ showButton: false })} 
                                 value={this.state.newComment.body}
                                 className="comments-section-input-box" type="text" placeholder="Suggest an improvement" onChange={this.handleChange()} />
                             {this.state.showButton ? 

@@ -14,8 +14,6 @@ end
   json.comments do 
     json.set! comment.id do
       json.partial! '/api/comments/comment', comment: comment
-      # json.extract! @annotation.comments, :ids, :body
-      # json.extract! comment.author, :id, :username
     end
   end
 end

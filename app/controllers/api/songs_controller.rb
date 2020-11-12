@@ -2,7 +2,6 @@ require 'net/http'
 
 class Api::SongsController < ApplicationController
     def index
-        # songs = filters ? Song.where(primary_tag: params[:filters]) : Song.all
         songs = Song.all
         @songs = songs.limit(10)
 

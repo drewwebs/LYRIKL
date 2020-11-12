@@ -10,7 +10,7 @@ export default (props) => (
             <p className="charts-song-artist">{props.song.artist}</p>
             <p className="charts-song-view-count">
                 <span className={props.song.fire ? "" : "hidden"}>
-                    <i className="fab fa-free-code-camp"></i>
+                    <i className="charts-fire fab fa-free-code-camp"></i>
                 </span>
                 {props.song.view_count}
             </p>

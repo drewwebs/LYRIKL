@@ -19,11 +19,11 @@ export default class Charts extends React.Component {
               <h1 className="charts-header">Charts</h1>
               <h2 className="charts-sub-header">Trending on LYRIKL</h2>
               {this.props.songs.map((song) => (
-                // const {id, title, artist, view_count, fire} = song
                 <SongIndexItem 
                     key={song.id}
                     song={song} />
               ))}
+              <button className="charts-button">Load More</button>
             </ul>
           </div>
         );

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Gravatar from 'react-gravatar';
-// import { ReactComponent as Logo } from '../../../app/assets/images/logo.svg'; 
+import Searchbar from './searchbar_container';
+
 
 export default class Nav extends React.Component {
     constructor(props) {
@@ -67,12 +68,7 @@ export default class Nav extends React.Component {
         return (
             <>
                 <header className="nav-bar">
-                    <form action="#" className="search-bar">
-                        <input placeholder="Search lyrics & more" />
-                        <div className="search-icon">
-                            <i className="fas fa-search" />
-                        </div>
-                    </form>
+                    <Searchbar />
                     <Link className="site-header" to="/"><img src={window.logoURL} alt="lyrikl" /></Link>
                     {this.display()}
                 </header>
