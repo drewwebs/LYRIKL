@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Gravatar from 'react-gravatar';
 // import { ReactComponent as Logo } from '../../../app/assets/images/logo.svg'; 
 
 export default class Nav extends React.Component {
@@ -36,17 +37,12 @@ export default class Nav extends React.Component {
 
     display() {
         const { isDropdownVisible } = this.state;
+        const currentUser = this.props.currentUser;
 
-        return !!this.props.currentUser ? (
+        return !!currentUser ? (
             <div className="active-session-buttons">
-                <a href="#"><i className="fas fa-pen-alt"></i><p className="active-session-button-label">Forums </p></a>
-                <a href="#"><i className="far fa-newspaper"></i><p className="active-session-button-label">Feed </p></a>
-                <a href="#"><i className="far fa-bell"></i><p className="active-session-button-label">Me </p></a>
-                <a href="#"><i className="far fa-envelope"></i><p className="active-session-button-label">Messages </p></a>
-                <a href="#"><i className="fas fa-brain" /> <p className="active-session-button-label">Earn IQ</p> </a>
                 <button className="account-button" onClick={this.toggleHidden} onBlur={this.toggleHide}>
-                    <i className="far fa-address-card"></i>
-                    <p className="active-session-button-label">139 IQ</p> 
+                    <p className="active-session-button-label"><Gravatar size={30} email={currentUser.email} className="profile-icon" /></p> 
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
                         <li className="account-dropdown-subtitle">Account</li>
                         <a href="#">View Profile</a>
