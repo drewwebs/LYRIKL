@@ -80,6 +80,8 @@
 
 .active-session-buttons {
     // width: 330px;
+    max-width: 35%; 
+    overflow: hidden;
     display: flex;
     font-size: 11px;
     height: 100%;
