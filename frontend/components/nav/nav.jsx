@@ -43,13 +43,12 @@ export default class Nav extends React.Component {
         return !!currentUser ? (
             <div className="active-session-buttons">
                 <button className="account-button" onClick={this.toggleHidden} onBlur={this.toggleHide}>
-                    <p className="active-session-button-label"><Gravatar size={30} email={currentUser.email} className="profile-icon" /></p> 
+                    <p className="active-session-button-label"><Gravatar d="mp" size={30} email="drewwebs@gmail.com" className="profile-icon" /></p> 
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
                         <li className="account-dropdown-subtitle">Account</li>
                         <a href="#">View Profile</a>
-                        <a href="#">Report a Problem</a>
+                        <a href="mailto:drewwebs@gmail.com">Report a Problem</a>
                         <li onClick={this.handleClick}>Sign Out</li>
-                        <a href="#">Firehose</a>
                     </ul>
                 </button>
             </div>
