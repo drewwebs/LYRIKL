@@ -75,13 +75,13 @@ export default class Nav extends React.Component {
                 <nav className="sub-nav-bar">
                     <Link to="/featured">Featured</Link>
                     <Link to="/charts">Charts</Link>
-                    <a href="#">Videos</a>
-                    <a href="#">Shop</a>
+                    <a href="https://github.com/drewwebs/LYRIKL">Github</a>
+                    <a href="https://genius.com/">Genius</a>
                     <div className="social-links">
-                        <a href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-instagram"></i></a>
-                        <a href="#"><i className="fab fa-youtube"></i></a>
+                        <a href="https://drewwebster.dev/"><i className="fas fa-globe"></i></a>
+                        <a href="https://github.com/drewwebs"><i className="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/drew-webster-4261a934/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://angel.co/u/drewwebs"><i class="fab fa-angellist"></i></a>
                     </div>
                 </nav>
             </>
