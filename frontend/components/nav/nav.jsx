@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Gravatar from 'react-gravatar';
 import Searchbar from './searchbar_container';
+import SparkMD5 from 'spark-md5';
 
 
 export default class Nav extends React.Component {
@@ -39,11 +40,12 @@ export default class Nav extends React.Component {
     display() {
         const { isDropdownVisible } = this.state;
         const currentUser = this.props.currentUser;
+        const userMD5 = SparkMD5.hash(currentUser.email);
 
         return !!currentUser ? (
             <div className="active-session-buttons">
                 <button className="account-button" onClick={this.toggleHidden} onBlur={this.toggleHide}>
-                    <p className="active-session-button-label"><Gravatar d="mp" size={30} email="drewwebs@gmail.com" className="profile-icon" /></p> 
+                    <p className="active-session-button-label"><Gravatar default="mp" size={30} md5={userMD5} className="profile-icon" /></p> 
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
                         <li className="account-dropdown-subtitle">Account</li>
                         <a href="#">View Profile</a>
