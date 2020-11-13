@@ -40,7 +40,7 @@ export default class Nav extends React.Component {
     display() {
         const { isDropdownVisible } = this.state;
         const currentUser = this.props.currentUser;
-        const userMD5 = SparkMD5.hash(currentUser.email);
+        const userMD5 = currentUser ? SparkMD5.hash(currentUser.email) : "";
 
         return !!currentUser ? (
             <div className="active-session-buttons">
