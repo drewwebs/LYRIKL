@@ -48,7 +48,7 @@ export default class CommentIndex extends React.Component {
                             }
                         </form> : <></>
                     }
-                    {this.state.comments.map(comment => <Comment key={comment.id} comment={comment} deleteComment={this.props.deleteComment} />)}
+                    {this.state.comments.map(comment => <Comment key={comment.id} comment={comment} deleteComment={this.props.deleteComment} currentUser={this.props.currentUser} />)}
                 </ul>
             : <></> 
         )

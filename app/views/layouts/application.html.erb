@@ -33,7 +33,7 @@
         "username": "<%= current_user.username %>",
         "email": "<%= current_user.email %>",
         "likes": <%= current_user.likes.pluck(:id, :likeable_id) %>
-        }
+      }
       </script>
     <% end %>
 

@@ -16,6 +16,7 @@ json.num_likes @annotation.likes.length
   json.comments do 
     json.set! comment.id do
       json.partial! '/api/comments/comment', comment: comment
+      json.num_likes comment.likes.length
     end
   end
 end

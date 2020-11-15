@@ -11,10 +11,6 @@ class Annotation extends React.Component {
         this.state = props.annotation;
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.annotation.numLikes !== prevProps.numLikes) this.props.fetchAnnotation();
-    }
-
     render() {
         const isUser = this.props.currentUser && (this.props.currentUser.id === this.props.annotation.author.id.toString() || this.props.currentUser.id === this.props.annotation.author.id); 
         
@@ -30,7 +26,7 @@ class Annotation extends React.Component {
                     <button className="annotation-edit-button" onClick={ () => this.props.displayForm("edit")}>Edit</button> 
                     <button className="annotation-delete-button" onClick={ () => this.props.deleteAnnotation().then(() => this.props.fetchSong()).then( () => this.props.clearPage())}>Delete</button>
                     </div>: <div></div>}
-                <LikeForm annotationId={this.props.annotation.id} numLikes={this.props.annotation.num_likes} />
+                {this.props.currentUser ? <LikeForm type={"Annotation"} likeableId={this.props.annotation.id} numLikes={this.props.annotation.num_likes} /> : ""}
                 <CommentIndex handleFinish={this.props.handleFinish} annotation={this.props.annotation} comments={this.props.annotation.comments} addAnnotation={this.props.addAnnotation}/>
             </div>
         )

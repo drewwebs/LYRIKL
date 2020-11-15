@@ -3,12 +3,12 @@ import { createLike, deleteLike } from '../../actions/like_actions';
 import { connect } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-const LikeForm = ({ createLike, deleteLike, numLikes, annotationId }) => {
+const LikeForm = ({ createLike, deleteLike, numLikes, likeableId, currentUser }) => {
     
     const previouslyLiked = () => {
         for (let i = 0; i < currentUser.likes.length; i++) {
             const like = currentUser.likes[i];
-            if (like[1] === annotationId) {
+            if (like[1] === likeableId) {
                 return like[0];
             }
         }
@@ -20,7 +20,7 @@ const LikeForm = ({ createLike, deleteLike, numLikes, annotationId }) => {
     const [buttonClass, setButtonClass] = useState(previouslyLiked() ? "liked" : "");
 
     const handleLikes = (action) => {
-        const button = document.getElementById("likes-button");
+        const button = document.getElementById(`${likeableId}-likes-button`);
         switch (action) {
             case "add":
                 createLike()
@@ -49,7 +49,7 @@ const LikeForm = ({ createLike, deleteLike, numLikes, annotationId }) => {
 
     return (
         <form className="likes-form" onClick={e=> e.stopPropagation()} onSubmit={() => previouslyLiked() ? handleLikes("delete") : handleLikes("add")}>
-            <button className="likes-form-button"><i id="likes-button" className={`far fa-thumbs-up likes-form-button-inner ${buttonClass}`}></i><div className="likes-form-button-text">{likes > 0 ? "+" + likes : ""}</div></button>
+            <button className="likes-form-button"><i id={`${likeableId}-likes-button`} className={`far fa-thumbs-up likes-form-button-inner ${buttonClass}`}></i><div className="likes-form-button-text">{likes > 0 ? "+" + likes : ""}</div></button>
         </form>
     )
 }
@@ -59,7 +59,7 @@ const mSTP = ({ session }) => ({
 })
 
 const mDTP = (dispatch, ownProps) => ({
-    createLike: () => dispatch(createLike({likeable_type: "Annotation", likeable_id: ownProps.annotationId})),
+    createLike: () => dispatch(createLike({likeable_type: ownProps.type, likeable_id: ownProps.likeableId})),
     deleteLike: (likeId) => dispatch(deleteLike(likeId))
 })
 

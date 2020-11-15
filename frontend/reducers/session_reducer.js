@@ -13,11 +13,12 @@ const sessionReducer = (state = _nullSession, action) => {
         case LOGOUT_CURRENT_USER:
             return _nullSession;
         case RECEIVE_LIKE:
-            const updatedCurrentUser = currentUser;
+            
+            const updatedCurrentUser = state.currentUser;
             updatedCurrentUser.likes.push([action.like.id, action.like.likeable_id]);
             return Object.assign({}, {currentUser: updatedCurrentUser});
         case DELETE_LIKE:
-            const newCurrentUser = currentUser;
+            const newCurrentUser = state.currentUser;
             for (let i = 0; i < newCurrentUser.likes.length; i++) {
                 const like = newCurrentUser.likes[i];
                 if (like[0] === action.likeId) {
