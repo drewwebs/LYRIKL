@@ -16,13 +16,16 @@ https://lyrikl.herokuapp.com/
 
 ![Annotation demo](https://i.imgur.com/kh2a2gc.gif)
 
+# Comments
+
+**Adding a comment** You may comment on your own, or somebody else's annotation to suggest edits or add additional insight.
+
+# Likes
+
+In the case where you enjoy an annotation, but have nothing to suggest or add, you may simply like the annotation.  You may also like comments.
+
 ***LYRIKL*** uses the Last.FM API to fetch the artwork for each song uploaded upon the song's creation.
 
-# Upcoming features
-### Comments
-  Users will be able to comment on songs, annotations, or even other comments.
-### Likes
-  Users will be able to like songs, annotations, or comments
 
 # Author
 Drew Webster || [github](https://github.com/drewwebs/) || [LinkedIn](https://www.linkedin.com/in/drew-webster-4261a934/) 
