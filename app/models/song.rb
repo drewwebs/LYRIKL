@@ -11,6 +11,9 @@ class Song < ApplicationRecord
 
     has_many :comments,
         as: :commentable
+
+    has_many :likes,
+        as: :likeable
     
     def self.stringify_views(views)
         stringified = ""

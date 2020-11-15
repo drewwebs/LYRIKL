@@ -9,6 +9,9 @@ class Annotation < ApplicationRecord
     has_many :comments,
         as: :commentable
 
+    has_many :likes,
+        as: :likeable
+
     def reformat_lyrics
         song = Song.find(self.song_id) 
         lines = song.lyrics.split("  \n")

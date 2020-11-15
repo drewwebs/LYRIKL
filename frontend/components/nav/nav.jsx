@@ -81,8 +81,8 @@ export default class Nav extends React.Component {
                     <div className="social-links">
                         <a href="https://drewwebster.dev/"><i className="fas fa-globe"></i></a>
                         <a href="https://github.com/drewwebs"><i className="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/drew-webster-4261a934/"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://angel.co/u/drewwebs"><i class="fab fa-angellist"></i></a>
+                        <a href="https://www.linkedin.com/in/drew-webster-4261a934/"><i className="fab fa-linkedin-in"></i></a>
+                        <a href="https://angel.co/u/drewwebs"><i className="fab fa-angellist"></i></a>
                     </div>
                 </nav>
             </>

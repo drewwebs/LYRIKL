@@ -101,3 +101,32 @@
     width: 80px;
     margin-left: 20px;
 }
+
+.likes-form {
+    &-button {
+        display: flex;
+        background: none;
+        border: none;
+
+        &-text {
+            font-size: 18px;
+            color: #0ecb27;
+        }
+
+        &-inner {
+            font-size: 18px;
+            padding-right: 8px;
+
+            &:hover {
+                color: #0ecb27
+            }
+
+            &.liked {
+                color: #0ecb27;
+            }
+        }
+
+
+        
+    }
+}

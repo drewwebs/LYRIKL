@@ -10,6 +10,8 @@ json.song do
   json.extract! @annotation.song, :id
 end
 
+json.num_likes @annotation.likes.length
+
 @annotation.comments.includes(:author).each do |comment|
   json.comments do 
     json.set! comment.id do
