@@ -26,7 +26,6 @@
     <%= javascript_include_tag 'application' %>
 
     <% if current_user %>
-      <%# <% debugger %> %>
       <script>
       window.currentUser = {
         'id': <%= current_user.id %>,
