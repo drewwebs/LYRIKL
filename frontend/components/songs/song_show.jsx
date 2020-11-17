@@ -27,12 +27,14 @@ export default class SongShow extends React.Component {
     }
 
     handleSelect(e) {
-        if (window.getSelection().toString() && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
+        if (window.getSelection().toString() && e.target.nodeName !== "BUTTON" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
             const selection = window.getSelection();
             const selectionInfo = getSelectionInfo(selection);
             this.setState( { annotationButton: true, annotationForm: "" } );
             this.selection = selectionInfo;
             this.yOffset = e.pageY;
+        } else if (e.target.id !== "annotation-button") {
+            this.setState( { annotationButton: false });
         }
     }
 
@@ -66,7 +68,7 @@ export default class SongShow extends React.Component {
     render() {
         const loggedIn = !!this.props.currentUser;
         return this.props.song ? (
-            <div className="song-show">
+            <div className="song-show" >
                 <div className="song-show-header-container-background" style={{ backgroundImage:`url(${this.props.song.image_url})` }}>
                     <div className="song-show-header-container">
                         <section className="song-show-header">
@@ -78,7 +80,7 @@ export default class SongShow extends React.Component {
                         </section>
                     </div>
                 </div>
-                <div className="song-show-body-container">
+                <div className="song-show-body-container" >
                     <section className="song-show-body" onClick={this.displayAnnotation} onMouseUp={this.handleSelect}>
                         <ReactMarkdown 
                             className="song-show-body-lyrics"
@@ -87,7 +89,7 @@ export default class SongShow extends React.Component {
                                         link: linkCreator}}
                             sourcePos={true}
                             />
-                        <section className="song-show-body-annotations">
+                        <section className="song-show-body-annotations" onClick={e => e.stopPropagation()}>
                             {this.state.annotation ?  <Annotation 
                                                         annotation={this.state.annotation} 
                                                         yOffset={this.yOffset}
@@ -98,12 +100,14 @@ export default class SongShow extends React.Component {
                                                       /> : ""}
 
                             {this.state.annotationButton ?  (loggedIn ?  <div 
+                                                                            id="annotation-button"
                                                                             className="annotation-button" 
                                                                             onClick={ () => this.displayForm("create") }
                                                                             style={{position:`absolute`, top: `${this.yOffset}px`}}
-                                                                        > <span>Start a LYRIKL Annotation</span><span className="annotation-button-green-text">(+5 IQ)</span></div> 
+                                                                        > <span id="annotation-button">Start a LYRIKL Annotation</span><span id="annotation-button" className="annotation-button-green-text">(+5 IQ)</span></div> 
                                                                       : 
                                                                         <Link 
+                                                                            id="annotation-button"
                                                                             className="annotation-button annotation-sign-in"
                                                                             style={{ position: `absolute`, top: `${this.yOffset}px` }}
                                                                             to="/login">
