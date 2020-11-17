@@ -2,8 +2,8 @@ require 'net/http'
 
 class Api::SongsController < ApplicationController
     def index
-        songs = Song.all
-        @songs = songs.limit(10)
+        @songs = Song.all
+        
 
         render :index
     end

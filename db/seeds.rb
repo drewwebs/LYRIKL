@@ -973,8 +973,930 @@ About family, and struggle, and it takin' forever
 About hearts that you've broken, and ties that you've   severed
 No doubt in my mind, that'll make them feel better", 
         primary_tag: "Hip-Hop"
-    }
+    },
 
+    {
+        title: "Interlude (That's Love)",
+        artist: "Chance the Rapper",
+        lyrics: "
+[Intro]  
+Yeah, yeah, yeah, yeah  
+Yeah, yeah, yeah, yeah, yeah, yeah, yeah, yeah, yeah  
+Yeah  
+Yeah, yeah, yeah, yeah, yeah, yeah  
+Yeah, yeah, yeah, yeah, yeah yeah, yeah, yeah, yeah  
+  
+[Verse]  
+What's better than tripping is falling in love  
+What's better than Letterman, Leno, Fallon, and all the above  
+What's better than popping bottles trying to ball in the club  
+Is the first caveman pops with his son, ball and a club  
+What's better than paper is ballin' it up  
+What's better than followers is actually fallin' in love  
+What's better than frolicking, follies, fallin' in mud  
+Rolling in green pastures, wanderin', followin' love  
+What's better than eating is feeding your fam  
+What's better than meetings is missing meetings to meet with your fam  
+What's better than leaning and needing a Xan  
+Is hitting your xan dreaming a dream could mean leaving the land  
+What's better than yelling is hollerin' love  
+What's better than rhymes, nickels, dimes and dollars and dubs  
+Is dialing up your darling just for callin' her up  
+It ain't nothing better than fallin' in love  
+Igh  
+  
+[Chorus]  
+I've seen it come back, back, back and forth  
+You hit the nail right on top of the head  
+I know you've seen it all before  
+But when it looks you in the eyes  
+It ain't nothin' you could say but \"That's love\"  
+That's love  
+That's love  
+That's love  
+Say that's love, ooh, ooh  
+That's love  
+That's love, that's love, that's love  
+I love you (You love who?)  
+I love you (Tell 'em who you love)  
+I love you (You love who?)  
+I love you (Yeah)  
+I love you (Sing it right now)  
+I love you (Love)  
+I love you (Who do you love?)  
+I love you (Love)  
+I love you  
+That's love  
+That's love, that's love  
+Say that's love, ooh, ooh, that's love (Love)  
+That's love, that's love, that's love, that's love, igh",
+    primary_tag: "Hip-Hop"
+    },
+    {
+        title: "Karma Police",
+        artist: "Radiohead",
+        lyrics:
+"[Verse 1]  
+Karma police, arrest this man  
+He talks in maths, he buzzes like a fridge  
+He's like a detuned radio  
+Karma police, arrest this girl  
+Her Hitler hairdo is making me feel ill  
+And we have crashed her party  
+  
+[Chorus]  
+This is what you'll get  
+This is what you'll get  
+This is what you'll get  
+When you mess with us  
+  
+[Verse 2]  
+Karma police, I've given all I can  
+It's not enough, I've given all I can  
+But we're still on the payroll  
+  
+[Chorus]  
+This is what you'll get  
+This is what you'll get  
+This is what you'll get  
+When you mess with us  
+  
+[Outro]  
+For a minute there  
+I lost myself, I lost myself  
+Phew, for a minute there  
+I lost myself, I lost myself  
+For a minute there  
+I lost myself, I lost myself  
+Phew, for   a minute there
+I lost myself, I lost myself",
+        primary_tag: "Rock"
+    },
+    {
+        title: "Tokyo Drifting",
+        artist: "Glass Animals",
+        lyrics: "
+[Intro: Denzel Curry]  
+Driftin'  
+Huh, huh, huh, Tokyo driftin'  
+  
+[Verse 1: Dave Bayley]  
+Two things 'bout the geez, you better listen up  
+Chrome spokes with the spinners on his tire hubs  
+Suck smoke in his '40, windows up  
+He rolls, like he really doesn't give a-  
+Drug lust and two packets in your pocket  
+Disco dust hits your nose like a rocket  
+  
+[Bridge: Dave Bayley]  
+Doo-doo-doo, doo, doo-doo-doo-doo-doo  
+Doo-doo-doo, doo, doo-doo-doo-doo-doo  
+  
+[Verse 2: Dave Bayley]  
+Scoot-scoot, boy, race out to the super-club  
+Let it rip like you drank all of the tequila  
+Get loose, street fighter, tear it up  
+Fresh footwear drippin' out of you onto the rug  
+  
+[Chorus: Dave Bayley & Denzel Curry]  
+Ooh, now you're lettin' go  
+Heart beatin' faster, feet pushin' on the floor  
+Ain't nothin' better  
+Ooh, now you're lettin' go  
+Heart beatin' faster, feet pushin' on the floor  
+Ain't nothin' better  
+Wavey Davey's on fire  
+You still got it, you still got it alright, yeah (Huh, huh)  
+Wavey Davey's on fire  
+Oh, you still got it, you still got it alright, yeah (Huh, huh)  
+Huh, huh  
+Huh, huh  
+Huh, huh  
+  
+[Verse 3: Denzel Curry]  
+Ayy, what is everybody talkin' 'bout?  
+When they wanna live fast, but I'd rather walk it out  
+Niggas wanna talk about a G  
+But I spent a G on the twelve teeth in my mouth (Huh, huh, huh)  
+Diamonds aquatic, it feel like a trout on my wrist (Wrist)  
+Or a spout on my wrist with a spider up in it (In it)  
+Everything gotta be eighty and you keep the twenty percentage  
+You know that I get it, I'm on it, I'm in it  
+If you try to take it, the clip get extended  
+I'm back on my bullshit, like Jordan on Pippen  
+If this is my life then I'm Tokyo drifting (Uh)  
+  
+[Chorus: Dave Bayley & Denzel Curry]  
+Ooh, now you're lettin' go  
+Heart beatin' faster, feet pushin' on the floor (Yeah, oh)  
+Ain't nothin' better  
+Ooh, now you're lettin' go  
+Heart beatin' faster, feet pushin' on the floor  
+Ain't nothin' better  
+Wavey Davey's on fire (Yuh, yuh, yuh, okay)  
+You still got it, you still got it alright, yeah (Huh, huh, huh)  
+Wavey Davey's on fire (Yuh, yuh, yuh, okay)  
+You still got it, you still got it alright, yeah (Huh, huh, huh)  
+Driftin'  
+Yeah  
+Yeah, Tokyo driftin'  
+  
+[Outro: Dave Bayley & Denzel Curry]  
+Wavey Davey's on fire  
+You still got it, you still got it al—  
+You still, you still got it al—  
+You still, you still got it alright, yeah (Driftin')",
+        primary_tag: "Rap"
+    },
+    {
+        title: "Yoshimi Battles the Pink Robots Part 1",
+        artist: "The Flaming Lips",
+        lyrics: 
+"[Verse 1]  
+Her name is Yoshimi  
+She's a black belt in karate  
+Working for the city  
+She has to discipline her body  
+  
+[Pre-Hook 1]  
+Cause she knows that  
+It's demanding  
+To defeat those evil machines  
+I know she can beat them  
+  
+[Hook]  
+Oh Yoshimi, they don't believe me  
+But you won't let those robots eat me  
+Yoshimi, they don't believe me  
+But you won't let those robots defeat me  
+  
+[Verse 2]  
+Those evil-natured robots (I'll get you, Yoshimi)  
+They're programmed to destroy us  
+She's gotta be strong to fight them  
+So she's taking lots of vitamins  
+  
+[Pre-Hook 2]  
+Cause she knows that  
+It'd be tragic  
+If those evil robots win  
+I know she can beat them  
+  
+[Hook]  
+Oh Yoshimi, they don't believe me  
+But you won't let those robots defeat me  
+Yoshimi, they don't believe me  
+But you won't let those robots eat me  
+  
+[Break]  
+Yoshimi  
+  
+[Pre-Hook 2]  
+Cause she knows that  
+It'd be tragic  
+If those evil robots win  
+I know she can beat them  
+  
+[Hook]  
+Oh Yoshimi, they don't believe me  
+But you won't let those robots defeat me  
+Yoshimi, they don't believe me  
+But you won't let those robots defeat me  
+Oh Yoshimi, they don't believe me  
+But you won't let those robots eat me  
+Yoshimi, they don't believe me  
+But you won't let those robots eat me  
+Yoshimi",
+        primary_tag: "Rock"
+    },
+    {
+        title: "In the Aeroplane Over the Sea",
+        artist: "Neutral Milk Hotel",
+        lyrics: 
+"[Verse 1]  
+What a beautiful face  
+I have found in this place  
+That is circling all 'round the sun  
+What a beautiful dream  
+That could flash on the screen  
+In a blink of an eye and be gone from me  
+Soft and sweet  
+Let me hold it close and keep it here with me  
+  
+[Verse 2]  
+And one day we will die  
+And our ashes will fly  
+From the aeroplane over the sea  
+But for now we are young  
+Let us lay in the sun  
+And count every beautiful thing we can see  
+Love to be  
+In the arms of all I'm keeping here with me  
+  
+[Verse 3]  
+What a curious life  
+We have found here tonight  
+There is music that sounds from the street  
+There are lights in the clouds  
+Anna's ghost all around  
+Hear her voice as it's rolling and ringing through me  
+Soft and sweet  
+How the notes all bend and reach above the trees  
+  
+[Bridge]  
+Now how I remember you  
+How I would push my fingers through  
+Your mouth to make those muscles move  
+That made your voice so smooth and sweet  
+But now we keep where we don't know  
+All secrets sleep in winter clothes  
+With the one you loved so long ago  
+Now he don't even know his name  
+  
+[Verse 4]  
+What a beautiful face  
+I have found in this place  
+That is circling all 'round the sun  
+And when we meet on a cloud  
+I'll be laughing out loud  
+I'll be laughing with everyone I see  
+Can't believe  
+How strange it is to be anything at all",
+        primary_tag: "Rock"
+    },
+    {
+        title: "This Year",
+        artist: "The Mountain Goats",
+        lyrics: "
+[Verse 1]  
+I broke free on a Saturday morning  
+I put the pedal to the floor  
+Headed north on Mills Avenue  
+And listened to the engine roar  
+  
+[Verse 2]  
+My broken house behind me  
+And good things ahead  
+A girl named Cathy  
+Wants a little of my time  
+Six cylinders underneath the hood  
+Crashing and kicking  
+Aha! Listen to the engine whine  
+  
+[Chorus]  
+I am going to make it through this year  
+If it kills me  
+I am going to make it though this year  
+If it kills me  
+  
+[Verse 3]  
+I played video games in a drunken haze  
+I was seventeen years young  
+Hurt my knuckles punching the machines  
+The taste of Scotch rich on my tongue  
+  
+[Verse 4]  
+And then Cathy showed up  
+And we hung out  
+Trading swigs from a bottle  
+All bitter and clean  
+Locking eyes  
+Holding hands  
+Twin high maintenance machines  
+  
+[Chorus]  
+I am going to make it through this year  
+If it kills me  
+I am going to make it though this year  
+If it kills me  
+  
+[Verse 5]  
+I drove home in the California dusk  
+I could feel the alcohol inside of me hum  
+Pictured the look on my stepfather's face  
+Ready for the bad things to come  
+  
+[Verse 6]  
+I down shifted  
+As I pulled into the driveway  
+The motor screaming out  
+Stuck in second gear  
+The scene ends badly  
+As you might imagine  
+In a cavalcade of anger and fear  
+There will be feasting and dancing  
+In Jerusalem next year  
+  
+[Chorus]  
+I am going to make it through this year  
+If it kills me  
+I am going to make it though this year  
+If it kills me",
+    primary_tag: "Rock"
+    },
+    {
+        title: "Tattoos fade",
+        artist: "The World/Inferno Friendship Society",
+        lyrics: "
+There are rumors going around  
+You can feel history coming about  
+You're never sure just where it's going to stay  
+You suffer through lingering doubt  
+You wish someone would spell it out  
+But things don't work that way  
+There's so much going on, faces in the crowd  
+Belong to a team on which you'd love to play  
+You're hoping for some permanence  
+But there really is no place for this  
+Your tattoos, they're gonna fade!  
+They're gonna fade!  
+They're gonna fade!  
+They're gonna fade!  
+  
+Our youth like wax drips down  
+In puddles around our legs  
+It hardens and catches us to the quick  
+You're putting a lot of importance in  
+Something you're really just playing a part in  
+You should take what action you can get  
+What you're sure you're carving in stone  
+On your flesh  
+You'd do better living more and commemorating less  
+There's much I don't want to remember  
+There's not a thing I'd wish last forever  
+You're tattoos are gonna fade!  
+They're gonna fade!  
+They're gonna fade!  
+They're gonna fade!  
+  
+It's not as important to persevere as to doubt  
+When you're so angry, nothing matters  
+You be brave 'cause everything counts, and  
+I'd never be so unsubtle  
+As to write this on my sleeve  
+Unless I was sure I could change it  
+When I was ready to leave  
+There's much I don't want to remember  
+There's not a thing I would wish last forever  
+Or let me put this another way:  
+I know you're hoping for some permanence  
+But there really is no truth to this  
+Your tattoos, they're gonna fade",
+        primary_tag: "Cabaret/Punk"
+    },
+    {
+        title: "Finish Line / Drown",
+        artist: "Chance the Rapper feat. T‐Pain, Kirk Franklin, Eryn Allen Kane & Noname",
+        lyrics: "
+[Part I: \"Finish Line\"]
+
+[Intro: Eryn Allen Kane & Chance The Rapper]
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do
+And we back, and we back, and we back, and we back
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do
+And we back, and we back, and we back
+
+[Verse 1: Chance The Rapper]
+They ain't teaching taxes in school
+It don't even matter, I was acting a fool
+But who would think the raps would turn into racks?
+Don't matter, matter fact, it could happen to you
+Scars on my head, I'm the boy who lived
+The boy love playing when the boy too sick
+Reclining on a prayer, I'm declining to help
+I've been lying to my body can't rely on myself, oh no
+Last year got addicted to Xans
+Started forgetting my name and started missing my chance
+L.A. for four months, end up leaving right back
+I'm in love with my city, bitch, I sleep in my hat, uh
+I felt hogtied ever since my dog died
+He lived to 84, damn, that's a long ride
+I know he up there, he just sit and he wait
+I'll be racing up the stairs, I'ma get to the gate singing
+
+[Bridge: Eryn Allen Kane]
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do
+
+[Chorus: T-Pain]
+Oh, all my days
+I prayed and prayed
+And now I see the finish line
+Oh, I'm gonna finish mine, yeah
+All my days
+I prayed and prayed
+And now I see the finish line
+Gonna finish mine, yeah-eah
+
+[Verse 2: Chance The Rapper]
+Hey! Gimme the water, gimme the water
+I need the kind from Space Jam
+Get this money, get this budget, KOK to day camp
+Me and my girl plan to stay to the end
+Hope there never come a day where we be better as friends
+We in a marathon we could build a marriage on
+Arguments as parents digging deeper than a baritone
+I've been getting blocked just trying to make songs with friends
+Labels told me to my face that they own my friends
+I got to pray, I got to pray, like Hammer after \"2 Legit\"
+I got the power, I could poke Lucifer with crucifix
+I cannot scrape om stupid shit, I stand up like I'm Ludacris
+I know some folks that talk so much
+You'd think they drive an Uber whip, damn
+Queen said, \"Why we in a queen bed?\"
+I said, \"It's yours, don't worry, lil' beanhead\"
+I'm just here to catch my breath, I got a world tattoo
+She said, \"Cool, just bring me some food\"
+
+[Chorus: T-Pain]
+Oh, all my days
+I prayed and prayed
+And now I see the finish line
+Oh, I'm gonna finish mine, yeah
+All my days
+I prayed and prayed
+And now I see the finish line
+I'm gonna finish mine, yeah-eah
+
+[Bridge: Eryn Allen Kane]
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do-do-do
+Do-do-do-do-do
+
+[Part II: \"Drown\"]
+
+[Intro: Eryn Allen Kane]
+The water may be deeper than it's ever been
+
+[Verse 1: Noname]
+Lord rain down on me so I can move on water
+Like children at the altar, like God inside my house
+I love you, I love you, you looking holy like Mama
+You made a church out of feathers, so when she fly to the Father
+She know the choir gon' follow and all the offering paid
+She gave my name away to your holy house
+She like my blessings in disguise
+She like her Jesus mountain high
+So He can watch her lonely child, I know my God
+I know my God seen His breaks and His edges
+Are jagged for giving that pain to His city in gold
+Like everything is everything
+Like all them days He prayed with me
+Like emptiness was tamed in me
+And all that was left was His love
+And all that was left was His love
+And all that was left was His love
+And all that was left was His love
+
+[Chorus: Choir]
+Never, never drown
+The water may be deeper than it's ever been
+Never drown
+The water may be deeper than it's ever been
+Never drown
+
+[Verse 2: Choir & Kirk Franklin]
+Never, never, never (Chance, let me in, come on)
+This thirst in my soul (There's a thirst in my soul, it tell me)
+Where else can I go? (Where?) but You? (Come on)
+I may cry a river (I may cry a thousand tears, but)
+But You take each drop and You wash (You wash me new)
+Me new (People sing)
+This water is deep (Yes, yes and I need You to)
+Jesus, rescue me (Come on, save me, I need You to)
+Take me to Your mountain (Hallelujah)
+So someday Chicago will be free (Someday, we'll all be free)
+Be free (Say)
+
+[Chorus: Choir]
+The water may be deeper than it's ever been
+Never drown
+The water may be deeper than it's ever been
+Never drown",
+    primary_tag: "Rap"
+    },
+    {
+        title: "Cinderella (feat. Ty Dolla $ign)",
+        artist: "Mac Miller",
+        lyrics: "
+[Part I: Cinderella]  
+  
+[Intro: Ty Dolla $ign]  
+Uh, $ign  
+Oh no, no, no, no, no, no, no, no, no  
+No, no ($ign)  
+Ayy  
+  
+[Chorus: Ty Dolla $ign]  
+I been waitin' all night for this moment  
+I been waitin' all year for this moment  
+I been picturin' you takin' off your clothes for me  
+I been literally curvin' all these hoes for you  
+Daddy told you, better bring your ass home  
+Cinderella, better get your ass home  
+Man, I swear that parents just don't understand  
+You ain't gotta be old to be a man  
+Take my hand, come with me  
+To my room (My room)  
+Girl, I got a suite at the SLS (SLS), uh  
+I already know you got expensive taste (Yeah)  
+Ayy, take my hand (My hand), follow me (Follow me)  
+To my room  
+Tell your little friends you gon' be alright  
+Girl, I got a plan for the whole night  
+  
+[Verse 1: Mac Miller]  
+Okay, your legs just like  
+A store: they open up and you got people in line  
+Been there every night for weeks at a time  
+You in my dreams, that's why I sleep all the time  
+Just to hear you say I love you, just to touch you, just to leave you behind  
+I told you, you don't have to worry, you'll be fine  
+This type of thing, I heard it happen all the time  
+Yeah, I just wanna see you fly  
+Because your fragrance got me faded, you be keepin' me high  
+Said nothin' better than the first time  
+I'll be at your service like the check-in at curbside  
+You don't have to spend another second on this Earth dry  
+Wet you like [?], go a second and a third time  
+Left you a perverse mind  
+And when you hungry, I can chef you up a stir fry  
+Get you some dessert wine, elevate ya third eye  
+First prize, Nobel, get a piece  
+Your clothes off, turn around, lemme see  
+  
+[Chorus: Ty Dolla $ign]  
+I been waitin' all night for this moment  
+I been waitin' all year for this moment  
+I been picturin' you takin' off your clothes for me  
+I been literally curvin' all these hoes for you  
+Daddy told you, better bring your ass home  
+Cinderella, better get your ass home  
+Man, I swear that parents just don't understand  
+You ain't gotta be old to be a man  
+Take my hand, come with me  
+To my room  
+Girl, I got a suite at the SLS, uh  
+I already know you got expensive taste (Uh)  
+Take my hand, follow me  
+To my room  
+Tell your little friends you gon' be alright  
+Girl, I got a plan for the whole night  
+  
+[Verse 2: Mac Miller]  
+Yeah, okay  
+I came up with a plan, it was take you by the hand  
+And bring you somewhere where the sand is, soon as we landed  
+We went straight into the room and played the music  
+Started dancin', you was takin' off your pants  
+It look like Dorothy ain't in Kansas anymore, I do you like a chore  
+We started on the bed and then we movin' to the floor  
+You started gettin' crazy, told me fuck you like a whore  
+I thought you was an angel, now you yellin' to the Lord  
+You used to tell me all the time I ain't ya type  
+Now you always wanna spend the night  
+Now I'm doin' everything you like  
+When I'm inside your pussy, damn, it feels so right (Yeah)  
+But I still respect ya game, every time I'm out-of-line  
+You always set me straight, the sex is great, for Heaven's sakes  
+I need it every day, I yell your name, Cinderella  
+Never gonna find nobody better, all my life...  
+  
+[Chorus: Ty Dolla $ign]  
+I been waitin' all night for this moment  
+I been waitin' all year for this moment  
+I been picturin' you takin' off your clothes for me  
+I been literally curvin' all these hoes for you  
+Daddy told you, better bring your ass home  
+Cinderella, better get your ass home  
+Man, I swear that parents just don't understand  
+You ain't gotta be old to be a man  
+Take my hand, come with me  
+To my room  
+Girl, I got a suite at the SLS, uh  
+I already know you got expensive taste, uh  
+Take my hand, follow me  
+To my room  
+Tell your little friends you gon' be alright  
+Girl, I got a plan for the whole night, ayy  
+  
+[Guitar Solo: Jeff “Gitty” Gitelman]  
+  
+[Part II: Right After Love]  
+  
+[Verse 1: Mac Miller]  
+Hey now, I'm sayin'  
+My only way out is a way in  
+I won't stop  
+'Til you mine, no way  
+Well, all my days now, they changin'  
+I got an angels, no more Satan  
+Looks like God's on my side  
+This time, yeah  
+  
+[Refrain: Mac Miller]  
+Been meanin' to tell ya  
+You lookin' better every day  
+Write you letters, it's only right that  
+Right after love, I write my name, yeah  
+If it's forever or never, it's all the same  
+Under the weather, feel much better  
+When that weather isn't rain, yeah  
+  
+[Verse 2: Mac Miller]  
+Ooh, Cinderella  
+Don't you run out of time  
+It feels like you've been takin'  
+All day, yeah  
+Well, wherever you came from, wherever you goin'  
+I promise I'm not far behind, yeah  
+So don't you dare throw this away  
+  
+[Refrain: Mac Miller]  
+I been meanin' to tell ya  
+You look better every day  
+Write you letters, it's only right that  
+Right after love, I write my name, yeah  
+And if it's forever or never, it's all the same  
+Under the weather, feel much better  
+When that weather isn't rain",
+        primary_tag: "Rap"
+    },
+    {
+        title: "Chum",
+        artist: "Earl Sweatshirt",
+        lyrics: "
+[Chorus]  
+Something sinister to it, pendulum swinging slow  
+A degenerate moving through the city with criminals, stealth  
+Welcome to enemy turf, harder than immigrants work  
+\"Golf\" is stitched into my shirt  
+Get up off the pavement, brush the dirt up off my psyche  
+Psyche, psyche  
+  
+[Interlude]  
+Can I get that, oh… let me get that beat in my headphones, louder  
+  
+[Verse 1]  
+It's probably been 12 years since my father left  
+Left me fatherless  
+And I just used to say I hate him in dishonest jest  
+When honestly I miss this nigga, like when I was six  
+And every time I got the chance to say it I would swallow it  
+Sixteen, I'm hollow, intolerant, skip shots  
+I storm that whole bottle, I'll show you a role model  
+I'm drunk, pissy, pissing on somebody front lawn  
+Trying to figure out how and when the fuck I missed moderate  
+Momma often was offering peace offerings  
+Think, wheeze cough, scoffing and he's off again  
+Searching for a big brother, Tyler was that  
+And plus he liked how I rap, the blunted mice in the trap  
+Too black for the white kids, and too white for the blacks  
+From honor roll to cracking locks up off them bicycle racks  
+I'm indecisive, I'm scatterbrained, and I'm frightened  
+It's evident in them eyes, where he hiding all them icicles at  
+  
+[Chorus]  
+Something sinister to it, pendulum swinging slow  
+A degenerate moving through the city with criminals, stealth  
+Welcome to enemy turf, harder than immigrants work  
+\"Golf\" is stitched into my shirt  
+Get up off the pavement, brush the dirt up off my psyche  
+Psyche, psyche  
+  
+[Interlude]  
+Can I get that, oh… let me get that beat in my headphones, louder  
+  
+[Verse 2]  
+Uh… time lapse, bars rotten, heart's bottomless pit  
+Was mobbin' deep as '96 Havoc and Prodigy did  
+We were the pottymouth posse crash the party and dip  
+With all belongings then toss em out to the audience  
+Nothing was fucking awesome  
+Trying to make it from the bottom  
+His sins feeling as hard as Vince Carter's knee cartilage is  
+Supreme garment and weed gardeners garnishing spliffs  
+With Keef particles and entering apartments with 'zine article  
+Tolerance for boundaries, I know you happy now  
+Craven and these Complex fuck niggas done track me down  
+Just to be the guys that did it, like, \"I like attention\"  
+Not the type where niggas trying to get a raise at my expense  
+Supposed to be grateful, right?  
+Like, \"Thanks so much,\" you made my life harder  
+And the ties between my mom and I are strained and tightened  
+Even more than they were before all of this shit  
+Been back a week and I already feel like calling it quits  
+  
+[Chorus]  
+Something sinister to it, pendulum swinging slow  
+A degenerate moving through the city with criminals, stealth  
+Welcome to enemy turf, harder than immigrants work  
+\"Golf\" is stitched into my shirt  
+Get up off the pavement, brush the dirt up off my psyche  
+Psyche, psyche  
+  
+[Outro]  
+Can I get that, oh… let me get that beat in my headphones, louder",
+        primary_tag: "Rap"
+    },
+    {
+        title: "I feel it coming",
+        artist: "The Weeknd",
+        lyrics: "
+[Intro: The Weeknd]  
+Yeah, uh  
+  
+[Verse 1: The Weeknd]  
+Tell me what you really like  
+Baby, I can take my time  
+We don't ever have to fight  
+Just take it step-by-step  
+I can see it in your eyes  
+'Cause they never tell me lies  
+I can feel that body shake  
+And the heat between your legs  
+  
+[Pre-Chorus: The Weeknd]  
+You've been scared of love and what it did to you  
+You don't have to run, I know what you've been through  
+Just a simple touch and it can set you free  
+We don't have to rush when you're alone with me  
+  
+[Chorus: The Weeknd]  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+  
+[Verse 2: The Weeknd]  
+You are not the single type  
+So baby, this the perfect time  
+I'm just tryna get you high (I'm just tryna, babe)  
+And faded off this touch  
+You don't need a lonely night  
+So baby, I can make it right  
+You just got to let me try  
+To give you what you want  
+  
+[Pre-Chorus: The Weeknd]  
+You've been scared of love and what it did to you  
+You don't have to run, I know what you've been through  
+Just a simple touch and it can set you free  
+We don't have to rush when you're alone with me  
+  
+[Chorus: The Weeknd & Daft Punk]  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+  
+[Pre-Chorus: The Weeknd]  
+Hey! You've been scared of love and what it did to you  
+You don't have to run, I know what you've been through  
+Just a simple touch and it can set you free  
+We don't have to rush when you're alone with me  
+  
+[Chorus: The Weeknd & Daft Punk]  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I know what you feel right now  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I know what you say right now, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I know what you say right now, babe  
+Na na, na, na, na, na, na na na  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+I feel it coming, I feel it coming, babe  
+  
+[Outro: Daft Punk]  
+I feel it coming, babe  
+I feel it coming, babe  
+I feel it coming, babe  
+I feel it coming, babe",
+        primary_tag: "R&B"
+    },
+    {
+        title: "Call Me Back",
+        artist: "The Strokes",
+        lyrics: "
+Wait time is the worst  
+I can hardly sit  
+No one has the time  
+Someone's always late  
+  
+I look for you  
+And you look for me  
+  
+I don't know why  
+I came down  
+I hold your phone  
+Don't wake up  
+I hear a voice  
+In the ground  
+  
+Tell me, don't tell me  
+The hard part is telling you  
+Something that you would not like me to tell you  
+Tell me, don't tell me  
+The hard part is telling you  
+Something that you would not like me to tell you  
+  
+Wait time is to blame  
+Mapped out fame's a trip  
+We all have the time  
+Someone's always fed  
+  
+I look for you  
+And you look away  
+  
+I don't know why  
+I came down  
+I hold your phone  
+Don't wake up  
+I hear a voice  
+In the ground  
+  
+(Waking up is so much fun to do)  
+Tell me, don't tell me  
+The hard part is telling you  
+Something that you would not like me to tell you  
+(An 80's movie make-out party with you)  
+Tell me, don't tell me  
+The hard part is telling you  
+Something that you would not like me to tell you",
+    primary_tag: "Rock"
+    }
 ])
 
 User.create(username: "drewwebs", email: "drewwebs@gmail.com", password: "hunter12")

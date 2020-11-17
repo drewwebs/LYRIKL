@@ -14,7 +14,7 @@ export const linkCreator = (reference) => {
     reference.children.forEach( child => child.type === "br" ? parsed.push("<br />") : parsed.push(child.props.value) )
     
     return (
-      <button id={`${reference.href}`}> 
+      <button id={`${reference.href}`} className="annotation-element"> 
         {reference.children.map( child => child.type === "br" ? <br /> : child.props.value )}
       </button>
     );

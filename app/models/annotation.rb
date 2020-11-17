@@ -24,11 +24,11 @@ class Annotation < ApplicationRecord
     def undo_reformat
         song = Song.find(self.song_id) 
         lines = song.lyrics.split("  \n")
-
+        # debugger;
         if self.line_start == self.line_end
             i = lines[self.line_start].index("](#{self.id.to_s})")
         else
-            i = self.line_start.length - 1
+            i = lines[self.line_start].length - 1
         end
 
         found = false

@@ -107,6 +107,8 @@
         display: flex;
         background: none;
         border: none;
+        padding-top: 8px;
+        padding-left: 0px;
 
         &-text {
             font-size: 18px;
@@ -130,4 +132,14 @@
 
         
     }
+}
+
+.annotation-element {
+    text-align: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    box-sizing: inherit;
+    font: inherit;
 }

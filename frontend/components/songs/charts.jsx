@@ -5,6 +5,7 @@ import SongIndexItem from './song_index_item.jsx';
 export default class Charts extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {numSongs: 10};
         this.chartsRef = React.createRef();
     }
 
@@ -18,12 +19,16 @@ export default class Charts extends React.Component {
             <ul className="charts">
               <h1 className="charts-header">Charts</h1>
               <h2 className="charts-sub-header">Trending on LYRIKL</h2>
-              {this.props.songs.map((song) => (
+              {this.props.songs.slice(0, this.state.numSongs).map((song) => (
                 <SongIndexItem 
                     key={song.id}
                     song={song} />
               ))}
-              <button className="charts-button">Load More</button>
+              {this.props.songs.length > this.state.numSongs ? 
+                <button className="charts-button" onClick={() => this.setState({numSongs: this.state.numSongs + 10})}>Load More</button>
+                :
+                ""
+              }
             </ul>
           </div>
         );

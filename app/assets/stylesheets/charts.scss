@@ -57,6 +57,9 @@
             font-size: 24px;
             width: 400px;
             padding-left: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
 
         &-artist {
@@ -64,6 +67,9 @@
             padding-left: 70px;
             font-size: 24px;
             font-weight: 100;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
 
         &-view-count {
