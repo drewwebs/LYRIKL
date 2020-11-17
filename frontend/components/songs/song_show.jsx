@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 export default class SongShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {annotation: "", annotationForm: "", annotationButton: false};
+        this.state = {annotation: "", annotationForm: "", annotationButton: false, targetedAnnotation: ""};
         this.displayAnnotation = this.displayAnnotation.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleFinish = this.handleFinish.bind(this);
@@ -27,7 +27,7 @@ export default class SongShow extends React.Component {
     }
 
     handleSelect(e) {
-        if (window.getSelection().toString() && e.target.nodeName !== "BUTTON" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
+        if (window.getSelection().toString() && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
             const selection = window.getSelection();
             const selectionInfo = getSelectionInfo(selection);
             this.setState( { annotationButton: true, annotationForm: "" } );
@@ -50,13 +50,20 @@ export default class SongShow extends React.Component {
         this.setState({annotation});
     }
 
+    removeHighlight() {
+        const targeted = document.getElementsByClassName("targeted")[0];
+        if (targeted) targeted.classList.remove("targeted");
+    }
+
     displayAnnotation(e) {
-        
-        if (e.target.nodeName === "BUTTON") {
+        if (e.target.nodeName === "A") {
+            this.removeHighlight();
+            e.target.classList.add("targeted");
             this.yOffset = e.pageY;
             this.props.fetchAnnotation(e.target.id)
-            .then(data => this.setState({annotation: data.annotation, annotationForm: ""}));
+            .then(data => this.setState({annotation: data.annotation, annotationForm: "", targetedAnnotation: e.target}));
         } else {
+            this.removeHighlight();
             this.removeAnnotationFromPage();
         }
     }

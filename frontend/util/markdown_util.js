@@ -8,7 +8,7 @@ export const referenceHandler = (reference) => {
 }
 
 export const linkCreator = (reference) => (
-    <button id={`${reference.href}`} className="annotation-element"> 
+    <a id={`${reference.href}`} > 
       {reference.children.map( (child) => child.type === "br" ? <br /> : child.props.value )}
-    </button>
+    </a>
 )
