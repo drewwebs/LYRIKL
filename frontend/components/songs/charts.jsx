@@ -1,36 +1,49 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { fetchAllSongs } from '../../actions/song_actions';
 import SongIndexItem from './song_index_item.jsx';
 
-export default class Charts extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {numSongs: 10};
-        this.chartsRef = React.createRef();
-    }
+export default () => {
 
-    componentDidMount() {
-        this.props.fetchAllSongs();
-    }
+    const [numSongs, setNumSongs] = useState(10);
+    const dispatch = useDispatch();
+    const chartsRef = useRef();
+    const location = useLocation();
+    const songs = useSelector(state => Object.values(state.entities.songs));
 
-    render() {
-        return (
-          <div ref={this.chartsRef} className="charts-background">
-            <ul className="charts">
-              <h1 className="charts-header">Charts</h1>
-              <h2 className="charts-sub-header">Trending on LYRIKL</h2>
-              {this.props.songs.slice(0, this.state.numSongs).map((song) => (
-                <SongIndexItem 
-                    key={song.id}
-                    song={song} />
-              ))}
-              {this.props.songs.length > this.state.numSongs ? 
-                <button className="charts-button" onClick={() => this.setState({numSongs: this.state.numSongs + 10})}>Load More</button>
-                :
-                ""
-              }
-            </ul>
-          </div>
-        );
-    }
+    useEffect(() => {
+        dispatch(fetchAllSongs());
+    }, []);
+
+    useEffect(() => {
+      if (location.pathname === "/charts") {
+        window.scrollTo({
+          behavior: "smooth",
+          top: chartsRef.current.offsetTop
+        });
+      }
+    }, location.pathName);
+   
+
+    
+    return (
+      <div ref={chartsRef} className="charts-background">
+        <ul className="charts">
+          <h1 className="charts-header">Charts</h1>
+          <h2 className="charts-sub-header">Trending on LYRIKL</h2>
+          {songs.slice(0, numSongs).map((song) => (
+            <SongIndexItem 
+                key={song.id}
+                song={song} />
+          ))}
+          {songs.length > numSongs ? 
+            <button className="charts-button" onClick={() => setNumSongs( numSongs + 10 )}>Load More</button>
+            :
+            ""
+          }
+        </ul>
+      </div>
+    );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Charts from '../songs/charts_container';
+import Charts from '../songs/charts';
 import Featured from '../featured/featured';
 
 
