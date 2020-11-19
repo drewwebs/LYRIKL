@@ -25,10 +25,19 @@ const getOffset = (originalOffset, node) => {
 };
 
 export default (selection) => {
+    const focusLine = getLineNumber(selection.focusNode);
+    const anchorLine = getLineNumber(selection.anchorNode);
+    const anchorPos = getOffset(selection.anchorOffset, selection.anchorNode);
+    const focusPos = getOffset(selection.focusOffset, selection.focusNode);
+    let [lineStart, startPos, lineEnd, endPos] = focusLine >= anchorLine ? [anchorLine, anchorPos, focusLine, focusPos] : [focusLine, focusPos, anchorLine, anchorPos];
+    if (focusLine === anchorLine && anchorPos > focusPos) {
+        [startPos, endPos] = [endPos, startPos];
+    }
+
     return {
-        line_start: getLineNumber(selection.anchorNode),
-        line_end: getLineNumber(selection.focusNode),
-        start_pos: getOffset(selection.anchorOffset, selection.anchorNode),
-        end_pos: getOffset(selection.focusOffset, selection.focusNode)
+        line_start: lineStart,
+        line_end: lineEnd,
+        start_pos: startPos,
+        end_pos: endPos
     };
 };
