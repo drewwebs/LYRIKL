@@ -14,7 +14,7 @@ export default () => {
                 top: featuredRef.current.offsetTop
             });
         }
-    });
+    }, [location.pathname]);
 
     return (
         <section ref={featuredRef} className="featured">

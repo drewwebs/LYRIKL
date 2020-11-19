@@ -24,7 +24,7 @@ export default () => {
           top: chartsRef.current.offsetTop
         });
       }
-    }, location.pathName);
+    }, [location.pathname]);
    
 
     
