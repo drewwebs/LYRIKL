@@ -1,5 +1,5 @@
 const getLineNumber = (node) => {
-    if (node.previousElementSibling.nodeName === "BUTTON") {
+    if (node.previousElementSibling.nodeName === "A") {
         return getLineNumber(node.previousElementSibling);
     } else {
         return node.previousElementSibling.dataset["sourcepos"].split(":")[0];
@@ -7,15 +7,15 @@ const getLineNumber = (node) => {
 };
 
 const getOffset = (originalOffset, node) => {
-    if (node.previousElementSibling.nodeName !== "BUTTON") {
-        if (node.nodeName === "BUTTON" && node.previousSibling.nodeName === "#text") {
+    if (node.previousElementSibling.nodeName !== "A") {
+        if (node.nodeName === "A" && node.previousSibling.nodeName === "#text") {
             return originalOffset + node.previousSibling.length;
         } else {
             return originalOffset;
         }
     } else {
         let newOffset = 0;
-        if (node.nodeName === "BUTTON" && node.previousSibling.nodeName === "#text") {
+        if (node.nodeName === "A" && node.previousSibling.nodeName === "#text") {
             newOffset = originalOffset + node.previousElementSibling.text.length + node.previousElementSibling.id.length + "[]()".length + node.previousSibling.length;
         } else {
             newOffset = originalOffset + node.previousElementSibling.text.length + node.previousElementSibling.id.length + "[]()".length;

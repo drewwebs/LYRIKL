@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 export default class SongShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {annotation: "", annotationForm: "", annotationButton: false, targetedAnnotation: ""};
+        this.state = {annotation: "", annotationForm: "", annotationButton: false};
         this.displayAnnotation = this.displayAnnotation.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleFinish = this.handleFinish.bind(this);
@@ -61,7 +61,7 @@ export default class SongShow extends React.Component {
             e.target.classList.add("targeted");
             this.yOffset = e.pageY;
             this.props.fetchAnnotation(e.target.id)
-            .then(data => this.setState({annotation: data.annotation, annotationForm: "", targetedAnnotation: e.target}));
+            .then(data => this.setState({annotation: data.annotation, annotationForm: ""}));
         } else {
             this.removeHighlight();
             this.removeAnnotationFromPage();
