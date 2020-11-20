@@ -11,7 +11,8 @@ export default class AnnotationForm extends React.Component {
     this.props.clearPage();
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.action(this.state)
       .then(data => this.updateAndAdd(data.annotation));
   }

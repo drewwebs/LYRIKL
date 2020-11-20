@@ -22,8 +22,8 @@ export default class SongShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchSong();        
-        window.scrollTo(0,0);
+        // this.props.fetchSong();        
+        window.scrollTo({top: 0, left: 0});
     }
 
     handleSelect(e) {

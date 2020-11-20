@@ -48,7 +48,7 @@ const LikeForm = ({ createLike, deleteLike, numLikes, likeableId, currentUser })
 
 
     return (
-        <form className="likes-form" onClick={e=> e.stopPropagation()} onSubmit={() => previouslyLiked() ? handleLikes("delete") : handleLikes("add")}>
+        <form className="likes-form" onClick={e=> e.stopPropagation()} onSubmit={(e) => {e.preventDefault(); return previouslyLiked() ? handleLikes("delete") : handleLikes("add")}}>
             <button className="likes-form-button"><i id={`${likeableId}-likes-button`} className={`far fa-thumbs-up likes-form-button-inner ${buttonClass}`}></i><div className="likes-form-button-text">{likes > 0 ? "+" + likes : ""}</div></button>
         </form>
     )

@@ -8,11 +8,11 @@
 Song.delete_all
 Annotation.delete_all
 
-User.create(username: 'Demo', email: 'Demo', password: 'hunter12'),
-User.create(username: "tswift_number_one_fan", email: 'Demo1', password: 'hunter12'),
-User.create(username: "kanye_west", email: 'Demo2', password: 'hunter12'),
-User.create(username: "baby_yoda", email: 'Demo3', password: 'hunter12'),
-User.create(username: "gizmo_the_bernedoodle", email: 'Demo4', password: 'hunter12'),
+User.create(username: 'Demo', email: 'Demo', password: 'hunter12');
+User.create(username: "tswift_number_one_fan", email: 'Demo1', password: 'hunter12');
+User.create(username: "kanye_west", email: 'Demo2', password: 'hunter12');
+User.create(username: "baby_yoda", email: 'Demo3', password: 'hunter12');
+User.create(username: "gizmo_the_bernedoodle", email: 'Demo4', password: 'hunter12');
 User.create(username: "silver_snoopy", email: "Demo5", password: 'hunter12')
 
 songs = Song.create([
@@ -981,7 +981,7 @@ No doubt in my mind, that'll make them feel better",
     {
         title: "Interlude (That's Love)",
         artist: "Chance the Rapper",
-        lyrics: "
+        lyrics: "  
 [Intro]  
 Yeah, yeah, yeah, yeah  
 Yeah, yeah, yeah, yeah, yeah, yeah, yeah, yeah, yeah  
@@ -1038,8 +1038,8 @@ That's love, that's love, that's love, that's love, igh",
     {
         title: "Karma Police",
         artist: "Radiohead",
-        lyrics:
-"[Verse 1]  
+        lyrics:"  
+[Verse 1]  
 Karma police, arrest this man  
 He talks in maths, he buzzes like a fridge  
 He's like a detuned radio  
@@ -1078,7 +1078,7 @@ I lost myself, I lost myself",
     {
         title: "Tokyo Drifting",
         artist: "Glass Animals",
-        lyrics: "
+        lyrics: "  
 [Intro: Denzel Curry]  
 Driftin'  
 Huh, huh, huh, Tokyo driftin'  
@@ -1154,8 +1154,8 @@ You still, you still got it alright, yeah (Driftin')",
     {
         title: "Yoshimi Battles the Pink Robots Part 1",
         artist: "The Flaming Lips",
-        lyrics: 
-"[Verse 1]  
+        lyrics: "  
+[Verse 1]  
 Her name is Yoshimi  
 She's a black belt in karate  
 Working for the city  
@@ -1215,8 +1215,8 @@ Yoshimi",
     {
         title: "In the Aeroplane Over the Sea",
         artist: "Neutral Milk Hotel",
-        lyrics: 
-"[Verse 1]  
+        lyrics: "  
+[Verse 1]  
 What a beautiful face  
 I have found in this place  
 That is circling all 'round the sun  
@@ -1270,7 +1270,7 @@ How strange it is to be anything at all",
     {
         title: "This Year",
         artist: "The Mountain Goats",
-        lyrics: "
+        lyrics: "  
 [Verse 1]  
 I broke free on a Saturday morning  
 I put the pedal to the floor  
@@ -1340,7 +1340,7 @@ If it kills me",
     {
         title: "Tattoos fade",
         artist: "The World/Inferno Friendship Society",
-        lyrics: "
+        lyrics: "  
 There are rumors going around  
 You can feel history coming about  
 You're never sure just where it's going to stay  
@@ -1390,7 +1390,7 @@ Your tattoos, they're gonna fade",
     {
         title: "Finish Line / Drown",
         artist: "Chance the Rapper feat. T‐Pain, Kirk Franklin, Eryn Allen Kane & Noname",
-        lyrics: "
+        lyrics: "  
 [Part I: \"Finish Line\"]  
   
 [Intro: Eryn Allen Kane & Chance The Rapper]  
@@ -1538,7 +1538,7 @@ Never drown",
     {
         title: "Cinderella (feat. Ty Dolla $ign)",
         artist: "Mac Miller",
-        lyrics: "
+        lyrics: "  
 [Part I: Cinderella]  
   
 [Intro: Ty Dolla $ign]  
@@ -1685,7 +1685,7 @@ When that weather isn't rain",
     {
         title: "Chum",
         artist: "Earl Sweatshirt",
-        lyrics: "
+        lyrics: "  
 [Chorus]  
 Something sinister to it, pendulum swinging slow  
 A degenerate moving through the city with criminals, stealth  
@@ -1762,7 +1762,7 @@ Can I get that, oh… let me get that beat in my headphones, louder",
     {
         title: "I feel it coming",
         artist: "The Weeknd",
-        lyrics: "
+        lyrics: "  
 [Intro: The Weeknd]  
 Yeah, uh  
   
@@ -1852,7 +1852,7 @@ I feel it coming, babe",
     {
         title: "Call Me Back",
         artist: "The Strokes",
-        lyrics: "
+        lyrics: "  
 Wait time is the worst  
 I can hardly sit  
 No one has the time  

@@ -13,9 +13,10 @@ export default class CommentIndex extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         this.props.createComment(this.state.newComment)
-        .then(() => this.setState({ comments: this.state.comments.concat(this.state.newComment) }))
+        .then((data) => this.setState({ comments: this.state.comments.concat(data.comment) }))
         .then(() => this.setState({ newComment: {body: ""}}));
     }
 
@@ -36,6 +37,7 @@ export default class CommentIndex extends React.Component {
                 <ul onClick={e => e.stopPropagation()} className="comments-section">
                     {this.props.currentUser ?
                         <form 
+                            key="comments-section-form"
                             className="comments-section-form">
                             <h2 className="comments-section-header">Help us improve this annotation</h2>
                             <input onFocus={() => this.setState({ showButton: true })}

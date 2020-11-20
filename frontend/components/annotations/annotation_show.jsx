@@ -13,7 +13,6 @@ class Annotation extends React.Component {
 
     render() {
         const isUser = this.props.currentUser && (this.props.currentUser.id === this.props.annotation.author.id.toString() || this.props.currentUser.id === this.props.annotation.author.id); 
-        
         return (
             <div className="song-show-body-annotations-display" style={{position:`absolute`, top: `${this.props.yOffset}px`}}>
                 <footer className="news-footer">
@@ -27,7 +26,7 @@ class Annotation extends React.Component {
                     <button className="annotation-delete-button" onClick={ () => this.props.deleteAnnotation().then(() => this.props.fetchSong()).then( () => this.props.clearPage())}>Delete</button>
                     </div>: <div></div>}
                 {this.props.currentUser ? <LikeForm type={"Annotation"} likeableId={this.props.annotation.id} numLikes={this.props.annotation.num_likes} /> : ""}
-                <CommentIndex handleFinish={this.props.handleFinish} annotation={this.props.annotation} comments={this.props.annotation.comments} addAnnotation={this.props.addAnnotation}/>
+                <CommentIndex annotation={this.props.annotation} comments={this.props.annotation.comments} />
             </div>
         )
     }
