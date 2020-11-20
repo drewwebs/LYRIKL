@@ -30,7 +30,7 @@
 
 .nav-buttons {
     display: flex;;
-    width: 120px;
+    width: 180px;
     font-size: 11px;
     height: 100%;
     position: absolute;
@@ -45,6 +45,7 @@
     height: 100%;
     box-sizing: border-box;
     transition-duration: 0.1s;
+    cursor: pointer;
     &:hover {
         border-bottom: 8px solid red;
     }

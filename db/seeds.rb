@@ -6,11 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Song.delete_all
-User.delete_all
 Annotation.delete_all
 
-
-User.create(username: 'Demo', email: 'Demo', password: 'hunter12')
+User.create(username: 'Demo', email: 'Demo', password: 'hunter12'),
+User.create(username: "tswift_number_one_fan", email: 'Demo1', password: 'hunter12'),
+User.create(username: "kanye_west", email: 'Demo2', password: 'hunter12'),
+User.create(username: "baby_yoda", email: 'Demo3', password: 'hunter12'),
+User.create(username: "gizmo_the_bernedoodle", email: 'Demo4', password: 'hunter12'),
+User.create(username: "silver_snoopy", email: "Demo5", password: 'hunter12')
 
 songs = Song.create([
     {

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Gravatar from 'react-gravatar';
 import Searchbar from './searchbar_container';
 import SparkMD5 from 'spark-md5';
+import { loginDemo } from '../../util/session_api_util';
 
 
 export default class Nav extends React.Component {
@@ -61,6 +62,8 @@ export default class Nav extends React.Component {
                 <Link to="/signup">Sign Up</Link>
         
                 <Link to="/login">Sign In</Link>
+
+                <a onClick={() => this.props.loginDemo()}>Demo</a>
             </div>
         );
     }
