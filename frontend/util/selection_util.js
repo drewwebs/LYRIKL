@@ -2,7 +2,7 @@ const getLineNumber = (node) => {
     if (node.previousElementSibling.nodeName === "A") {
         return getLineNumber(node.previousElementSibling);
     } else {
-        return node.previousElementSibling.dataset["sourcepos"].split(":")[0];
+        return parseInt(node.previousElementSibling.dataset["sourcepos"].split(":")[0]);
     }
 };
 
@@ -33,6 +33,8 @@ export default (selection) => {
     if (focusLine === anchorLine && anchorPos > focusPos) {
         [startPos, endPos] = [endPos, startPos];
     }
+
+    
 
     return {
         line_start: lineStart,

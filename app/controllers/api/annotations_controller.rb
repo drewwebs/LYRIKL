@@ -3,7 +3,7 @@ class Api::AnnotationsController < ApplicationController
 
     def create
         @annotation = Annotation.new(annotation_params)
-        @annotation.line_start, @annotation.line_end, @annotation.start_offset, @annotation.end_offset = params[:annotation][:selection][:line_start].to_i, params[:annotation][:selection][:line_end].to_i, params[:annotation][:selection][:start_pos].to_i, params[:annotation][:selection][:end_pos].to_i
+        @annotation.line_start, @annotation.line_end, @annotation.start_offset, @annotation.end_offset = params[:annotation][:selection][:line_start], params[:annotation][:selection][:line_end], params[:annotation][:selection][:start_pos], params[:annotation][:selection][:end_pos]
         
         if validate_lines(@annotation) == nil
             render json: ["You can't annotate that line"], status: :unprocessable_entity
