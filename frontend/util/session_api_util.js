@@ -21,13 +21,21 @@ export const logout = () => (
     })
 );
 
+const USERS = [ 
+    "silver_snoopy",
+    "tswift_number_one_fan",
+    "kanye_west",
+    "baby_yoda",
+    "gizmo_the_bernedoodle"
+];
+
 export const loginDemo = () => (
     $.ajax({
         method: 'POST',
         url: 'api/session',
         data: { 
             user: {
-                name: "Demo",
+                name: USERS[Math.floor(Math.random() * USERS.length)],
                 password: "hunter12"
             }
         }
