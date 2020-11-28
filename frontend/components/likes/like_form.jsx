@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 const LikeForm = ({ createLike, deleteLike, numLikes, likeableId, currentUser }) => {
-    
     const previouslyLiked = () => {
         for (let i = 0; i < currentUser.likes.length; i++) {
             const like = currentUser.likes[i];

@@ -58,13 +58,6 @@ class Api::AnnotationsController < ApplicationController
         end
         
         return true
-        # lines[annotation.line_start..annotation.line_end].each do |line|
-        #     if line.split("").include?("[") || line.split("").include?("]")
-        #         annotation.body = "Each line can only have one annotation"
-        #         annotation.save
-        #         return nil
-        #     end
-        # end
     end
 
 end

@@ -5,7 +5,7 @@ import { logout } from '../../actions/session_actions';
 
 export default () => {
 
-    const loggedIn = useSelector(state => state.session.currentUser);
+    const currentUser = useSelector(state => state.session.currentUser);
     const dispatch = useDispatch();
 
     return (
@@ -23,7 +23,7 @@ export default () => {
                 <a href="https://github.com/drewwebs/LYRIKL">Source Code</a>
                 <a href="https://genius.com/">Genius</a>
                 <a href="mailto:drewwebs@gmail.com">Contact Drew</a>
-                {loggedIn ? <a href="#" onClick={() => dispatch(logout())}>Logout</a> : <Link to="/login">Sign In</Link>}
+                {currentUser ? <a href="#" onClick={() => dispatch(logout())}>Logout</a> : <Link to="/login">Sign In</Link>}
             </section>
         </footer>
     )

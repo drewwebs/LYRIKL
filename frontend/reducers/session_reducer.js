@@ -13,7 +13,6 @@ const sessionReducer = (state = _nullSession, action) => {
         case LOGOUT_CURRENT_USER:
             return _nullSession;
         case RECEIVE_LIKE:
-            
             const updatedCurrentUser = state.currentUser;
             updatedCurrentUser.likes.push([action.like.id, action.like.likeable_id]);
             return Object.assign({}, {currentUser: updatedCurrentUser});

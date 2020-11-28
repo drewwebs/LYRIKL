@@ -1,1 +1,5 @@
-json.extract! @like, :id, :likeable_id, :likeable_type, :liker_id
+json.partial! '/api/likes/like', like: @like
+
+json.liker do
+  json.partial! '/api/users/user', user: @like.liker
+end

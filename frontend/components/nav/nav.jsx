@@ -49,7 +49,7 @@ export default class Nav extends React.Component {
                     <p className="active-session-button-label"><Gravatar default="mp" size={30} md5={userMD5} className="profile-icon" /></p> 
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
                         <li className="account-dropdown-subtitle">Account</li>
-                        <a href="#">View Profile</a>
+                        <Link onMouseDown={e => e.preventDefault()} to={`/users/${currentUser.id}`}>View Profile</Link>
                         <a href="mailto:drewwebs@gmail.com">Report a Problem</a>
                         <li onClick={this.handleClick}>Sign Out</li>
                     </ul>

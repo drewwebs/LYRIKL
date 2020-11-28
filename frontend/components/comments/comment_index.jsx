@@ -13,6 +13,7 @@ export default class CommentIndex extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment(this.state.newComment)
@@ -31,7 +32,6 @@ export default class CommentIndex extends React.Component {
     }
 
     render() {
-        
         return (
             this.props.currentUser || this.state.comments.length > 1 ?
                 <ul onClick={e => e.stopPropagation()} className="comments-section">
@@ -50,7 +50,7 @@ export default class CommentIndex extends React.Component {
                             }
                         </form> : <></>
                     }
-                    {this.state.comments.map(comment => <Comment key={comment.id} comment={comment} deleteComment={this.props.deleteComment} currentUser={this.props.currentUser} />)}
+                    {this.state.comments.map(comment => <Comment key={comment.id} commentId={comment.id} deleteComment={this.props.deleteComment} currentUser={this.props.currentUser} />)}
                 </ul>
             : <></> 
         )

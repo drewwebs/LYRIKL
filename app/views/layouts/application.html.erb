@@ -31,7 +31,9 @@
         'id': <%= current_user.id %>,
         "username": "<%= current_user.username %>",
         "email": "<%= current_user.email %>",
-        "likes": <%= current_user.likes.pluck(:id, :likeable_id) %>
+        "likes": <%= current_user.likes.pluck(:id, :likeable_id) %>,
+        "comments": <%= current_user.comments.pluck(:id) %>,
+        "annotations": <%= current_user.annotations.pluck(:id) %>
       }
       </script>
     <% end %>

@@ -7,6 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import Song from './songs/song_show_container';
 import Splash from './splash/splash';
 import Footer from './nav/footer';
+import Profile from './profile/profile';
 
 const App = () => {
     return (
@@ -17,10 +18,11 @@ const App = () => {
                 <Route path="/featured" component={Splash} />
                 <Route path="/charts" component={Splash} />
                 <Route path="/songs/:songId" component={Song} />
+                <ProtectedRoute path="/users/:userId" component={Profile} />
                 <AuthRoute path="/signup" component={Signup} />
                 <AuthRoute path="/login" component={Login} />
             </Switch>
-            <Footer />
+            <Route exact path="/" component={Footer} />
         </div>
     );
 }

@@ -3,7 +3,7 @@ json.partial! '/api/annotations/annotation', annotation: @annotation
 
 
 json.author do
-  json.extract! @annotation.author, :id, :username
+  json.partial! '/api/users/user', user: @annotation.author
 end
 
 json.song do
