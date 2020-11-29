@@ -28,6 +28,8 @@ class User < ApplicationRecord
     has_many :likes,
         foreign_key: :liker_id
 
+    has_one_attached :photo
+
     def self.find_by_credentials(name,password)
         user = User.find_by(email: name) || User.find_by(username: name)
         return user if user && user.is_password?(password)

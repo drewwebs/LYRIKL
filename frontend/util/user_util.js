@@ -4,3 +4,13 @@ export const fetchUser = userId => (
         url: `api/users/${userId}`,
     })
 );
+
+export const addImageToUser = (userId, formData) => (
+    $.ajax({
+        method: 'PATCH',
+        url: `api/users/${userId}`,
+        data: formData,
+        contentType: false,
+        processData: false
+    })
+);

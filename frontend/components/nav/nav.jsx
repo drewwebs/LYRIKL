@@ -46,7 +46,10 @@ export default class Nav extends React.Component {
         return !!currentUser ? (
             <div className="active-session-buttons">
                 <button className="account-button" onClick={this.toggleHidden} onBlur={this.toggleHide}>
-                    <p className="active-session-button-label"><Gravatar default="mp" size={30} md5={userMD5} className="profile-icon" /></p> 
+                    <p className="active-session-button-label">
+                        {currentUser.photo ? <img className="profile-icon" src={currentUser.photo} /> :
+                        <Gravatar default="mp" size={30} md5={userMD5} className="profile-icon" />}
+                    </p> 
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
                         <li className="account-dropdown-subtitle">Account</li>
                         <Link onMouseDown={e => e.preventDefault()} to={`/users/${currentUser.id}`}>View Profile</Link>

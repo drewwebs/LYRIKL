@@ -41,11 +41,14 @@
         // position: absolute;
         // top: 130px;
         // left: calc(7% + 50px);
-        height: auto;
+        height: 100%;
         width: 100%;
         border: 1px solid #000000;
         box-shadow: 5px 10px 18px rgba(0,0,0,.8);
         border-radius: 50%;
+        object-fit: cover;  
+        margin-left: auto;
+        margin-right: auto;
 
         &-container {
             position: absolute;
@@ -53,6 +56,8 @@
             left: calc(7% + 50px);
             border-radius: 50%;
             overflow: hidden;
+            height: 200px;
+            width: 200px;
             
             &:hover .logged-in {
                 transition-duration: 3s;
@@ -106,4 +111,62 @@
             }
         }
     }
+}
+
+.photo-form {
+    width: 400px;
+    height: 200px;
+    padding: 60px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    margin: -260px 0 0 -260px;
+    background: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    color: #e9e9e9;
+    align-items: center;
+    border-radius: 4px;
+    position: relative;
+
+    
+    & > * {
+        margin: 20px;
+    }
+
+    &-filename {
+        margin-top: -15px;
+    }
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #333333;
+    color: #EDE8D9;
+    margin-left: 10px;
+    border: 1px solid #555;
+    border-radius: 2px;
+}
+
+.profile-form-background {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.4)
+}
+
+.fa-window-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
 }

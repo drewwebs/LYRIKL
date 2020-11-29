@@ -1,5 +1,7 @@
 json.extract! user, :id, :username, :email
 
+json.photo user.photo.attached? ? url_for(user.photo) : nil
+
 if user.likes.length > 0
     json.likes do
         user.likes.each do |like|
