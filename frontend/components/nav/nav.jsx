@@ -48,7 +48,7 @@ export default class Nav extends React.Component {
                 <button className="account-button" onClick={this.toggleHidden} onBlur={this.toggleHide}>
                     <p className="active-session-button-label">
                         {currentUser.photo ? <img className="profile-icon" src={currentUser.photo} /> :
-                        <Gravatar default="mp" size={30} md5={userMD5} className="profile-icon" />}
+                        <Gravatar default="mp" md5={userMD5} className="profile-icon" />}
                     </p> 
                     <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
                         <li className="account-dropdown-subtitle">Account</li>

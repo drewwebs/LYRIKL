@@ -38,18 +38,12 @@
     }
 
     &-picture {
-        // position: absolute;
-        // top: 130px;
-        // left: calc(7% + 50px);
-        // border: 1px solid #000000;
-        // box-shadow: 5px 10px 18px rgba(0,0,0,.8);
-        // border-radius: 50%;
-        object-fit: contain;  
+        object-fit: contain;
+        object-position: 25% 25%;  
         display: inline;
         height: 200px;
-        width: 200px;
+        width: auto;
         margin: 0 auto;
-        
 
         &-container {
             position: absolute;
@@ -59,6 +53,8 @@
             overflow: hidden;
             height: 200px;
             width: 200px;
+            display: flex;
+            justify-content: center;
             
             &:hover .logged-in {
                 transition-duration: 3s;

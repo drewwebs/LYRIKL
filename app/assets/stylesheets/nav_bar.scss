@@ -78,21 +78,23 @@
 }
 
 .profile-icon {
-    border-radius: 50%;
-    margin-bottom: 6px;
-    margin-right: 6px;
     height: 30px;
-    width: 30px;
-    margin-left: auto;
-    margin-right: auto;
+    width: auto;
     object-fit: contain;  
     display: inline;
-    margin: 0 auto;
+    margin: 0 auto;  
+    width: auto;
 }
 
 .active-session-button-label {
-    padding-left: 6px;
+    margin-left: 6px;
     margin-bottom: 6px;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .search-icon {
