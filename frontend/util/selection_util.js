@@ -3,7 +3,7 @@ const addAnnotationOffset = (annotationNode) => {
     return lines.length > 1 ? 
         lines[lines.length - 1].length + "]()".length + annotationNode.id.length 
         : annotationNode.text.length + annotationNode.id.length + "[]()".length;
-}
+};
 
 const getLineNumber = (node) => {
     if (node.previousElementSibling.nodeName === "A") {

@@ -13,28 +13,32 @@ export default (props) => {
     const [annotation, setAnnotation] = useState("");
     const [annotationForm, setAnnotationForm] = useState("");
     const [annotationButton, setAnnotationButton] = useState(false);
-
-    let yOffset = 0;
-    let selection = "";
+    const [yOffset, setYOffset] = useState(0);
+    const [selection, setSelection] = useState("");
 
     useEffect(() => {    
         window.scrollTo({top: 0, left: 0});
     }, [] );
 
     const handleSelect = (e) => {
-        if (window.getSelection().toString() && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
+        if (
+            window.getSelection().toString() &&
+            e.target.nodeName !== "A" &&
+            window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics" && 
+            window.getSelection().focusNode.nodeName !== "P"
+        ) {
             setAnnotationButton(true);
             setAnnotationForm("");
-            selection = getSelectionInfo(window.getSelection());
-            yOffset = e.pageY;
+            setSelection(getSelectionInfo(window.getSelection()));
+            setYOffset(e.pageY);
         } else if (e.target.id !== "annotation-button") {
             setAnnotationButton(false);
         }
     };
 
     const removeAnnotationFromPage = () => {
-        setAannotation("");
-    }
+        setAnnotation("");
+    };
 
 
     const removeHighlight = () => {
@@ -46,7 +50,7 @@ export default (props) => {
         if (e.target.nodeName === "A") {
             removeHighlight();
             e.target.classList.add("targeted");
-            yOffset = e.pageY;
+            setYOffset(e.pageY);
             props.fetchAnnotation(e.target.id)
             .then(data => {
                 setAnnotation(data.annotation);
@@ -56,7 +60,7 @@ export default (props) => {
             removeHighlight();
             removeAnnotationFromPage();
         }
-    }
+    };
 
     const displayForm = (type) => {
         setAnnotationForm(type);
