@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+
 import {referenceHandler, linkCreator} from '../../util/markdown_util';
 import Annotation from '../annotations/annotation_show';
 import CreateAnnotation from '../annotations/create_annotation_container';
 import EditAnnotation from '../annotations/edit_annotation_form_container';
 import getSelectionInfo from '../../util/selection_util';
-import { Link } from 'react-router-dom';
+
+import { fetchAnnotation } from '../../actions/annotation_actions';
 
 export default (props) => {
-    const loggedIn = !!props.currentUser;
+    const loggedIn = !!useSelector(state => state.session.currentUser);
+    const song = useSelector(state => state.entities.songs[props.match.params.songId]);
     
+    const dispatch = useDispatch();
+
     const [annotation, setAnnotation] = useState("");
     const [annotationForm, setAnnotationForm] = useState("");
     const [annotationButton, setAnnotationButton] = useState(false);
@@ -51,7 +58,7 @@ export default (props) => {
             removeHighlight();
             e.target.classList.add("targeted");
             setYOffset(e.pageY);
-            props.fetchAnnotation(e.target.id)
+            dispatch(fetchAnnotation(e.target.id))
             .then(data => {
                 setAnnotation(data.annotation);
                 setAnnotationForm("");
@@ -68,15 +75,15 @@ export default (props) => {
     };
 
     return (
-        props.song ? (
+        song ? (
             <div className="song-show" >
-                <div className="song-show-header-container-background" style={{ backgroundImage:`url(${props.song.image_url})` }}>
+                <div className="song-show-header-container-background" style={{ backgroundImage:`url(${song.image_url})` }}>
                     <div className="song-show-header-container">
                         <section className="song-show-header">
-                            <img className="song-show-header-img" src={`${props.song.image_url}`} alt=""/>
+                            <img className="song-show-header-img" src={`${song.image_url}`} alt=""/>
                             <div className="song-show-header-details">
-                                <h1 className="song-show-header-details-title">{props.song.title}</h1>
-                                <h2 className="song-show-header-details-artist">{props.song.artist}</h2>
+                                <h1 className="song-show-header-details-title">{song.title}</h1>
+                                <h2 className="song-show-header-details-artist">{song.artist}</h2>
                             </div>
                         </section>
                     </div>
@@ -85,7 +92,7 @@ export default (props) => {
                     <section className="song-show-body" onClick={displayAnnotation} onMouseUp={handleSelect}>
                         <ReactMarkdown 
                             className="song-show-body-lyrics"
-                            children={props.song.lyrics} 
+                            children={song.lyrics} 
                             renderers={{linkReference: referenceHandler, 
                                         link: linkCreator}}
                             sourcePos={true}
@@ -120,7 +127,7 @@ export default (props) => {
                                                             <CreateAnnotation 
                                                                 setAnnotationForm={setAnnotationForm}
                                                                 selection={selection}
-                                                                songId={props.song.id}
+                                                                songId={song.id}
                                                                 yOffset={yOffset} 
                                                                 setAnnotation={setAnnotation}
                                                             /> : 
