@@ -1,97 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Gravatar from 'react-gravatar';
 import Searchbar from './searchbar_container';
 import SparkMD5 from 'spark-md5';
-import { loginDemo } from '../../util/session_api_util';
+import { logout, clearErrors, loginDemo } from '../../actions/session_actions';
 
 
-export default class Nav extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {isDropdownVisible: false};
-        this.handleClick = this.handleClick.bind(this);
-        this.toggleHidden = this.toggleHidden.bind(this);
-        this.clearErrors = this.clearErrors.bind(this);
-        this.toggleHide = this.toggleHide.bind(this);
-    }
+export default () => {
+    const currentUser = useSelector(state => state.session.currentUser);
+    const dispatch = useDispatch();
+    const userMD5 = currentUser ? SparkMD5.hash(currentUser.email) : "";
+    const [showDropdown, toggleDropdown] =  useState(false);
 
-    handleClick(e) {
-        e.preventDefault();
-        this.props.logout();
-    }
+    return (
+        <>
+            <header className="nav-bar">
+                <Searchbar />
+                <Link className="site-header" to="/"><img src={window.logoURL} alt="lyrikl" /></Link>
+                {!!currentUser ? (
+                    <div className="active-session-buttons">
+                            <button className="account-button" onClick={() => toggleDropdown(!showDropdown)} onBlur={() => toggleDropdown(false)}>
+                                <p className="active-session-button-label">
+                                    {currentUser.photo ? <img className="profile-icon" src={currentUser.photo} /> :
+                                        <Gravatar default="mp" md5={userMD5} className="profile-icon" />}
+                                </p>
+                                <ul className={`account-dropdown ${showDropdown ? "" : "hidden"}`}>
+                                    <li className="account-dropdown-subtitle">Account</li>
+                                    <Link onMouseDown={e => e.preventDefault()} to={`/users/${currentUser.id}`}>View Profile</Link>
+                                    <a href="mailto:drewwebs@gmail.com">Report a Problem</a>
+                                    <li onClick={() => dispatch(logout())}>Sign Out</li>
+                                </ul>
+                            </button>
+                        </div>
+                )
+                :
+                (
+                    <div className="nav-buttons" onClick={() => dispatch(clearErrors())}>
+                            <Link to="/signup">Sign Up</Link>
 
-    toggleHidden() {
-        this.setState(prevState => ({
-            isDropdownVisible: !prevState.isDropdownVisible
-        }));
-    }
+                            <Link to="/login">Sign In</Link>
 
-    toggleHide() {
-        this.setState(
-            {isDropdownVisible: false}
-        );
-    }
-
-    clearErrors(e) {
-        e.preventDefault();
-        this.props.clearErrors();
-    }
-
-    display() {
-        const { isDropdownVisible } = this.state;
-        const currentUser = this.props.currentUser;
-        const userMD5 = currentUser ? SparkMD5.hash(currentUser.email) : "";
-
-        return !!currentUser ? (
-            <div className="active-session-buttons">
-                <button className="account-button" onClick={this.toggleHidden} onBlur={this.toggleHide}>
-                    <p className="active-session-button-label">
-                        {currentUser.photo ? <img className="profile-icon" src={currentUser.photo} /> :
-                        <Gravatar default="mp" md5={userMD5} className="profile-icon" />}
-                    </p> 
-                    <ul className={`account-dropdown ${isDropdownVisible ? "" : "hidden" }`}>
-                        <li className="account-dropdown-subtitle">Account</li>
-                        <Link onMouseDown={e => e.preventDefault()} to={`/users/${currentUser.id}`}>View Profile</Link>
-                        <a href="mailto:drewwebs@gmail.com">Report a Problem</a>
-                        <li onClick={this.handleClick}>Sign Out</li>
-                    </ul>
-                </button>
-            </div>
-        )
-        :
-        (
-            <div className="nav-buttons" onClick={this.clearErrors}>
-                <Link to="/signup">Sign Up</Link>
-        
-                <Link to="/login">Sign In</Link>
-
-                <a onClick={() => this.props.loginDemo()}>Demo</a>
-            </div>
-        );
-    }
-
-    render() {
-        return (
-            <>
-                <header className="nav-bar">
-                    <Searchbar />
-                    <Link className="site-header" to="/"><img src={window.logoURL} alt="lyrikl" /></Link>
-                    {this.display()}
-                </header>
-                <nav className="sub-nav-bar">
-                    <Link to="/featured">Featured</Link>
-                    <Link to="/charts">Charts</Link>
-                    <a href="https://github.com/drewwebs/LYRIKL">Github</a>
-                    <a href="https://genius.com/">Genius</a>
-                    <div className="social-links">
-                        <a href="https://drewwebster.dev/"><i className="fas fa-globe"></i></a>
-                        <a href="https://github.com/drewwebs"><i className="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/drew-webster-4261a934/"><i className="fab fa-linkedin-in"></i></a>
-                        <a href="https://angel.co/u/drewwebs"><i className="fab fa-angellist"></i></a>
-                    </div>
-                </nav>
-            </>
-        );
-    }
+                            <a onClick={() => dispatch(loginDemo())}>Demo</a>
+                        </div>
+                )}
+            </header>
+            <nav className="sub-nav-bar">
+                <Link to="/featured">Featured</Link>
+                <Link to="/charts">Charts</Link>
+                <a href="https://github.com/drewwebs/LYRIKL">Github</a>
+                <a href="https://genius.com/">Genius</a>
+                <div className="social-links">
+                    <a href="https://drewwebster.dev/"><i className="fas fa-globe"></i></a>
+                    <a href="https://github.com/drewwebs"><i className="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/drew-webster-4261a934/"><i className="fab fa-linkedin-in"></i></a>
+                    <a href="https://angel.co/u/drewwebs"><i className="fab fa-angellist"></i></a>
+                </div>
+            </nav>
+        </>
+    );
 }

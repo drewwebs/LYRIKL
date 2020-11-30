@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './nav/nav_container';
+import Nav from './nav/nav';
 import Signup from './session/signup_container';
 import Login from './session/login_container';
 import { Route, Switch } from 'react-router-dom';
