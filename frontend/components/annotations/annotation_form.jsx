@@ -8,7 +8,7 @@ export default class AnnotationForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.clearPage();
+    this.props.setAnnotation("");
   }
 
   handleSubmit(e) {
@@ -18,9 +18,9 @@ export default class AnnotationForm extends React.Component {
   }
 
   updateAndAdd(annotation) {
-    this.props.addAnnotation(annotation);
+    this.props.setAnnotation(annotation);
     this.props.fetchSong(annotation.song_id);
-    this.props.handleFinish();
+    this.props.setAnnotationForm("");
   }
 
   handleChange() {
