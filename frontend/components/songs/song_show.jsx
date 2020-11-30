@@ -118,7 +118,7 @@ export default (props) => {
                                                                 selection={selection}
                                                                 songId={props.song.id}
                                                                 yOffset={yOffset} 
-                                                                addAnnotation={setAnnotation}
+                                                                setAnnotation={setAnnotation}
                                                             /> : 
                                                             <EditAnnotation
                                                                 setAnnotationForm={setAnnotationForm}
