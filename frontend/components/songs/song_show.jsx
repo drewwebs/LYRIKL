@@ -27,10 +27,12 @@ export default class SongShow extends React.Component {
     }
 
     handleSelect(e) {
-        if (window.getSelection().toString() && e.target.nodeName !== "A" && window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics") {
-            // const selection = window.getSelection();
-            // const selectionInfo = getSelectionInfo(selection);
-            // const selectionInfo = getSelectionInfo(window.getSelection());
+        if (
+            window.getSelection().toString() &&
+            e.target.nodeName !== "A" &&
+            window.getSelection().anchorNode.parentElement.parentElement.className === "song-show-body-lyrics" &&
+            window.getSelection().focusNode.nodeName !== "P"
+        ) {
             this.setState( { annotationButton: true, annotationForm: "" } );
             this.selection = getSelectionInfo(window.getSelection());
             this.yOffset = e.pageY;
