@@ -7,7 +7,7 @@ import SparkMD5 from 'spark-md5';
 import { logout, clearErrors, loginDemo } from '../../actions/session_actions';
 
 
-export default (props) => {
+export default () => {
     const currentUser = useSelector(state => state.session.currentUser);
     const dispatch = useDispatch();
     const userMD5 = currentUser ? SparkMD5.hash(currentUser.email) : "";
