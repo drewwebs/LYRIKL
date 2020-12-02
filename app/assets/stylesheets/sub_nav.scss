@@ -5,7 +5,9 @@
     justify-content: center;
     align-items: center;
     background-color: #121212;
-    border-bottom: 1px solid #f9f9f9
+    border-bottom: 1px solid #f9f9f9;
+    position: relative;
+    z-index: 3;
 }
 
 .sub-nav-bar > * {

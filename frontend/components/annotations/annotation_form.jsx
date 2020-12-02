@@ -8,7 +8,7 @@ export default class AnnotationForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.clearPage();
+    this.props.setAnnotation("");
   }
 
   handleSubmit(e) {
@@ -18,9 +18,9 @@ export default class AnnotationForm extends React.Component {
   }
 
   updateAndAdd(annotation) {
-    this.props.addAnnotation(annotation);
+    this.props.setAnnotation(annotation);
     this.props.fetchSong(annotation.song_id);
-    this.props.handleFinish();
+    this.props.setAnnotationForm("");
   }
 
   handleChange() {
@@ -46,9 +46,8 @@ export default class AnnotationForm extends React.Component {
           <button className="annotation-form-submit-button">Save (+5 IQ)</button>
           <div
             className="annotation-form-cancel-button"
-            onClick={() => this.props.handleFinish()}
+            onClick={() => this.props.setAnnotationForm("")}
           >Cancel</div>
-
         </div>
       </form>
     );

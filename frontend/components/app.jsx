@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from './nav/nav_container';
+import Nav from './nav/nav';
 import Signup from './session/signup_container';
 import Login from './session/login_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
-import Song from './songs/song_show_container';
+import Song from './songs/song_show';
 import Splash from './splash/splash';
 import Footer from './nav/footer';
 import Profile from './profile/profile';
