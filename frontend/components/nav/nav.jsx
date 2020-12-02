@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Gravatar from 'react-gravatar';
-import Searchbar from './searchbar_container';
+import Searchbar from './searchbar';
 import SparkMD5 from 'spark-md5';
 import { logout, clearErrors, loginDemo } from '../../actions/session_actions';
 
 
-export default () => {
+export default (props) => {
     const currentUser = useSelector(state => state.session.currentUser);
     const dispatch = useDispatch();
     const userMD5 = currentUser ? SparkMD5.hash(currentUser.email) : "";
     const [showDropdown, toggleDropdown] =  useState(false);
 
+    
     return (
         <>
             <header className="nav-bar">

@@ -19,6 +19,7 @@ export default class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.action(this.state);
+    if (this.props.closeForm) this.props.closeForm();
   }
 
   displaySignupPrompt() {
@@ -26,26 +27,50 @@ export default class SessionForm extends React.Component {
       return (
         <p className="signup-prompt">
           Don&#39;t have an account?{" "}
-          <Link
-            to="/signup"
+          {this.props.setFormType ? 
+            <span
             className="signup-prompt-button"
-            onClick={this.clearErrors}
+            onClick={() => {
+              this.clearErrors();
+              this.props.setFormType("signup")
+            }}
           >
-            Sign up here
-          </Link>
+              Sign up here
+            </span>
+            :
+            <Link
+              to="/signup"
+              className="signup-prompt-button"
+              onClick={this.clearErrors}
+            >
+              Sign up here
+            </Link>
+          }
         </p>
       );
     } else {
       return (
         <p className="signup-prompt">
           Already have an account?{" "}
-          <Link
-            to="/login"
+          {this.props.setFormType ? 
+            <span
             className="signup-prompt-button"
-            onClick={this.clearErrors}
-          >
-            Log in here
-          </Link>
+            onClick={() => {
+              this.clearErrors();
+              this.props.setFormType("login")
+            }}
+            >
+              Log in here
+            </span>
+            :
+            <Link
+              to="/login"
+              className="signup-prompt-button"
+              onClick={this.clearErrors}
+            >
+              Log in here
+            </Link>
+          }
         </p>
       );
     }
@@ -94,6 +119,7 @@ export default class SessionForm extends React.Component {
   handleDemo(e) {
     e.preventDefault();
     this.props.loginDemo();
+    if (this.props.closeForm) this.props.closeForm();
   }
 
   renderErrors() {

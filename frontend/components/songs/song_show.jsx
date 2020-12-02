@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-
 import {referenceHandler, linkCreator} from '../../util/markdown_util';
 import Annotation from '../annotations/annotation_show';
 import CreateAnnotation from '../annotations/create_annotation_container';
 import EditAnnotation from '../annotations/edit_annotation_form_container';
 import getSelectionInfo from '../../util/selection_util';
+import SessionModal from '../session/session_modal';
 
 import { fetchAnnotation } from '../../actions/annotation_actions';
 
@@ -22,6 +21,8 @@ export default (props) => {
     const [annotationButton, setAnnotationButton] = useState(false);
     const [yOffset, setYOffset] = useState(0);
     const [selection, setSelection] = useState("");
+    const [sessionForm, setSessionForm] = useState(false);
+    const [sessionFormType, setSessionFormType] = useState("login");
 
     useEffect(() => {    
         window.scrollTo({top: 0, left: 0});
@@ -77,6 +78,7 @@ export default (props) => {
     return (
         song ? (
             <div className="song-show" >
+                {sessionForm ? <SessionModal formType={sessionFormType} setFormType={setSessionFormType} closeForm={() => setSessionForm(false)} /> : ""}
                 <div className="song-show-header-container-background" style={{ backgroundImage:`url(${song.image_url})` }}>
                     <div className="song-show-header-container">
                         <section className="song-show-header">
@@ -114,13 +116,14 @@ export default (props) => {
                                                                             style={{position:`absolute`, top: `${yOffset}px`}}
                                                                         > <span id="annotation-button">Start a LYRIKL Annotation</span><span id="annotation-button" className="annotation-button-green-text">(+5 IQ)</span></div> 
                                                                       : 
-                                                                        <Link 
+                                                                        <span 
+                                                                            onClick={() => setSessionForm(true)}
                                                                             id="annotation-button"
                                                                             className="annotation-button annotation-sign-in"
                                                                             style={{ position: `absolute`, top: `${yOffset}px` }}
-                                                                            to="/login">
+                                                                            >
                                                                             Sign in to start annotating
-                                                                        </Link>) : ""
+                                                                        </span>) : ""
                                                                         }
 
                             {annotationForm ? (annotationForm === "create" ? 
